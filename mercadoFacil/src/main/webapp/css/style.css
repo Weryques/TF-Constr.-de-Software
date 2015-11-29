@@ -30,7 +30,7 @@ img{max-width:100%;}
 /*end reset*/
 /*--login form start here--*/ 
 body {
-   background:url(../images/5.jpg)no-repeat;
+   background:url(../images/fundo1.jpeg)no-repeat;
    background-size: cover;
    font-family: 'Open Sans', sans-serif;
    font-size: 100%;
@@ -45,10 +45,10 @@ body {
   margin: 0 auto;
   padding: 0.5em 0em 0.5em 0em;
 }
-.s-bar input[type="text"] {
+.s-bar input[type="text"] { /*Caixa de pesquisa, entrada, texto "Digite seu CEP"*/
   font-size: 1em;
   font-weight: 600;
-  color: #fff;
+  color: #000000;
   padding: 1.3em 1em 1.3em 1.5em;
   width: 70%;
  text-shadow: rgba(80, 80, 80, 0.08) 1px 1px, 
@@ -65,10 +65,10 @@ body {
   outline: none;
   -webkit-appearance: none;
 }
-.s-bar input[type="submit"]{
+.s-bar input[type="submit"]{  /*botão de pesquisa*/
   font-size: 1em;
   font-weight: 600;
-  color: #fff;
+  color: #000000;
   padding: 1.3em 0.2em;
   width: 22%;
   text-align: center;
@@ -94,7 +94,7 @@ body {
   background: -o-linear-gradient(top, #7ac209 0%,#7ac209 37%,#7ac209 66%,#7ac209 100%);
   background: -ms-linear-gradient(top, #7ac209 0%,#7ac209 37%,#7ac209 66%,#7ac209 100%);
   background: linear-gradient(to bottom, #8EDB15 0%,#8EDB15 37%,#8EDB15 66%,#8EDB15 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ac209', endColorstr='#7ac209',GradientType=0 );
+  filter: progid-DXImageTransform-Microsoft-gradient( startColorstr='#7ac209', endColorstr='#7ac209',GradientType=0 );
 }
 .s-bar input[type="submit"]:hover{
 	opacity: 0.8;
@@ -136,7 +136,7 @@ body {
 .copyright p {
   font-size: 0.875em;
   font-weight: 400;
-  color: #fff;
+  color: #000000; /*cor do texto de direitos*/
 }
 .copyright p a{
   font-size: 1em;
