@@ -26,7 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//fonts-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript">
+				<script type="text/javascript">
 					jQuery(document).ready(function($) {
 						$(".scroll").click(function(event){		
 							event.preventDefault();
@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 
 </head>
-<body>
+<body> 
 	<!--header-->
 	<div class="header-in">
 		<div class="container">
@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-top-in">
 					<ul class="header-grid">
 						<li ><a href="account.html">My Account   </a> <label>/</label></li>
-						<li  ><a href="visao/login.jsp">  Login </a> </li>		
+						<li ><a href="visao/login.jsp">  Login </a> </li>		
 					</ul>
 					<div class="act">
 						<a href="#" class="done">Donec actortor </a>
@@ -69,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li  ><a href="index.html" >Home  </a><label>- </label> </li>
 						<li><a href="location.html" > Locations</a><label>- </label></li>
 						<li><a href="specials.html">Specials </a><label>- </label></li>
-						<li><a href="404.html" > Order Online</a><label>- </label></li>
+						<li class="active1"><a href="404.html" > Order Online</a><label>- </label></li>
 						<li><a href="contact.html">Contacts</a></li>
 					</ul>
 					<!--script-->
@@ -88,28 +88,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 			<div class="clearfix"> </div>
 		</div>
+		<!---->
 		
 		</div>
 	</div>
 	<!---->
 	<div class="container">
-		<div class="account">
-		<h2>Login</h2>
-			<form>
-			<div>
-				<span>User Name</span>
-				<input type="text"> 				
-			</div>
-			<div>
-				<span class="word-in">Password</span>
-				<input type="password"> 
-			</div>
-				<a class="forgot" href="#">Forgot Your Password?</a>
-				<input type="submit" value="Login"> 
-			</form>
+		 <div class="register-account">
+    	     <h4 class="title">Shopping cart is empty</h4>
+    	     <p class="cart">You have no items in your shopping cart.<br>Click<a href="index.html"> here</a> to continue shopping</p>
+    	   </div>
 		</div>
-	
-	</div>
 
 	<!---->
 	<div class="footer">
