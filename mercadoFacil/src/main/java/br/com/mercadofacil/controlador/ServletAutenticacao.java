@@ -1,7 +1,7 @@
 /**
  * 
  */
-package mercadofacil.controlador;
+package br.com.mercadofacil.controlador;
 
 import javax.servlet.http.HttpServlet;
 
