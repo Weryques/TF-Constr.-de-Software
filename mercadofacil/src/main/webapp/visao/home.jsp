@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Food shop A Hotel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
 <link href="../css/styleHomeLoginCarrinho.css" rel="stylesheet" type="text/css" media="all" />	
@@ -25,8 +25,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="../js/move-top.js"></script>
+<script type="text/javascript" src="../js/easing.js"></script>
 				<script type="text/javascript">
 					jQuery(document).ready(function($) {
 						$(".scroll").click(function(event){		
@@ -42,13 +42,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="visao/index.jsp">Food Shop</a></h1>
+				<h1><a href="home.jsp">Food Shop</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
 					<ul class="header-grid">
 						<li  ><a href="account.html">My Account   </a> <label>/</label></li>
-						<li ><a href="visao/login.jsp">  Login </a> </li>		
+						<li ><a href="login.jsp">  Login </a> </li>		
 					</ul>
 					<div class="act">
 						<a href="#" class="done">Donec actortor </a>
@@ -67,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-nav">
 					<span class="menu"> </span>
 					<ul>
-						<li class="active" ><a href="index.html" >Home  </a><label>- </label> </li>
+						<li class="active" ><a href="home.jsp" >Home  </a><label>- </label> </li>
 						<li><a href="location.html" > Locations</a><label>- </label></li>
 						<li><a href="specials.html">Specials </a><label>- </label></li>
 						<li><a href="404.html" > Order Online</a><label>- </label></li>
@@ -124,7 +124,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<!---->
-		  <script src="js/jquery.wmuSlider.js"></script> 
+		  <script src="../js/jquery.wmuSlider.js"></script> 
 			  <script>
        			$('.example1').wmuSlider({
 					 pagination : false,
@@ -171,7 +171,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-8 food-grid">
 				<div class="cup">
 					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="images/p1.jpg" class="img-responsive" alt=""></a>
+						<a href="single.html"><img src="../images/p1.jpg" class="img-responsive" alt=""></a>
 						<p>Lorem ipsum dolor sit consectetur</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
@@ -180,7 +180,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"> </div>
 					</div>
 					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="images/p2.jpg" class="img-responsive" alt=""></a>
+						<a href="single.html"><img src="../images/p2.jpg" class="img-responsive" alt=""></a>
 						<p>Lorem ipsum dolor sit consectetur</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
@@ -189,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"> </div>
 					</div>
 					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="images/p3.jpg" class="img-responsive" alt=""></a>
+						<a href="single.html"><img src="../images/p3.jpg" class="img-responsive" alt=""></a>
 						<p>Lorem ipsum dolor sit consectetur</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
@@ -199,7 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					
 					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="images/p4.jpg" class="img-responsive" alt=""></a>
+						<a href="single.html"><img src="../images/p4.jpg" class="img-responsive" alt=""></a>
 						<p>Lorem ipsum dolor sit consectetur</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
@@ -208,7 +208,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"> </div>
 					</div>
 					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="images/p5.jpg" class="img-responsive" alt=""></a>
+						<a href="single.html"><img src="../images/p5.jpg" class="img-responsive" alt=""></a>
 						<p>Lorem ipsum dolor sit consectetur</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
@@ -217,7 +217,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"> </div>
 					</div>
 					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="images/p6.jpg" class="img-responsive" alt=""></a>
+						<a href="single.html"><img src="../images/p6.jpg" class="img-responsive" alt=""></a>
 						<p>Lorem ipsum dolor sit consectetur</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
@@ -233,7 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="single.html" class="more">Browse More</a>
 						<div class="clearfix"> </div>
 						<div class="arrow">
-							<a href="#"><img src="images/arrow.png" alt=""></a>
+							<a href="#"><img src="../images/arrow.png" alt=""></a>
 						</div>
 					</div>
 				<!---->
@@ -242,7 +242,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h3>Adpiscing labo</h3>
 						<p>Lorem ipsum dolor sit amet </p>
 						<div class="egg">
-							<a href="single.html"><img src="images/pic.jpg" class="img-responsive" alt=""></a>
+							<a href="single.html"><img src="../images/pic.jpg" class="img-responsive" alt=""></a>
 						</div>
 						<p class="para-in">Rem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incidi. </p>
 					</div>
