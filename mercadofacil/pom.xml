@@ -2,11 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>TF-CS</groupId>
-  <artifactId>mercadoFacil</artifactId>
+  <artifactId>mercadofacil</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   
-  <name>mercadoFacil Maven Webapp</name>
+  <name>mercadofacil Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
   <properties>
@@ -30,6 +30,6 @@
     
   </dependencies>
   <build>
-    <finalName>mercadoFacil</finalName>
+    <finalName>mercadofacil</finalName>
   </build>
 </project>
