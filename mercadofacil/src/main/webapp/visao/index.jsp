@@ -27,7 +27,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<input type="submit"  value="Procurar"/>
 	  </form>
 	</div>
-	<!-- <p>Popular searches: <a href="#">Modern PSD template,</a> <a href="#"> Portfolio design </a></p> -->
 </div>
 <!--search end here-->	
 <div class="copyright">
