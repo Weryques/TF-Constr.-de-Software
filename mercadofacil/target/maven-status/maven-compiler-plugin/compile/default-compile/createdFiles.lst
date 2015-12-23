@@ -1,0 +1,9 @@
+br/com/mercadofacil/controlador/ServletConexaoBD.class
+br/com/mercadofacil/controlador/ServletGravaBanco.class
+br/com/mercadofacil/controlador/ServletDirecionamentoPagina.class
+br/com/mercadofacil/modelo/Anunciante.class
+br/com/mercadofacil/controlador/ServletAutenticacao.class
+br/com/mercadofacil/modelo/Usuario.class
+br/com/mercadofacil/modelo/Endereco.class
+br/com/mercadofacil/modelo/Comerciante.class
+br/com/mercadofacil/modelo/Consumidor.class
