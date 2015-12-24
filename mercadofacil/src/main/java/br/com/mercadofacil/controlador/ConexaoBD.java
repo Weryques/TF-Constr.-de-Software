@@ -12,8 +12,8 @@ public class ConexaoBD{
 	
 	private Connection conexao;
 	
-	private void conectar() throws SQLException{
+	private Connection conectar() throws SQLException{
 		String url = "jdbc:mysql://localhost/mercadofacil";
-		conexao = DriverManager.getConnection(url);
+		return conexao = DriverManager.getConnection(url);
 	}
 }
