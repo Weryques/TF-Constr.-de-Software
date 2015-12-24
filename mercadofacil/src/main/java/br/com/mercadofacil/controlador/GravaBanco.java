@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author weryquessantos
  *
  */
-public class ServletGravaBanco extends HttpServlet{
+public class GravaBanco extends HttpServlet{
 	
 	/* (non-Javadoc)
 	 * @see javax.servlet.http.HttpServlet#service(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
