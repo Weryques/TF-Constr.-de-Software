@@ -28,13 +28,12 @@
       <scope>provided</scope>
     </dependency>
     
-    <!-- Dependência para usar mysql -->
     <dependency>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java</artifactId>
-		<version>5.1.38</version>
+		<groupId>org.apache.derby</groupId>
+		<artifactId>derby</artifactId>
+		<version>10.12.1.1</version>
 	</dependency>
-    
+
   </dependencies>
   <build>
     <finalName>mercadofacil</finalName>

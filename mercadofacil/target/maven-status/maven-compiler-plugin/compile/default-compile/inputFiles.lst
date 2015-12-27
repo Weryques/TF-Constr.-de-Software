@@ -2,8 +2,9 @@
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Usuario.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Consumidor.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletAutenticacao.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/UpdateBD.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ConexaoBD.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Endereco.java
+/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/BancoEmbarcado.java
+/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/ConexaoBD.java
+/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/UpdateBD.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Anunciante.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Comerciante.java

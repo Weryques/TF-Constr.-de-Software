@@ -1,9 +1,10 @@
-br/com/mercadofacil/controlador/ConexaoBD.class
+br/com/mercadofacil/jdbc/ConexaoBD.class
+br/com/mercadofacil/jdbc/UpdateBD.class
 br/com/mercadofacil/controlador/ServletDirecionamentoPagina.class
 br/com/mercadofacil/modelo/Anunciante.class
 br/com/mercadofacil/controlador/ServletAutenticacao.class
-br/com/mercadofacil/controlador/UpdateBD.class
 br/com/mercadofacil/modelo/Usuario.class
+br/com/mercadofacil/jdbc/BancoEmbarcado.class
 br/com/mercadofacil/modelo/Endereco.class
 br/com/mercadofacil/modelo/Comerciante.class
 br/com/mercadofacil/modelo/Consumidor.class

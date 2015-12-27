@@ -1,4 +1,4 @@
-package br.com.mercadofacil.controlador;
+package br.com.mercadofacil.jdbc;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServlet;
  *
  */
 @WebServlet(value = "/conexao")
-public class ConexaoBD extends HttpServlet{
+public class ConexaoBD extends HttpServlet{ 
 	
 	private Connection conexao;
 	
@@ -28,18 +28,21 @@ public class ConexaoBD extends HttpServlet{
 	}
 	
 	private void conectar(){
-		String url = "jdbc:mysql://localhost:3306/";
-		String nomeBD = "mercadofacil";
-		String usuario = "root";
-		String senha = "";
+		BancoEmbarcado derby = new BancoEmbarcado();
+		
+		//derby.criarBanco();
+		
+		String url = "jdbc:derby:bdmercadofacil";
+		Connection conexao;
 		
 		try {
-			conexao = DriverManager.getConnection(url + nomeBD, usuario, senha);
-			System.out.println("A conexão com o banco de dados ocorreu com sucesso!");
+			conexao = DriverManager.getConnection(url);
+			conexao.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println(e.getMessage() +"\n"+ e.getSQLState());
-	
+			System.out.println(e.getMessage());
+			System.out.println(e.getErrorCode());
+			System.out.println(e.getSQLState());
 		}
 	}
 }

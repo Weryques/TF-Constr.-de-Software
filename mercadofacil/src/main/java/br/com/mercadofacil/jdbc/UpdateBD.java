@@ -1,4 +1,4 @@
-package br.com.mercadofacil.controlador;
+package br.com.mercadofacil.jdbc;
 
 /**
  * @author weryquessantos
