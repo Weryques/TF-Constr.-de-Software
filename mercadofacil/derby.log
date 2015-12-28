@@ -1,4 +1,4 @@
-Sat Dec 26 23:32:56 BRST 2015 Thread[http-bio-8080-exec-1,5,main] Cleanup action starting
+Mon Dec 28 11:39:35 BRST 2015 Thread[http-bio-8080-exec-1,5,main] Cleanup action starting
 java.sql.SQLException: Database 'bdmercadofacil' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -16,8 +16,8 @@ java.sql.SQLException: Database 'bdmercadofacil' not found.
 	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
 	at java.sql.DriverManager.getConnection(DriverManager.java:664)
 	at java.sql.DriverManager.getConnection(DriverManager.java:270)
-	at br.com.mercadofacil.jdbc.ConexaoBD.conectar(ConexaoBD.java:39)
-	at br.com.mercadofacil.jdbc.ConexaoBD.service(ConexaoBD.java:27)
+	at br.com.mercadofacil.jdbc.ConexaoBD.conectar(ConexaoBD.java:32)
+	at br.com.mercadofacil.jdbc.ConexaoBD.service(ConexaoBD.java:24)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
@@ -61,8 +61,8 @@ ERROR XJ004: Database 'bdmercadofacil' not found.
 	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
 	at java.sql.DriverManager.getConnection(DriverManager.java:664)
 	at java.sql.DriverManager.getConnection(DriverManager.java:270)
-	at br.com.mercadofacil.jdbc.ConexaoBD.conectar(ConexaoBD.java:39)
-	at br.com.mercadofacil.jdbc.ConexaoBD.service(ConexaoBD.java:27)
+	at br.com.mercadofacil.jdbc.ConexaoBD.conectar(ConexaoBD.java:32)
+	at br.com.mercadofacil.jdbc.ConexaoBD.service(ConexaoBD.java:24)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
@@ -84,3 +84,22 @@ ERROR XJ004: Database 'bdmercadofacil' not found.
 	at java.lang.Thread.run(Thread.java:745)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
+----------------------------------------------------------------
+Mon Dec 28 11:39:35 BRST 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0151-e8d0-c905-00000943fdc8 
+on database directory /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/bdmercadofacil with class loader WebappClassLoader
+  context: /mercadofacil
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+ClassRealm[plugin>org.apache.tomcat.maven:tomcat7-maven-plugin:2.2, parent: sun.misc.Launcher$AppClassLoader@3d4eac69]
+ 
+Loaded from file:/Users/weryquessantos/.m2/repository/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_60-b27
+user.dir=/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.11.2
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

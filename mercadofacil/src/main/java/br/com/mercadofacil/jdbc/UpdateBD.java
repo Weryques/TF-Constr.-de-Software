@@ -6,7 +6,7 @@ package br.com.mercadofacil.jdbc;
  */
 public class UpdateBD{
 		
-	private void inserirConsumidor(String sql){
+	private void inserirConsumidor(){
 		
 	}
 }

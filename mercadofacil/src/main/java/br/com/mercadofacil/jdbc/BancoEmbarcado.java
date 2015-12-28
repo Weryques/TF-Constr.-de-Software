@@ -3,6 +3,7 @@ package br.com.mercadofacil.jdbc;
 import java.sql.*;
 
 public class BancoEmbarcado {
+	
 	public void criarBanco(){
 		String url = "jdbc:derby:directory:bdmercadofacil;create=true";
 		
@@ -85,7 +86,7 @@ public class BancoEmbarcado {
 				+ " anuncianteRazao VARCHAR(45) NOT NULL,"
 				+ " PRIMARY KEY (id),"
 				+ " CONSTRAINT fkServicosAnunciante"
-				+ " 	FOREIGN KEY (cnpj, email, anunciante)"
+				+ " 	FOREIGN KEY (cnpj, email, anuncianteRazao)"
 				+ " 	REFERENCES mercadofacil.anunciante (cnpj, email, razaoSocial)"
 				+ ")";
 		
@@ -95,11 +96,11 @@ public class BancoEmbarcado {
 				+ " valor DOUBLE NOT NULL,"
 				+ " categoria VARCHAR(45) NOT NULL,"
 				+ " descricao VARCHAR(240) NOT NULL,"
-				+ " cnpjAnunciante VARCHAR(45) NULL DEFAULT NULL,"
-				+ " emailAnunciante VARCHAR(45) NULL DEFAULT NULL,"
-				+ " razaoSocialAnunciante VARCHAR(45) NULL DEFAULT NULL,"
-				+ " nomeFantasiaSupermercado VARCHAR(45) NULL DEFAULT NULL,"
-				+ " razaoSocialSupermercado VARCHAR(45) NULL DEFAULT NULL,"
+				+ " cnpjAnunciante VARCHAR(45) DEFAULT NULL,"
+				+ " emailAnunciante VARCHAR(45) DEFAULT NULL,"
+				+ " razaoSocialAnunciante VARCHAR(45) DEFAULT NULL,"
+				+ " nomeFantasiaSupermercado VARCHAR(45) DEFAULT NULL,"
+				+ " razaoSocialSupermercado VARCHAR(45) DEFAULT NULL,"
 				+ " PRIMARY KEY (id),"
 				+ " CONSTRAINT empresaAnunc"
 				+ " 	FOREIGN KEY (cnpjAnunciante, emailAnunciante, razaoSocialAnunciante)"
@@ -142,8 +143,8 @@ public class BancoEmbarcado {
 			conexao.close();
 			
 			System.out.println("Banco de dados criado com sucesso!");
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
 			System.out.println(e.getSQLState());
 		}
