@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConexaoBD{ 
 	
-	private Connection conectar(){		
+	public Connection conectar(){		
 		String url = "jdbc:derby:bdmercadofacil";
 		Connection conexao = null;
 		

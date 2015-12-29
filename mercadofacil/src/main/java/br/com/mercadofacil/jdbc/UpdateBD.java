@@ -14,10 +14,10 @@ public class UpdateBD{
 		return insertEndereco;
 	}
 	
-	public String inserirConsumidor(String cpf, String email, String nome, String telefone, String celular, String tipoPerfil, int idEndereco){
+	public String inserirConsumidor(String cpf, String email, String senha, String nome, String telefone, String celular, String tipoPerfil, int idEndereco){
 		String insertConsumidor = "INSERT INTO mercadofacil.consumidor ("
 				+ "cpf, email, nome, telefone, celular, tipoPerfil, idEndereco) "
-				+ "VALUES('"+ cpf +"', '"+ email +"', '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"', '"+ idEndereco +"')";
+				+ "VALUES('"+ cpf +"', '"+ email +"', '"+ senha +"' , '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"', '"+ idEndereco +"')";
 		
 		return insertConsumidor;
 	}

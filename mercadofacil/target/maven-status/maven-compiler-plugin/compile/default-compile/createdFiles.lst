@@ -1,4 +1,6 @@
+br/com/mercadofacil/controlador/ServletCadastro.class
 br/com/mercadofacil/jdbc/ConexaoBD.class
+br/com/mercadofacil/jdbc/SelectBD.class
 br/com/mercadofacil/jdbc/UpdateBD.class
 br/com/mercadofacil/controlador/ServletDirecionamentoPagina.class
 br/com/mercadofacil/modelo/Anunciante.class
