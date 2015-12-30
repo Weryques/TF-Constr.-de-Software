@@ -8,19 +8,19 @@ package br.com.mercadofacil.modelo;
  *
  */
 public class Consumidor extends Usuario{
-	private String cpfCliente;
+	private String cpfConsumidor;
 
 	/**
-	 * @return the cpfCliente
+	 * @return the cpfConsumidor
 	 */
-	public String getCpfCliente() {
-		return cpfCliente;
+	public String getCpfConsumidor() {
+		return cpfConsumidor;
 	}
 
 	/**
-	 * @param cpfCliente the cpfCliente to set
+	 * @param cpfConsumidor the cpfConsumidor to set
 	 */
-	public void setCpfCliente(String cpfCliente) {
-		this.cpfCliente = cpfCliente;
+	public void setCpfConsumidor(String cpfConsumidor) {
+		this.cpfConsumidor = cpfConsumidor;
 	}
 }

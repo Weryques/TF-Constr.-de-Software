@@ -8,11 +8,57 @@ package br.com.mercadofacil.modelo;
  *
  */
 public class Usuario {
+	private Endereco endereco = new Endereco();
 	private String nomeCompleto;
 	private String telefone;
 	private String celular;
-	private int identificador;
+	private String tipoPerfil;
+	private String email;
+	private String senha;
 	
+	
+	/**
+	 * @return the endereco
+	 */
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	/**
+	 * @return the tipoPerfil
+	 */
+	public String getTipoPerfil() {
+		return tipoPerfil;
+	}
+	/**
+	 * @param tipoPerfil the tipoPerfil to set
+	 */
+	public void setTipoPerfil(String tipoPerfil) {
+		this.tipoPerfil = tipoPerfil;
+	}
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	/**
+	 * @return the senha
+	 */
+	public String getSenha() {
+		return senha;
+	}
+	/**
+	 * @param senha the senha to set
+	 */
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	/**
 	 * @return the nomeCompleto
 	 */
@@ -48,17 +94,5 @@ public class Usuario {
 	 */
 	public void setCelular(String celular) {
 		this.celular = celular;
-	}
-	/**
-	 * @return the identificador
-	 */
-	public int getIdentificador() {
-		return identificador;
-	}
-	/**
-	 * @param identificador the identificador to set
-	 */
-	public void setIdentificador(int identificador) {
-		this.identificador = identificador;
 	}
 }
