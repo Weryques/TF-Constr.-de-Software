@@ -7,8 +7,16 @@ package br.com.mercadofacil.modelo;
  * @author weryquessantos
  *
  */
-public class Comerciante {
+public class Comerciante extends Usuario{
 	private String cnpjComerciante;
+	private Supermercado supermercado = new Supermercado();
+
+	/**
+	 * @return the supermercado
+	 */
+	public Supermercado getSupermercado() {
+		return supermercado;
+	}
 
 	/**
 	 * @return the cnpjComerciante

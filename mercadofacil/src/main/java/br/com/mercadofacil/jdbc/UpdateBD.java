@@ -22,4 +22,21 @@ public class UpdateBD{
 		return insertConsumidor;
 	}
 	
+	public String inserirSupermercado(String nomeFantasia, String razaoSocial){
+		String insertSupermercado = "INSERT INTO mercadofacil.supermercado ("
+				+ "nomeFantasia, razaoSocial) "
+				+ "VALUES('"+ nomeFantasia +"', '"+ razaoSocial +"')";
+		
+		return insertSupermercado;
+	}
+	
+	public String inserirComerciante(String cnpj, String email, String nome, String telefone, String celular, String tipoPerfil, 
+			int idEndereco, String nfEmpresa, String rsEmpresa){
+		String insertComerciante = "INSERT INTO mercadofacil.comerciante ("
+				+ "cnpj, email, nome, telefone, celular, tipoPerfil, idEndereco, nfEmpresa, rsEmpresa) "
+				+ "VALUES('"+ cnpj +"', '"+ email +"', '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"', '"
+						+ ""+ idEndereco +"', '"+ nfEmpresa +"', '"+ rsEmpresa +"')";
+		
+		return insertComerciante;
+	}
 }

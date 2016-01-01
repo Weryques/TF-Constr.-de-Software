@@ -17,7 +17,7 @@ public class ConexaoBD{
 			System.out.println(e.getSQLState());
 			System.out.println(e.getMessage());
 			
-			/**SQLState XJ004 significa que o banco de dado não foi encontrato.*/
+			/**SQLState XJ004 significa que o banco de dados não foi encontrato.*/
 			if(e.getSQLState().equals("XJ004")){
 				tratarErroBancoNaoEncontrado();
 				
