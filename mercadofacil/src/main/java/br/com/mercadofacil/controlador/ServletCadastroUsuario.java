@@ -49,7 +49,6 @@ public class ServletCadastroUsuario extends HttpServlet{
 			consumidor.setTelefone(req.getParameter("telefone"));
 			consumidor.setCelular(req.getParameter("celular"));
 			consumidor.setTipoPerfil("tipoPerfil");
-			consumidor.setSenha(req.getParameter("senha"));
 			
 			UpdateBD update = new UpdateBD();
 			SelectBD select = new SelectBD();
@@ -102,7 +101,6 @@ public class ServletCadastroUsuario extends HttpServlet{
 			comerciante.setTelefone(req.getParameter("telefone"));
 			comerciante.setCelular(req.getParameter("celular"));
 			comerciante.setTipoPerfil("tipoPerfil");
-			comerciante.setSenha(req.getParameter("senha"));
 			
 			comerciante.getSupermercado().setNomeFantasia(req.getParameter("nomeFantasia"));
 			comerciante.getSupermercado().setRazaoSocial(req.getParameter("razaoSocial"));
@@ -166,12 +164,13 @@ public class ServletCadastroUsuario extends HttpServlet{
 			anunciante.setTelefone(req.getParameter("telefone"));
 			anunciante.setCelular(req.getParameter("celular"));
 			anunciante.setTipoPerfil("tipoPerfil");
-			anunciante.setSenha(req.getParameter("senha"));
 			
 			UpdateBD update = new UpdateBD();
 			SelectBD select = new SelectBD();
 			ResultSet resultado = null;
 			Statement stmt = null;
+			
+			//aqui pode-se inserir os teste de validação das informações antes de grava-las no banco de dados
 			
 			try {
 				stmt = conexao.createStatement();
