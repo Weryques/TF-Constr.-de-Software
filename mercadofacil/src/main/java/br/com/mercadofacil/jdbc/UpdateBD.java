@@ -16,8 +16,8 @@ public class UpdateBD{
 	
 	public String inserirConsumidor(String cpf, String email, String senha, String nome, String telefone, String celular, String tipoPerfil, int idEndereco){
 		String insertConsumidor = "INSERT INTO mercadofacil.consumidor ("
-				+ "cpf, email, nome, telefone, celular, tipoPerfil, idEndereco) "
-				+ "VALUES('"+ cpf +"', '"+ email +"', md5('"+ senha +"') , '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"', '"+ idEndereco +"')";
+				+ "cpf, email, senha, nome, telefone, celular, tipoPerfil, idEndereco) "
+				+ "VALUES('"+ cpf +"', '"+ email +"', md5('"+ senha +"'), '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"', '"+ idEndereco +"')";
 		
 		return insertConsumidor;
 	}
@@ -30,13 +30,23 @@ public class UpdateBD{
 		return insertSupermercado;
 	}
 	
-	public String inserirComerciante(String cnpj, String email, String nome, String telefone, String celular, String tipoPerfil, 
+	public String inserirComerciante(String cnpj, String email, String senha, String nome, String telefone, String celular, String tipoPerfil, 
 			int idEndereco, String nfEmpresa, String rsEmpresa){
 		String insertComerciante = "INSERT INTO mercadofacil.comerciante ("
-				+ "cnpj, email, nome, telefone, celular, tipoPerfil, idEndereco, nfEmpresa, rsEmpresa) "
-				+ "VALUES('"+ cnpj +"', '"+ email +"', '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"', '"
+				+ "cnpj, email, senha, nome, telefone, celular, tipoPerfil, idEndereco, nfEmpresa, rsEmpresa) "
+				+ "VALUES('"+ cnpj +"', '"+ email +"', md5('"+ senha +"'), '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"', '"
 						+ ""+ idEndereco +"', '"+ nfEmpresa +"', '"+ rsEmpresa +"')";
 		
 		return insertComerciante;
+	}
+	
+	public String inserirAnunciante(String cnpj, String email, String senha, String razaoSocial, String nome, 
+			String telefone, String celular, String tipoPerfil, int idEndereco){
+		String insertAnunciante = "INSERT INTO mercadofacil.anunciante ("
+				+ "cnpj, email, senha, razaoSocial, nome, telefone, celular, tipoPerfil, idEndereco) "
+				+ "VALUES('"+ cnpj +"', '"+ email +"', md5('"+ senha +"'), '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"'"
+						+ "'"+ idEndereco +"')";
+		
+		return insertAnunciante;
 	}
 }

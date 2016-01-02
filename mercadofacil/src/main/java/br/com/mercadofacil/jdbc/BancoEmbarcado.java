@@ -43,7 +43,7 @@ public class BancoEmbarcado {
 				+ ")";
 		
 		String createTabelaComerciante = "CREATE TABLE mercadofacil.comerciante ("
-				+ " cnpj VARCHAR(45) NOT NULL,"
+				+ " cnpj VARCHAR(18) NOT NULL,"
 				+ " email VARCHAR(45) NOT NULL,"
 				+ " senha VARCHAR(45) NOT NULL,"
 				+ " nome VARCHAR(45) NOT NULL,"
@@ -63,7 +63,7 @@ public class BancoEmbarcado {
 				+ ")";
 		
 		String createTabelaAnunciante = "CREATE TABLE mercadofacil.anunciante ("
-				+ " cnpj VARCHAR(45) NOT NULL,"
+				+ " cnpj VARCHAR(18) NOT NULL,"
 				+ " email VARCHAR(45) NOT NULL,"
 				+ " senha VARCHAR(45) NOT NULL,"
 				+ " razaoSocial VARCHAR(45) NOT NULL,"
@@ -84,7 +84,7 @@ public class BancoEmbarcado {
 				+ " id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 0, INCREMENT BY 1),"
 				+ " nome VARCHAR(45) NOT NULL,"
 				+ " descricao VARCHAR(240) NOT NULL,"
-				+ " cnpj VARCHAR(45) NOT NULL,"
+				+ " cnpj VARCHAR(18) NOT NULL,"
 				+ " email VARCHAR(45) NOT NULL,"
 				+ " anuncianteRazao VARCHAR(45) NOT NULL,"
 				+ " PRIMARY KEY (id),"
@@ -99,7 +99,7 @@ public class BancoEmbarcado {
 				+ " valor DOUBLE NOT NULL,"
 				+ " categoria VARCHAR(45) NOT NULL,"
 				+ " descricao VARCHAR(240) NOT NULL,"
-				+ " cnpjAnunciante VARCHAR(45) DEFAULT NULL,"
+				+ " cnpjAnunciante VARCHAR(18) DEFAULT NULL,"
 				+ " emailAnunciante VARCHAR(45) DEFAULT NULL,"
 				+ " razaoSocialAnunciante VARCHAR(45) DEFAULT NULL,"
 				+ " nomeFantasiaSupermercado VARCHAR(45) DEFAULT NULL,"

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import br.com.mercadofacil.jdbc.ConexaoBD;
 import br.com.mercadofacil.jdbc.SelectBD;
 import br.com.mercadofacil.jdbc.UpdateBD;
+import br.com.mercadofacil.modelo.Anunciante;
 import br.com.mercadofacil.modelo.Comerciante;
 import br.com.mercadofacil.modelo.Consumidor;
 
@@ -44,6 +45,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			consumidor.setCpfConsumidor(req.getParameter("cpf"));
 			consumidor.setNomeCompleto(req.getParameter("nomeCompleto"));
 			consumidor.setEmail(req.getParameter("email"));
+			consumidor.setSenha(req.getParameter("senha"));
 			consumidor.setTelefone(req.getParameter("telefone"));
 			consumidor.setCelular(req.getParameter("celular"));
 			consumidor.setTipoPerfil("tipoPerfil");
@@ -96,6 +98,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			comerciante.setCnpjComerciante(req.getParameter("cnpj"));
 			comerciante.setNomeCompleto(req.getParameter("nomeCompleto"));
 			comerciante.setEmail(req.getParameter("email"));
+			comerciante.setSenha(req.getParameter("senha"));
 			comerciante.setTelefone(req.getParameter("telefone"));
 			comerciante.setCelular(req.getParameter("celular"));
 			comerciante.setTipoPerfil("tipoPerfil");
@@ -129,7 +132,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 						comerciante.getSupermercado().getRazaoSocial()));
 				
 				/**Grava comerciante no banco de dados*/
-				stmt.executeQuery(update.inserirComerciante(comerciante.getCnpjComerciante(), comerciante.getEmail(), 
+				stmt.executeQuery(update.inserirComerciante(comerciante.getCnpjComerciante(), comerciante.getEmail(), comerciante.getSenha(), 
 						comerciante.getNomeCompleto(), comerciante.getTelefone(), comerciante.getCelular(), 
 						comerciante.getTipoPerfil(), Integer.parseInt(resultado.getString("id")), 
 						comerciante.getSupermercado().getNomeFantasia(), comerciante.getSupermercado().getRazaoSocial()));
@@ -141,7 +144,58 @@ public class ServletCadastroUsuario extends HttpServlet{
 			}
 		}
 		else if(req.equals("cadastroAnunciante")){
+			ConexaoBD conn = new ConexaoBD();
+			Anunciante anunciante = new Anunciante();
+			Connection conexao = null;
 			
+			conexao = conn.conectar();
+			
+			anunciante.getEndereco().setCep(req.getParameter("cep"));
+			anunciante.getEndereco().setCidade(req.getParameter("cidade"));
+			anunciante.getEndereco().setEstado(req.getParameter("estado"));
+			anunciante.getEndereco().setBairro(req.getParameter("bairro"));
+			anunciante.getEndereco().setLogradouro(req.getParameter("logradouro"));
+			anunciante.getEndereco().setComplemento(req.getParameter("complemento"));
+			anunciante.getEndereco().setNumero(Integer.parseInt(req.getParameter("numero")));
+			
+			anunciante.setCnpjAnunciante(req.getParameter("cnpj"));
+			anunciante.setRazaoSocial(req.getParameter("razaoSocial"));
+			anunciante.setNomeCompleto(req.getParameter("nomeCompleto"));
+			anunciante.setEmail(req.getParameter("email"));
+			anunciante.setSenha(req.getParameter("senha"));
+			anunciante.setTelefone(req.getParameter("telefone"));
+			anunciante.setCelular(req.getParameter("celular"));
+			anunciante.setTipoPerfil("tipoPerfil");
+			anunciante.setSenha(req.getParameter("senha"));
+			
+			UpdateBD update = new UpdateBD();
+			SelectBD select = new SelectBD();
+			ResultSet resultado = null;
+			Statement stmt = null;
+			
+			try {
+				stmt = conexao.createStatement();
+				
+				/**Grava endereço no banco de dados*/
+				stmt.executeUpdate(update.inserirEndereco(anunciante.getEndereco().getLogradouro(), anunciante.getEndereco().getNumero(), 
+						anunciante.getEndereco().getBairro(), anunciante.getEndereco().getComplemento(), anunciante.getEndereco().getCep(), 
+						anunciante.getEndereco().getCidade(), anunciante.getEndereco().getEstado()));
+				
+				/**Pego o id do endereço gravado antes*/
+				resultado = stmt.executeQuery(select.selecionarIdEndereco(anunciante.getEndereco().getNumero(), 
+						anunciante.getEndereco().getCep(), 
+						anunciante.getEndereco().getCidade()));
+				
+				/**Gravar anunciante no banco de dados*/
+				stmt.executeQuery(update.inserirAnunciante(anunciante.getCnpjAnunciante(), anunciante.getEmail(), 
+						anunciante.getSenha(), anunciante.getRazaoSocial(), anunciante.getNomeCompleto(), anunciante.getTelefone(), 
+						anunciante.getCelular(), anunciante.getTipoPerfil(), Integer.parseInt(resultado.getString("id"))));
+				
+				stmt.close();
+				conexao.close();
+			} catch (SQLException e) {
+				System.out.println("Erro em cadastrar anunciante: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
+			}
 		}
 		else{
 			req.getRequestDispatcher("visao/cadastro.jsp").forward(req, res);
