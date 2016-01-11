@@ -9,6 +9,19 @@ public class BancoEmbarcado {
 		
 		String schema = "CREATE SCHEMA mercadofacil";
 		
+		String createTabelaCompra = "CREATE TABLE mercadofacil.compra ("
+				+ " id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 0, INCREMENT BY 1),"
+				+ " statusEntrega VARCHAR(45) NOT NULL,"
+				+ " valorTotal DOUBLE NOT NULL,"
+				+ " cpfConsumidor VARCHAR(14) NOT NULL,"
+				+ " emailConsumidor VARCHAR(45) NOT NULL,"
+				+ " descricaoProdutos VARCHAR(1000) NOT NULL,"
+				+ " PRIMARY KEY (id),"
+				+ " 	CONSTRAINT fkCompraConsumidor"
+				+ " 	FOREIGN KEY (cpfConsumidor, emailConsumidor)"
+				+ " 	REFERENCES mercadofacil.consumidor (cpf, email)"
+				+ ")";
+		
 		String createTabelaEndereco = "CREATE TABLE mercadofacil.endereco ("
 				+ " id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 0, INCREMENT BY 1),"
 				+ " logradouro VARCHAR(45) NOT NULL,"
