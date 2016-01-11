@@ -133,6 +133,9 @@ public class BancoEmbarcado {
 			stmt.execute(schema);
 			System.out.println("Schema mercadofacil criado!");
 			
+			stmt.execute(createTabelaCompra);
+			System.out.println("Tabela compra criada!");
+			
 			stmt.execute(createTabelaEndereco);
 			System.out.println("Tabela endereço criada!");
 			
