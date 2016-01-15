@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [02/Jan/2016:16:10:56 -0200] "GET /mercadofacil/ HTTP/1.1" 200 1533 http-bio-8080-exec-1 81
+0:0:0:0:0:0:0:1 - - [02/Jan/2016:16:10:56 -0200] "GET /mercadofacil/css/styleIndex.css HTTP/1.1" 200 7433 http-bio-8080-exec-2 3
+0:0:0:0:0:0:0:1 - - [02/Jan/2016:16:10:56 -0200] "GET /mercadofacil HTTP/1.1" 302 - http-bio-8080-exec-4 0
+0:0:0:0:0:0:0:1 - - [02/Jan/2016:16:10:56 -0200] "GET /mercadofacil/ HTTP/1.1" 200 1533 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [02/Jan/2016:16:10:57 -0200] "GET /mercadofacil/images/search.png HTTP/1.1" 200 4600 http-bio-8080-exec-7 3
+0:0:0:0:0:0:0:1 - - [02/Jan/2016:16:10:57 -0200] "GET /mercadofacil/images/fundo1.jpeg HTTP/1.1" 200 1920235 http-bio-8080-exec-3 21
+0:0:0:0:0:0:0:1 - - [02/Jan/2016:16:10:57 -0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-9 0
+0:0:0:0:0:0:0:1 - - [02/Jan/2016:16:10:57 -0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-10 0

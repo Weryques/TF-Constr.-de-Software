@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:40:55 -0200] "GET /mercadofacil/ HTTP/1.1" 200 1533 http-bio-8080-exec-1 90
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:40:55 -0200] "GET /mercadofacil HTTP/1.1" 302 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:40:55 -0200] "GET /mercadofacil/ HTTP/1.1" 200 1533 http-bio-8080-exec-4 1
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:41:08 -0200] "GET /mercadofacil/visao/cadastro HTTP/1.1" 404 1005 http-bio-8080-exec-5 4
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:41:16 -0200] "GET /mercadofacil/visao/cadastro.jsp HTTP/1.1" 200 - http-bio-8080-exec-6 963
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:41:28 -0200] "GET /mercadofacil/visao/cadastro.jsp HTTP/1.1" 200 - http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:41:31 -0200] "GET /mercadofacil/visao/cadastro.jsp HTTP/1.1" 200 - http-bio-8080-exec-2 1
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:41:33 -0200] "GET /mercadofacil/visao/cadastro.html HTTP/1.1" 404 1015 http-bio-8080-exec-8 1
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:41:36 -0200] "GET /mercadofacil/visao/cadastro.html HTTP/1.1" 404 1015 http-bio-8080-exec-9 1
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:41:37 -0200] "GET /mercadofacil/visao/cadastro.jsp HTTP/1.1" 200 - http-bio-8080-exec-9 1
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:10:41:38 -0200] "GET /mercadofacil/visao/cadastro.jsp HTTP/1.1" 200 - http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [29/Dec/2015:12:44:57 -0200] "GET / HTTP/1.1" 404 - http-bio-8080-exec-5 0
