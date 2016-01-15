@@ -1,11 +1,13 @@
 br/com/mercadofacil/jdbc/UpdateBD.class
 br/com/mercadofacil/modelo/Supermercado.class
 br/com/mercadofacil/controlador/ServletCadastroProduto.class
+br/com/mercadofacil/modelo/Produto.class
 br/com/mercadofacil/controlador/ServletDirecionamentoPagina.class
 br/com/mercadofacil/modelo/Anunciante.class
 br/com/mercadofacil/modelo/Endereco.class
 br/com/mercadofacil/controlador/ServletCadastroServico.class
 br/com/mercadofacil/controlador/ServletCadastroUsuario.class
+br/com/mercadofacil/modelo/Servico.class
 br/com/mercadofacil/jdbc/ConexaoBD.class
 br/com/mercadofacil/jdbc/SelectBD.class
 br/com/mercadofacil/controlador/ServletAutenticacao.class
