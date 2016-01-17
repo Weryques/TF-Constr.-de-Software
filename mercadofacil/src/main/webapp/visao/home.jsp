@@ -10,6 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 <title>Food shop A Hotel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -25,6 +26,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
+
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+
 <script type="text/javascript" src="../js/move-top.js"></script>
 <script type="text/javascript" src="../js/easing.js"></script>
 				<script type="text/javascript">
@@ -42,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="home.jsp">Food Shop</a></h1>
+				<h1><a href="home.jsp">Mercado Fácil</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
@@ -56,9 +61,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="account.html">My Account</a> <label>/</label></li>
-					<li><a href="#">My Cart</a> <label>/</label></li>
-					<li><a href="checkout.html">  Checkout </a> </li>		
+					<li><a href="#"><span ></span> Usúario  </a><label>/</label></li>
+       			 	<li><a href="#"><span ></span> Carrinho  </a><label>/</label></li>
+     				<li><a href="../admin/index.jsp">  Admin </a> </li>		
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -293,6 +298,9 @@ uspendisse venenatis dolor et nunc iaculis ege</p>
 				<div class="clearfix"> </div>
 		</div>	
 	</div>
+	<script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/scripts.js"></script>
 	 <script type="text/javascript">
 						$(document).ready(function() {
 							/*
