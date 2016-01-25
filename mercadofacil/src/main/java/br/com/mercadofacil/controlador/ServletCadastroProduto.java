@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
 import br.com.mercadofacil.jdbc.ConexaoBD;
-import br.com.mercadofacil.jdbc.UpdateBD;
+import br.com.mercadofacil.jdbc.InsertBD;
 import br.com.mercadofacil.modelo.Servico;
 
 @WebServlet(value = "/cadastrarproduto")
@@ -35,7 +35,7 @@ public class ServletCadastroProduto extends HttpServlet{
 			servico.setEmail(req.getParameter("email"));
 			servico.setRazaoAnunciante(req.getParameter("razaoSocial"));
 			
-			UpdateBD update = new UpdateBD();
+			InsertBD update = new InsertBD();
 			Statement stmt = null;
 			
 			//validar informações antes de gravar.

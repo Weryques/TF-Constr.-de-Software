@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConexaoBD{ 
 	
 	public Connection conectar(){		
-		String url = "jdbc:derby:bdmercadofacil";
+		String url = "jdbc:mysql://localhost:3306/mercadofacil?user=root";
 		Connection conexao = null;
 		
 		try {
@@ -16,25 +16,7 @@ public class ConexaoBD{
 		}catch (SQLException e) {
 			System.out.println(e.getSQLState());
 			System.out.println(e.getMessage());
-			
-			/**SQLState XJ004 significa que o banco de dados não foi encontrato.*/
-			if(e.getSQLState().equals("XJ004")){
-				tratarErroBancoNaoEncontrado();
-				
-				try {
-					conexao = DriverManager.getConnection(url);
-					System.out.println("Conectado ao banco com sucesso!");
-				} catch (SQLException e1) {
-					System.out.println(e1.getSQLState());
-					System.out.println(e1.getMessage());
-				}
-			}
 		}
 		return conexao;
-	}
-	
-	private void tratarErroBancoNaoEncontrado(){
-		BancoEmbarcado derby = new BancoEmbarcado();
-		derby.criarBanco();
 	}
 }

@@ -14,10 +14,11 @@ import javax.servlet.http.HttpServlet;
 
 import br.com.mercadofacil.jdbc.ConexaoBD;
 import br.com.mercadofacil.jdbc.SelectBD;
-import br.com.mercadofacil.jdbc.UpdateBD;
+import br.com.mercadofacil.jdbc.InsertBD;
 import br.com.mercadofacil.modelo.Anunciante;
 import br.com.mercadofacil.modelo.Comerciante;
 import br.com.mercadofacil.modelo.Consumidor;
+import br.com.mercadofacil.modelo.ValidaDado;
 
 @WebServlet(value = "/cadastrar")
 public class ServletCadastroUsuario extends HttpServlet{
@@ -50,33 +51,35 @@ public class ServletCadastroUsuario extends HttpServlet{
 			consumidor.setCelular(req.getParameter("celular"));
 			consumidor.setTipoPerfil("tipoPerfil");
 			
-			UpdateBD update = new UpdateBD();
+			InsertBD update = new InsertBD();
 			SelectBD select = new SelectBD();
 			ResultSet resultado = null;
 			Statement stmt = null;
+			ValidaDado valida = new ValidaDado();
 			
-			//aqui pode-se inserir os teste de validação das informações antes de grava-las no banco de dados
-			
-			try {
-				stmt = conexao.createStatement();
-				
-				/**Grava endereço no banco de dados*/
-				stmt.executeUpdate(update.inserirEndereco(consumidor.getEndereco().getLogradouro(), consumidor.getEndereco().getNumero(), 
-						consumidor.getEndereco().getBairro(), consumidor.getEndereco().getComplemento(), consumidor.getEndereco().getCep(), 
-						consumidor.getEndereco().getCidade(), consumidor.getEndereco().getEstado()));
-				
-				/**Pego o id do endereço gravado antes*/
-				resultado = stmt.executeQuery(select.selecionarIdEndereco(consumidor.getEndereco().getNumero(), consumidor.getEndereco().getCep(), 
-						consumidor.getEndereco().getCidade()));
-				
-				/**Gravo o consumidor no banco de dados com id do endereço pegado na string sql anterior*/
-				stmt.executeUpdate(update.inserirConsumidor(consumidor.getCpfConsumidor(), consumidor.getEmail(), consumidor.getSenha(), consumidor.getNomeCompleto(), 
-						consumidor.getTelefone(), consumidor.getCelular(), consumidor.getTipoPerfil(), Integer.parseInt(resultado.getString("id"))));
-				
-				stmt.close();
-				conexao.close();
-			} catch (SQLException e) {
-				System.out.println("Erro em cadastrar consumidor: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
+			//validação de dados
+			if(valida.validarCPF(consumidor.getCpfConsumidor()) == true){
+				try {
+					stmt = conexao.createStatement();
+					
+					/**Grava endereço no banco de dados*/
+					stmt.executeUpdate(update.inserirEndereco(consumidor.getEndereco().getLogradouro(), consumidor.getEndereco().getNumero(), 
+							consumidor.getEndereco().getBairro(), consumidor.getEndereco().getComplemento(), consumidor.getEndereco().getCep(), 
+							consumidor.getEndereco().getCidade(), consumidor.getEndereco().getEstado()));
+					
+					/**Pego o id do endereço gravado antes*/
+					resultado = stmt.executeQuery(select.selecionarIdEndereco(consumidor.getEndereco().getNumero(), consumidor.getEndereco().getCep(), 
+							consumidor.getEndereco().getCidade()));
+					
+					/**Gravo o consumidor no banco de dados com id do endereço pegado na string sql anterior*/
+					stmt.executeUpdate(update.inserirConsumidor(consumidor.getCpfConsumidor(), consumidor.getEmail(), consumidor.getSenha(), consumidor.getNomeCompleto(), 
+							consumidor.getTelefone(), consumidor.getCelular(), consumidor.getTipoPerfil(), Integer.parseInt(resultado.getString("id"))));
+					
+					stmt.close();
+					conexao.close();
+				} catch (SQLException e) {
+					System.out.println("Erro em cadastrar consumidor: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
+				}
 			}
 		}
 		else if(req.equals("cadastroComerciante")){
@@ -105,7 +108,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			comerciante.getSupermercado().setNomeFantasia(req.getParameter("nomeFantasia"));
 			comerciante.getSupermercado().setRazaoSocial(req.getParameter("razaoSocial"));
 			
-			UpdateBD update = new UpdateBD();
+			InsertBD update = new InsertBD();
 			SelectBD select = new SelectBD();
 			ResultSet resultado = null;
 			Statement stmt;
@@ -165,7 +168,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			anunciante.setCelular(req.getParameter("celular"));
 			anunciante.setTipoPerfil("tipoPerfil");
 			
-			UpdateBD update = new UpdateBD();
+			InsertBD update = new InsertBD();
 			SelectBD select = new SelectBD();
 			ResultSet resultado = null;
 			Statement stmt = null;
