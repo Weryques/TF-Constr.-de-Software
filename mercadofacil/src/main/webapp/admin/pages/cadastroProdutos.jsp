@@ -31,6 +31,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+    
+    </style>
 
 </head>
 
@@ -39,7 +42,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top"  role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -261,7 +264,7 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-inverse sidebar" role="navigation">
+            <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
@@ -276,10 +279,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="painelAdmin.jsp"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                           <a href="painelAdmin.jsp"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Controle Finánceiro<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Controle Financeiro<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#"> Graficos</a>
@@ -303,7 +306,7 @@
                                     <a href="#"> Promoções</a>
                                 </li>
                                 <li>
-                                    <a href="#"> Anúcios</a>
+                                    <a href="#"> Anúncios</a>
                                 </li>
                                 <li>
                                     <a href="#"> Conta</a>
@@ -339,7 +342,7 @@
                                     <a href="../../visao/home.jsp"> Ir para loja</a>
                                 </li>
                                 <li>
-                                    <a href="login.jsp">Login Page</a>
+                                    <a href="login.jsp"> Logout</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -356,11 +359,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Painel Administrativo</h1>
-                        
-                        
-                        
+                        <h2 class="page-header text-primary">Cadastro de Produtos</h2>
                     </div>
+           
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
@@ -368,22 +369,40 @@
                 <!-- weliton  -->
                           
                  	<div class="row">
-		<div class="col-md-5"  id="CadastroProdutos">
+		<div class="col-md-12"  >
 		
-		   <h3 class="text-center text-primary">
-			 Cadastro de Produtos 
-			</h3>
-			<form role="form">
-				<div class="form-group">
+		  
+			<form role="form" name="CadastroProdutos" action="adicionaContato">
+				<div class="form-group col-md-6">
 					 
 					<label for="NomeProduto">
 						Nome do Produto
 					</label>
-					<input type="text" class="form-control" id="NomeProduto1">
+					<input type="text" class="form-control" id="NomeProduto">
 				</div>
-				<div class="form-group">
+				<div class="form-group col-md-2">
+					 
+					<label for="PrecoDeCompraProduto">
+						Preço de Compra
+					</label>
+					<input type="Number" class="form-control" name="PrecoDeCompraProduto">
+				</div>
+				<div class="form-group col-md-2">
+					 
+					<label for="PrecoDeVendaProduto">
+						Preço de Venda
+					</label>
+					<input type="Number" class="form-control" name="PrecoDeVendaProduto" >
+				</div>
+				<div class="form-group col-md-2">
+					<label for="quantidade">
+						Quantidade
+					</label>
+					<input type="Number" class="form-control" name="PrecoDeCompraProduto">
+				</div>
+				<div class="form-group col-md-6">
 				  <label for="sel1">Categoria:</label>
-				  <select class="form-control" id="Categoria">
+				  <select class="form-control" name="Categoria">
 				   	<option>---Nenhum---</option>
 				    <option>Secos e Molhados</option>
 				    <option>Frios</option>
@@ -392,158 +411,43 @@
 				    <option>Utilidades</option>
 				  </select>
 				</div>
-				<div class="form-group">
-					 
-					<label for="PrecoDeCompraProduto">
-						Preço de Comprar
+				<div class="form-group col-md-3">	 
+					<label for="NomeProduto">
+						CNPJ/CPF Comerciante
 					</label>
-					<input type="Number" class="form-control" id="PrecoDeCompraProduto">
+					<input type="text" class="form-control" name="cnpjAnunciante">
 				</div>
-				<div class="form-group">
-					 
-					<label for="PrecoDeVendaProduto">
-						Preço de Venda
+				<div class="form-group col-md-3">
+					<label for="NomeProduto">
+						CNPJ/CPF Anunciante
 					</label>
-					<input type="Number" class="form-control" id="PrecoDeVendaProduto" >
+					<input type="text" class="form-control" name="cnpjSupermercado">
 				</div>
-				
-				<div class="form-group">
-					 
+				<div class="form-group col-md-6">		 
 					<label for="exampleInputFile">
 						Imagem
 					</label>
-					<input type="file" id="exampleInputFile">
+					<input type="file" name="imagem">
 					<p class="help-block">
 						Escolha uma imagem para o Produto.
 					</p>
 				</div>
-				<button type="submit" class="btn btn-primary" onclick="teste()">
-				Salvar
-				</button>
-				<button type="submit" class="btn btn-warning" >
-				Limpar  
-				<script >
-				NomeProduto="ola";
-				</script>
-				</button>
+				<div class="form-group col-md-6">		 
+					<label for="descricao">
+						Descrição
+					</label>
+					<textarea class="form-control " rows="3" id="comment"></textarea>
+				</div>
+			
+				<div class="form-group col-md-6">
+					<button type="submit" class="btn btn-outline btn-primary btn-lg">Salvar</button>
+					<button type="button" class="btn btn-outline btn-warning  btn-lg" >Limpar  </button>
+				</div>
 			</form>
 		</div>
-		<div class="col-md-1">
-		</div>
-		<div class="col-md-6" id="ProdutosCadastrados">
-			<h3 class="text-center text-primary">
-			 Produtos Cadastrados 
-			</h3>
-			<div class="form-group">
-				  <label for="sel1">Categoria:</label>
-				  <select class="form-control" id="Categoria">
-				   	<option>---Todos---</option>
-				    <option>Secos e Molhados</option>
-				    <option>Frios</option>
-				    <option>Hortifruti</option>
-				    <option>Mercearia</option>
-				    <option>Utilidades</option>
-				  </select>
-				</div>
-			<table class="table table-hover table-bordered">
-				<thead>
-					<tr>
-						<th>
-							#
-						</th>
-						<th>
-							Nome
-						</th>
-						<th>
-							Categoria
-						</th>
-						<th>
-							PreÃÂ§o
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="warning">
-						<td>
-							1
-						</td>
-						<td>
-							Produto 1
-						</td>
-						<td>
-							Mercearia
-						</td>
-						<td>
-							2,00 R$
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							2
-						</td>
-						<td>
-							Produto 2
-						</td>
-						<td>
-							Hortifruti
-						</td>
-						<td>
-							16,00 R$
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							3
-						</td>
-						<td>
-							Produto 3
-						</td>
-						<td>
-							Utilidades
-						</td>
-						<td>
-							5,60 R$
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							4
-						</td>
-						<td>
-							Produto 4
-						</td>
-						<td>
-							Frios
-						</td>
-						<td>
-							20,00 R$
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							5
-						</td>
-						<td>
-							Produto 5
-						</td>
-						<td>
-							Secos e Molhados
-						</td>
-						<td>
-							10,00 R$
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		</div>         
-                 
-                          
-                          
-                          
-                          
-                          
-                          
+		
+		<!-- weliton -->
+		</div>                                  
             </div>
             <!-- /.container-fluid -->
         </div>

@@ -38,7 +38,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -260,7 +260,7 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-inverse sidebar" role="navigation">
+            <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
@@ -278,7 +278,7 @@
                             <a href="painelAdmin.jsp"><i class="fa fa-dashboard fa-fw" class="active"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Controle Finánceiro<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Controle Financeiro<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                  <li>
                                     <a href="#"> Gráficos</a>
@@ -339,7 +339,7 @@
                                     <a href="../../visao/home.jsp"> Ir para loja</a>
                                 </li>
                                 <li>
-                                    <a href="login.jsp"> Login Page</a>
+                                    <a href="login.jsp"> Logout</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -356,7 +356,114 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Listar</h1>                     
+                        <!-- weliton -->
+         <div class="col-md-12" id="ProdutosCadastrados">
+			<h3 class="text-center text-primary">
+			 Produtos Cadastrados 
+			</h3>
+			<div class="form-group">
+				  <label for="sel1">Categoria:</label>
+				  <select class="form-control" id="Categoria">
+				   	<option>---Todos---</option>
+				    <option>Secos e Molhados</option>
+				    <option>Frios</option>
+				    <option>Hortifruti</option>
+				    <option>Mercearia</option>
+				    <option>Utilidades</option>
+				  </select>
+				</div>
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Nome
+						</th>
+						<th>
+							Categoria
+						</th>
+						<th>
+							PreÃƒÂ§o
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="warning">
+						<td>
+							1
+						</td>
+						<td>
+							Produto 1
+						</td>
+						<td>
+							Mercearia
+						</td>
+						<td>
+							2,00 R$
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							2
+						</td>
+						<td>
+							Produto 2
+						</td>
+						<td>
+							Hortifruti
+						</td>
+						<td>
+							16,00 R$
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							3
+						</td>
+						<td>
+							Produto 3
+						</td>
+						<td>
+							Utilidades
+						</td>
+						<td>
+							5,60 R$
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							4
+						</td>
+						<td>
+							Produto 4
+						</td>
+						<td>
+							Frios
+						</td>
+						<td>
+							20,00 R$
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							5
+						</td>
+						<td>
+							Produto 5
+						</td>
+						<td>
+							Secos e Molhados
+						</td>
+						<td>
+							10,00 R$
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+                        <!-- weliton -->                    
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>

@@ -42,7 +42,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -264,7 +264,7 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-inverse sidebar" role="navigation">
+            <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
@@ -282,7 +282,7 @@
                             <a href="painelAdmin.jsp"><i class="fa fa-dashboard fa-fw" class="active"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Controle Finánceiro<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Controle Financeiro<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#"> Gráficos</a>
@@ -345,7 +345,7 @@
                                     <a href="../../visao/home.jsp"> Ir para loja</a>
                                 </li>
                                 <li>
-                                    <a href="login.jsp"> Login</a>
+                                    <a href="login.jsp"> Logout</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

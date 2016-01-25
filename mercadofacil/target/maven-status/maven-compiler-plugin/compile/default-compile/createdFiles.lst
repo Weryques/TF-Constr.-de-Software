@@ -1,0 +1,3 @@
+br\com\mercadofacil\jdbc\InsertBD.class
+br\com\mercadofacil\jdbc\DeleteBD.class
+br\com\mercadofacil\modelo\ValidaDado.class
