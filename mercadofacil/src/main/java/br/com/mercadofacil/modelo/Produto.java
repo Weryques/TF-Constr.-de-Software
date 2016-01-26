@@ -9,108 +9,105 @@ package br.com.mercadofacil.modelo;
  */
 public class Produto {
 	private String nome;
-	private Double valor;
+	private Double valorDeCompra;
+	private Double valorDeVenda;
+	private int quantidade;
 	private String categoria;
 	private String descricao;
-	private String emailAnunciante;
-	private String razaoSocialAnunciante;
-	private String nomeFantasiaSupermercado;
-	private String razaoSocialSupermercado;
-	
+	private String imagem;
+	private String cnpjAnunciante;
+	private String cnpjSupermercado;
+
 	/**
 	 * @return the nome
 	 */
 	public String getNome() {
 		return nome;
 	}
+
 	/**
-	 * @param nome the nome to set
+	 * @param nome
+	 *            the nome to set
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	/**
-	 * @return the valor
-	 */
-	public Double getValor() {
-		return valor;
-	}
-	/**
-	 * @param valor the valor to set
-	 */
-	public void setValor(Double valor) {
-		this.valor = valor;
-	}
+
 	/**
 	 * @return the categoria
 	 */
 	public String getCategoria() {
 		return categoria;
 	}
+
 	/**
-	 * @param categoria the categoria to set
+	 * @param categoria
+	 *            the categoria to set
 	 */
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+
 	/**
 	 * @return the descricao
 	 */
 	public String getDescricao() {
 		return descricao;
 	}
+
 	/**
-	 * @param descricao the descricao to set
+	 * @param descricao
+	 *            the descricao to set
 	 */
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	/**
-	 * @return the emailAnunciante
-	 */
-	public String getEmailAnunciante() {
-		return emailAnunciante;
+
+	public Double getValorDeCompra() {
+		return valorDeCompra;
 	}
-	/**
-	 * @param emailAnunciante the emailAnunciante to set
-	 */
-	public void setEmailAnunciante(String emailAnunciante) {
-		this.emailAnunciante = emailAnunciante;
+
+	public void setValorDeCompra(Double valorDeCompra) {
+		this.valorDeCompra = valorDeCompra;
 	}
-	/**
-	 * @return the razaoSocialAnunciante
-	 */
-	public String getRazaoSocialAnunciante() {
-		return razaoSocialAnunciante;
+
+	public Double getValorDeVenda() {
+		return valorDeVenda;
 	}
-	/**
-	 * @param razaoSocialAnunciante the razaoSocialAnunciante to set
-	 */
-	public void setRazaoSocialAnunciante(String razaoSocialAnunciante) {
-		this.razaoSocialAnunciante = razaoSocialAnunciante;
+
+	public void setValorDeVenda(Double valorDeVenda) {
+		this.valorDeVenda = valorDeVenda;
 	}
-	/**
-	 * @return the nomeFantasiaSupermercado
-	 */
-	public String getNomeFantasiaSupermercado() {
-		return nomeFantasiaSupermercado;
+
+	public int getQuantidade() {
+		return quantidade;
 	}
-	/**
-	 * @param nomeFantasiaSupermercado the nomeFantasiaSupermercado to set
-	 */
-	public void setNomeFantasiaSupermercado(String nomeFantasiaSupermercado) {
-		this.nomeFantasiaSupermercado = nomeFantasiaSupermercado;
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
 	}
-	/**
-	 * @return the razaoSocialSupermercado
-	 */
-	public String getRazaoSocialSupermercado() {
-		return razaoSocialSupermercado;
+
+	public String getImagem() {
+		return imagem;
 	}
-	/**
-	 * @param razaoSocialSupermercado the razaoSocialSupermercado to set
-	 */
-	public void setRazaoSocialSupermercado(String razaoSocialSupermercado) {
-		this.razaoSocialSupermercado = razaoSocialSupermercado;
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+	public String getCnpjAnunciante() {
+		return cnpjAnunciante;
+	}
+
+	public void setCnpjAnunciante(String cnpjAnunciante) {
+		this.cnpjAnunciante = cnpjAnunciante;
+	}
+
+	public String getCnpjSupermercado() {
+		return cnpjSupermercado;
+	}
+
+	public void setCnpjSupermercado(String cnpjSupermercado) {
+		this.cnpjSupermercado = cnpjSupermercado;
 	}
 }

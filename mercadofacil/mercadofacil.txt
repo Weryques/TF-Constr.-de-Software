@@ -1,0 +1,236 @@
+-- MySQL dump 10.13  Distrib 5.7.9, for Win32 (AMD64)
+--
+-- Host: localhost    Database: mercadofacil
+-- ------------------------------------------------------
+-- Server version	5.7.10-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `anunciante`
+--
+
+DROP TABLE IF EXISTS `anunciante`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `anunciante` (
+  `cnpj` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `razaoSocial` varchar(45) NOT NULL,
+  `causa` varchar(45) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `telefone` varchar(45) NOT NULL,
+  `celular` varchar(45) NOT NULL,
+  `tipoPerfil` varchar(45) NOT NULL,
+  `idEndereco` int(11) NOT NULL,
+  PRIMARY KEY (`cnpj`,`email`,`razaoSocial`),
+  KEY `fkAnuncianteEndereco_idx` (`idEndereco`),
+  CONSTRAINT `fkAnuncianteEndereco` FOREIGN KEY (`idEndereco`) REFERENCES `endereco` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `anunciante`
+--
+
+LOCK TABLES `anunciante` WRITE;
+/*!40000 ALTER TABLE `anunciante` DISABLE KEYS */;
+/*!40000 ALTER TABLE `anunciante` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comerciante`
+--
+
+DROP TABLE IF EXISTS `comerciante`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comerciante` (
+  `cnpj` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `telefone` varchar(45) NOT NULL,
+  `celular` varchar(45) NOT NULL,
+  `tipoPerfil` varchar(45) NOT NULL,
+  `idEndereco` int(11) NOT NULL,
+  `nfEmpresa` varchar(45) NOT NULL,
+  `rsEmpresa` varchar(45) NOT NULL,
+  PRIMARY KEY (`cnpj`,`email`),
+  KEY `fkComercianteEndereco_idx` (`idEndereco`),
+  KEY `fkComercianteSupermercado_idx` (`nfEmpresa`,`rsEmpresa`),
+  CONSTRAINT `fkComercianteEndereco` FOREIGN KEY (`idEndereco`) REFERENCES `endereco` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fkComercianteSupermercado` FOREIGN KEY (`nfEmpresa`, `rsEmpresa`) REFERENCES `supermercado` (`nomeFantasia`, `razaoSocial`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comerciante`
+--
+
+LOCK TABLES `comerciante` WRITE;
+/*!40000 ALTER TABLE `comerciante` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comerciante` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `consumidor`
+--
+
+DROP TABLE IF EXISTS `consumidor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `consumidor` (
+  `cpf` varchar(14) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `telefone` varchar(45) NOT NULL,
+  `celular` varchar(45) NOT NULL,
+  `tipoPerfil` varchar(45) NOT NULL,
+  `idEndereco` int(11) NOT NULL,
+  PRIMARY KEY (`cpf`,`email`),
+  KEY `fkConsumidorEndereco_idx` (`idEndereco`),
+  CONSTRAINT `fkConsumidorEndereco` FOREIGN KEY (`idEndereco`) REFERENCES `endereco` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `consumidor`
+--
+
+LOCK TABLES `consumidor` WRITE;
+/*!40000 ALTER TABLE `consumidor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `consumidor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `endereco`
+--
+
+DROP TABLE IF EXISTS `endereco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `endereco` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `logradouro` varchar(45) NOT NULL,
+  `numero` int(11) NOT NULL,
+  `bairro` varchar(45) NOT NULL,
+  `complemento` varchar(45) NOT NULL,
+  `cep` varchar(45) NOT NULL,
+  `cidade` varchar(45) NOT NULL,
+  `estado` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `endereco`
+--
+
+LOCK TABLES `endereco` WRITE;
+/*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
+/*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `produto`
+--
+
+DROP TABLE IF EXISTS `produto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `produto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `valorCompa` double NOT NULL,
+  `valorVenda` double NOT NULL,
+  `categoria` varchar(45) NOT NULL,
+  `descricao` varchar(240) NOT NULL,
+  `imagem` varchar(45) DEFAULT NULL,
+  `cnpjSupermercado` varchar(45) DEFAULT NULL,
+  `cnpjAnunciante` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `empresaAnunc_idx` (`cnpjAnunciante`),
+  KEY `empresaSuper_idx` (`cnpjSupermercado`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `produto`
+--
+
+LOCK TABLES `produto` WRITE;
+/*!40000 ALTER TABLE `produto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `produto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `servicos`
+--
+
+DROP TABLE IF EXISTS `servicos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `servicos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `descricao` varchar(240) NOT NULL,
+  `cnpj` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `anuncianteRazao` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ServicosAnunciante_idx` (`cnpj`,`email`,`anuncianteRazao`),
+  CONSTRAINT `ServicosAnunciante` FOREIGN KEY (`cnpj`, `email`, `anuncianteRazao`) REFERENCES `anunciante` (`cnpj`, `email`, `razaoSocial`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `servicos`
+--
+
+LOCK TABLES `servicos` WRITE;
+/*!40000 ALTER TABLE `servicos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `servicos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `supermercado`
+--
+
+DROP TABLE IF EXISTS `supermercado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `supermercado` (
+  `nomeFantasia` varchar(45) NOT NULL,
+  `razaoSocial` varchar(45) NOT NULL,
+  PRIMARY KEY (`nomeFantasia`,`razaoSocial`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `supermercado`
+--
+
+LOCK TABLES `supermercado` WRITE;
+/*!40000 ALTER TABLE `supermercado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `supermercado` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-01-26  2:44:36

@@ -1,3 +1,5 @@
 br\com\mercadofacil\jdbc\InsertBD.class
+br\com\mercadofacil\Dao\ConnectionFactory.class
 br\com\mercadofacil\jdbc\DeleteBD.class
+br\com\mercadofacil\Dao\ProdutoDao.class
 br\com\mercadofacil\modelo\ValidaDado.class
