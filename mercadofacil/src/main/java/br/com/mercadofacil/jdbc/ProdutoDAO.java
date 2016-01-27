@@ -1,4 +1,4 @@
-package br.com.mercadofacil.Dao;
+package br.com.mercadofacil.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 import br.com.mercadofacil.modelo.Produto;
 
-public class ProdutoDao {
+public class ProdutoDAO {
 
 	private Connection conexao;
-	Connection con = new ConnectionFactory().getConnection();
+	Connection con = new FabricaConexao().getConnection();
 
 	// insert
 	public void InseriProduto(Produto produto) {

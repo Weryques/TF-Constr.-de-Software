@@ -6,7 +6,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import br.com.mercadofacil.Dao.ProdutoDao;
+
+import br.com.mercadofacil.jdbc.ProdutoDAO;
 import br.com.mercadofacil.modelo.Produto;
 
 @WebServlet(value = "/cadastrarproduto")
@@ -26,7 +27,7 @@ public class ServletCadastroProduto extends HttpServlet{
 			produto.setCnpjAnunciante(req.getParameter("cnpjAnunciante"));
 			produto.setCnpjSupermercado(req.getParameter("cnpjSupermercado"));
 
-			ProdutoDao produtoD=new ProdutoDao();
+			ProdutoDAO produtoD=new ProdutoDAO();
 			produtoD.InseriProduto(produto);
 	
 		
