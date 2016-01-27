@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<%@page import="br.com.mercadofacil.modelo.Produto"%>
+<%@page import="br.com.mercadofacil.Dao.ProdutoDao"%>
+<%@page import="java.util.ArrayList" %>
 <head>
 
     <meta charset="utf-8">
@@ -372,6 +374,16 @@
 				    <option>Utilidades</option>
 				  </select>
 				</div>
+				<!-- Inicio da tabela -->
+				
+				<% //Produto p=new Produto();
+ 				ProdutoDao pd=new ProdutoDao();
+ 				ArrayList<Produto> ListaDeProdutos = new ArrayList();
+ 				ListaDeProdutos=pd.getLista("Todos");
+ 				int tam= ListaDeProdutos.size(),i;
+ 				//for(i=0;i<tam;i++){
+	 			//ListaDeProdutos.get(i).getNome();%>
+				
 			<table class="table table-hover table-bordered">
 				<thead>
 					<tr>
@@ -385,83 +397,30 @@
 							Categoria
 						</th>
 						<th>
-							PreÃ§o
+							Pre�oo
 						</th>
 					</tr>
 				</thead>
 				<tbody>
+				<% for(i=0;i<tam;i++){ %> 	
 					<tr class="warning">
 						<td>
 							1
 						</td>
 						<td>
-							Produto 1
+							<%=ListaDeProdutos.get(i).getNome() %>
 						</td>
 						<td>
-							Mercearia
+							<%=ListaDeProdutos.get(i).getCategoria() %>
 						</td>
 						<td>
-							2,00 R$
+							<%=ListaDeProdutos.get(i).getValorDeVenda() %>R$
 						</td>
 					</tr>
-					<tr class="warning">
-						<td>
-							2
-						</td>
-						<td>
-							Produto 2
-						</td>
-						<td>
-							Hortifruti
-						</td>
-						<td>
-							16,00 R$
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							3
-						</td>
-						<td>
-							Produto 3
-						</td>
-						<td>
-							Utilidades
-						</td>
-						<td>
-							5,60 R$
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							4
-						</td>
-						<td>
-							Produto 4
-						</td>
-						<td>
-							Frios
-						</td>
-						<td>
-							20,00 R$
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							5
-						</td>
-						<td>
-							Produto 5
-						</td>
-						<td>
-							Secos e Molhados
-						</td>
-						<td>
-							10,00 R$
-						</td>
-					</tr>
+					<%} %>
 				</tbody>
 			</table>
+			<!-- fim da tabela -->   
 		</div>
                         <!-- weliton -->                    
                     </div>

@@ -31,6 +31,7 @@ public class ServletCadastroProduto extends HttpServlet{
 	
 		
 			req.getRequestDispatcher("admin/pages/cadastroProdutos.jsp").forward(req, res);
+			
 		
 	}
 }

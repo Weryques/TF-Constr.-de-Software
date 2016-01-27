@@ -2,7 +2,9 @@ package br.com.mercadofacil.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import br.com.mercadofacil.modelo.Produto;
 
@@ -40,5 +42,34 @@ public class ProdutoDao {
 		}
 
 	}
+	
+    public  ArrayList<Produto> getLista(String categoria) throws SQLException{
+    	String sql;
+    	if(categoria.equals("Todos")){
+    		sql="select *from produto";
+    	}else{
+    		sql="select *from produto where categoria='"+categoria+"'";
+    	}
+        PreparedStatement stmt=this.con.prepareStatement(sql);
+        
+        ResultSet rs=stmt.executeQuery();
+        
+        ArrayList<Produto> listaCursos=new ArrayList<Produto>();
+        while(rs.next()){
+        	
+        	Produto produto = new Produto();
+          
+        	produto.setNome(rs.getString("nome"));
+        	produto.setCategoria(rs.getString("categoria"));
+        	produto.setValorDeVenda(rs.getDouble("valorVenda"));
+        	//produto.setDescricao(rs.getString("descricao"));
+          
+           listaCursos.add(produto);
+        }
+        rs.close();
+        stmt.close();
+        return listaCursos;
+        
+    }
 
 }
