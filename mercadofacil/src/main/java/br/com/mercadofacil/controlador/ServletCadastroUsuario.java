@@ -102,7 +102,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 						consumidor.getTelefone(), consumidor.getCelular(), consumidor.getTipoPerfil(), Integer.parseInt(resultado.getString("id"))));
 
 				conexao.commit(); //fecha transação, efetiva comandos
-				stmt.close(); //fecha statatement
+				stmt.close(); //fecha statement
 				conexao.close(); //fecha conexao com o banco de dados
 			}
 			else{
@@ -116,13 +116,17 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 	/**
 	 * @param req
+	 * @throws SQLException 
 	 */
-	private void cadastrarComerciante(ServletRequest req) {
+	private void cadastrarComerciante(ServletRequest req) throws SQLException {
 		FabricaConexao conn = new FabricaConexao();
 		Comerciante comerciante = new Comerciante();
 		Connection conexao = null;
 
 		conexao = conn.getConexao();
+		
+		//Abrir transação
+		conexao.setAutoCommit(false); //a transação não "commita" sozinha
 
 		comerciante.getEndereco().setCep(req.getParameter("cep"));
 		comerciante.getEndereco().setCidade(req.getParameter("cidade"));
@@ -172,11 +176,13 @@ public class ServletCadastroUsuario extends HttpServlet{
 					comerciante.getNomeCompleto(), comerciante.getTelefone(), comerciante.getCelular(), 
 					comerciante.getTipoPerfil(), Integer.parseInt(resultado.getString("id")), 
 					comerciante.getSupermercado().getNomeFantasia(), comerciante.getSupermercado().getRazaoSocial()));
-
-			stmt.close();
-			conexao.close();
+			
+			conexao.commit(); //fecha transação, efetiva comandos
+			stmt.close(); //fecha statement
+			conexao.close(); //fecha conexão
 		} catch (SQLException e) {
 			System.out.println("Erro em cadastrar comerciante: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
+			conexao.rollback(); //desfaz todos os comandos em caso de exceção
 		}
 	}
 

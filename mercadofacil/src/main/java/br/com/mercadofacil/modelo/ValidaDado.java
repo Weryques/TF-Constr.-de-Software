@@ -74,4 +74,10 @@ public class ValidaDado {
 		
 		return resultado;
 	}
+	
+	public boolean validarCNPJ(String cnpj){
+		boolean resultado = false;
+		
+		return resultado;
+	}
 }

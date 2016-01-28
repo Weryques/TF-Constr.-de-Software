@@ -11,7 +11,7 @@ import br.com.mercadofacil.modelo.Produto;
 public class ProdutoDAO {
 
 	private Connection conexao;
-	Connection con = new FabricaConexao().getConnection();
+	Connection con = new FabricaConexao().getConexao();
 
 	// insert
 	public void InseriProduto(Produto produto) {
