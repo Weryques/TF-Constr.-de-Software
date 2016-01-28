@@ -6,15 +6,14 @@ import java.sql.SQLException;
 
 public class FabricaConexao {
 	
-	public Connection getConexao() {
+	public Connection getConnection() {
 	     try {
-	         return DriverManager.getConnection("jdbc:mysql://localhost/mercadofacil", "root", "91645709");
+	         return DriverManager.getConnection(
+	 "jdbc:mysql://localhost/mercadofacil", "root", "91645709");
 	    
 	     } catch (SQLException e) {
-	    	 System.out.println(e.getSQLState());
-	    	 System.out.println(e.getMessage());
-	    	 
-	    	 throw new RuntimeException(e);
+	    	 System.out.println("N�o conectado!");
+	         throw new RuntimeException(e);
 	     }
 	 }
 }

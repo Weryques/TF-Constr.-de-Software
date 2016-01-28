@@ -12,16 +12,16 @@
 </head>
 <body>
 <% //Produto p=new Produto();
- 	ProdutoDAO produtoDAO=new ProdutoDAO();
- 	ArrayList<Produto> produtoLista = new ArrayList<Produto>();
+ ProdutoDAO produtoDAO=new ProdutoDAO();
+ ArrayList<Produto> produtoLista = new ArrayList();
  
- 	produtoLista = produtoDAO.getLista("categoria");
+ produtoLista = produtoDAO.getLista("categoria");
  
- 	int tamanhoLista = produtoLista.size();
+ int tamanhoLista = produtoLista.size();
  
- 	for(int i = 0; i < tamanhoLista; i++){%>
-	 	<h1><%= produtoLista.get(i).getNome()%> </h1> <% 	 
- 	}
+ for(int i = 0; i < tamanhoLista; i++){%>
+	 <h1><%= produtoLista.get(i).getNome()%> </h1> <% 	 
+ }
  %>
 </body>
 </html>
