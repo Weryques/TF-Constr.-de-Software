@@ -106,7 +106,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 				conexao.close(); //fecha conexao com o banco de dados
 			}
 			else{
-				throw new RuntimeException("CPF inválido!"); //cria uma exceção
+				throw new SQLException("CPF inválido!"); //cria uma exceção
 			}
 		} catch (SQLException e) {
 			System.out.println("Erro em cadastrar consumidor: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
