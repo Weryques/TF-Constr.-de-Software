@@ -1,3 +1,4 @@
+<%@page import="org.xml.sax.Parser"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,7 +37,16 @@
     <![endif]-->
 <style type="text/css">
 </style>
-
+<script type="text/javascript">
+	function validaDados(){
+		var tagSelect = document.getElementById("Categoria");
+		var itemSelecionado = tagSelect.options[tagSelect.selectedIndex].value;
+		if(itemSelecionado==1){
+			alert("Escolhar uma categoria");
+		return;
+		}
+	}
+</script>
 </head>
 
 <body>
@@ -270,11 +280,11 @@
 						<li><a href="#"><i class="fa fa-sitemap fa-fw"></i>
 								Categorias<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="#">Secos e Molhados</a></li>
-								<li><a href="#">Hortifruti</a></li>
-								<li><a href="#">Mercearia</a></li>
-								<li><a href="#">Utilidades</a></li>
-								<li><a href="#">Frios</a></li>
+								<li ><a href="#">Secos e Molhados</a></li>
+								<li ><a href="#">Hortifruti</a></li>
+								<li ><a href="#">Mercearia</a></li>
+								<li ><a href="#">Utilidades</a></li>
+								<li ><a href="#">Frios</a></li>
 							</ul> <!-- /.nav-second-level --></li>
 						<li><a href="#"><i class="fa fa-files-o fa-fw"></i>
 								Paginas<span class="fa arrow"></span></a>
@@ -309,49 +319,61 @@
 
 						<form role="form" name="CadastroProdutos"
 							action="../../cadastrarproduto">
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-5">
 
-								<label for="NomeProduto"> Nome do Produto </label> <input
-									type="text" class="form-control" name="NomeProduto">
+								<label for="NomeProduto" > Nome do Produto </label> <input
+									type="text" class="form-control" name="NomeProduto" required>
 							</div>
-							<div class="form-group col-md-2">
-
-								<label for="PrecoDeCompraProduto"> Preço de Compra </label> <input
-									type="Number" class="form-control" name="PrecoDeCompraProduto">
-							</div>
+							
 							<div class="form-group col-md-2">
 
 								<label for="PrecoDeVendaProduto"> Preço de Venda </label> <input
-									type="Number" class="form-control" name="PrecoDeVendaProduto">
+									type="Number" class="form-control" name="PrecoDeVendaProduto" required>
 							</div>
 							<div class="form-group col-md-2">
 								<label for="quantidade"> Quantidade </label> <input
-									type="Number" class="form-control" name="PrecoDeCompraProduto">
+									type="Number" class="form-control" name="PrecoDeCompraProduto" required>
 							</div>
-							<div class="form-group col-md-6">
-								<label for="sel1">Categoria:</label> <select
-									class="form-control" name="Categoria">
-									<option>---Nenhum---</option>
-									<option>Secos e Molhados</option>
-									<option>Frios</option>
-									<option>Hortifruti</option>
-									<option>Mercearia</option>
-									<option>Utilidades</option>
+							<div class="form-group col-md-3">
+								<label for="sel1">Categoria:</label>
+								 <select Id="Categoria" class="form-control">
+									<option value="1">---Nenhum---</option>
+									<option value="2">Secos e Molhados</option>
+									<option value="3">Frios</option>
+									<option value="4">Hortifruti</option>
+									<option value="5">Mercearia</option>
+									<option value="6">Utilidades</option>
 								</select>
 							</div>
-							<div class="form-group col-md-3">
-								<label for="NomeProduto"> CNPJ/CPF Comerciante </label> <input
-									type="text" class="form-control" name="cnpjAnunciante">
-							</div>
-							<div class="form-group col-md-3">
-								<label for="NomeProduto"> CNPJ/CPF Anunciante </label> <input
+							<div class="form-group col-md-4">
+								<label for="cnpjSupermercado"> CNPJ/CPF Anunciante </label> <input
 									type="text" class="form-control" name="cnpjSupermercado">
 							</div>
+							<div class="form-group col-md-4">
+								<label for="emailAnunciante"> Email do Anunciante </label> <input
+									type="email" class="form-control" name="emailAnunciante">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="razaoSocialAnunciante"> Razão Social Anunciante </label> <input
+									type="text" class="form-control" name="razaoSocialAnunciante">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="nomeFantasiaSupermercado"> Nome Fantasia do Supermercado </label> <input
+									type="text" class="form-control" name="nomeFantasiaSupermercado">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="razaoSocialSupermercado"> Razao Social do Supermercado </label> <input
+									type="text" class="form-control" name="razaoSocialSupermercado">
+							</div>
+							<!-- inicio imagem
+							tag imagem removida 
 							<div class="form-group col-md-6">
 								<label for="exampleInputFile"> Imagem </label> <input
 									type="file" name="imagem">
 								<p class="help-block">Escolha uma imagem para o Produto.</p>
 							</div>
+							fim imagem
+							-->
 							<div class="form-group col-md-6">
 								<label for="descricao"> Descrição </label>
 								<textarea class="form-control " rows="3" name="descricao"></textarea>
@@ -359,10 +381,13 @@
 
 							<div class="form-group col-md-6">
 								<button type="submit"
-									class="btn btn-outline btn-primary btn-lg ">Salvar</button>
+									class="btn btn-outline btn-primary btn-lg " onclick="validaDados()">Salvar</button>
 								<button type="button"
 									class="btn btn-outline btn-warning  btn-lg">Limpar</button>
 							</div>
+							<script type="text/javascript">
+									
+							</script>
 						</form>
 					</div>
 

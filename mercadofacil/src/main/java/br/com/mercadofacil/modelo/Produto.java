@@ -9,14 +9,16 @@ package br.com.mercadofacil.modelo;
  */
 public class Produto {
 	private String nome;
-	private Double valorDeCompra;
-	private Double valorDeVenda;
-	private int quantidade;
+	private Double valor;
 	private String categoria;
 	private String descricao;
-	private String imagem;
+	
 	private String cnpjAnunciante;
-	private String cnpjSupermercado;
+	private String emailAnunciante;
+	private String razaoSocialAnunciante;
+	private String nomeFantasiaSupermercado;
+	private String razaoSocialSupermercado;
+	private String imagem;
 
 	/**
 	 * @return the nome
@@ -63,30 +65,6 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
-	public Double getValorDeCompra() {
-		return valorDeCompra;
-	}
-
-	public void setValorDeCompra(Double valorDeCompra) {
-		this.valorDeCompra = valorDeCompra;
-	}
-
-	public Double getValorDeVenda() {
-		return valorDeVenda;
-	}
-
-	public void setValorDeVenda(Double valorDeVenda) {
-		this.valorDeVenda = valorDeVenda;
-	}
-
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
 	public String getImagem() {
 		return imagem;
 	}
@@ -103,11 +81,44 @@ public class Produto {
 		this.cnpjAnunciante = cnpjAnunciante;
 	}
 
-	public String getCnpjSupermercado() {
-		return cnpjSupermercado;
+	public Double getValor() {
+		return valor;
 	}
 
-	public void setCnpjSupermercado(String cnpjSupermercado) {
-		this.cnpjSupermercado = cnpjSupermercado;
+	public void setValor(Double valor) {
+		this.valor = valor;
 	}
+
+	public String getEmailAnunciante() {
+		return emailAnunciante;
+	}
+
+	public void setEmailAnunciante(String emailAnunciante) {
+		this.emailAnunciante = emailAnunciante;
+	}
+
+	public String getRazaoSocialAnunciante() {
+		return razaoSocialAnunciante;
+	}
+
+	public void setRazaoSocialAnunciante(String razaoSocialAnunciante) {
+		this.razaoSocialAnunciante = razaoSocialAnunciante;
+	}
+
+	public String getNomeFantasiaSupermercado() {
+		return nomeFantasiaSupermercado;
+	}
+
+	public void setNomeFantasiaSupermercado(String nomeFantasiaSupermercado) {
+		this.nomeFantasiaSupermercado = nomeFantasiaSupermercado;
+	}
+
+	public String getRazaoSocialSupermercado() {
+		return razaoSocialSupermercado;
+	}
+
+	public void setRazaoSocialSupermercado(String razaoSocialSupermercado) {
+		this.razaoSocialSupermercado = razaoSocialSupermercado;
+	}
+
 }

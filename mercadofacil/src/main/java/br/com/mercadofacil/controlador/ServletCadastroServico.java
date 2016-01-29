@@ -11,8 +11,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
-import br.com.mercadofacil.jdbc.ConexaoBD;
-import br.com.mercadofacil.jdbc.InsertBD;
 import br.com.mercadofacil.modelo.Servico;
 
 @WebServlet(value = "/cadastrarservico")
@@ -23,11 +21,11 @@ public class ServletCadastroServico extends HttpServlet{
 			req.getRequestDispatcher("visao/alguma página").forward(req, res);
 		}
 		else if(req.equals("novoServico")){
-			ConexaoBD conn = new ConexaoBD();
+			//ConexaoBD conn = new ConexaoBD();
 			Servico servico = new Servico();
 			Connection conexao = null;
 			
-			conexao = conn.conectar();
+			//conexao = conn.conectar();
 			
 			servico.setNome(req.getParameter("nome"));
 			servico.setDescricao(req.getParameter("descricao"));
@@ -35,7 +33,7 @@ public class ServletCadastroServico extends HttpServlet{
 			servico.setEmail(req.getParameter("email"));
 			servico.setRazaoAnunciante(req.getParameter("razaoSocial"));
 			
-			InsertBD update = new InsertBD();
+		//	InsertBD update = new InsertBD();
 			Statement stmt = null;
 			
 			//validar informações antes de gravar.
@@ -43,8 +41,8 @@ public class ServletCadastroServico extends HttpServlet{
 			try {
 				stmt = conexao.createStatement();
 				
-				stmt.executeQuery(update.inserirServico(servico.getNome(), servico.getDescricao(), 
-						servico.getCpnj(), servico.getEmail(), servico.getRazaoAnunciante()));
+			//	stmt.executeQuery(update.inserirServico(servico.getNome(), servico.getDescricao(), 
+				//		servico.getCpnj(), servico.getEmail(), servico.getRazaoAnunciante()));
 				
 				stmt.close();
 				conexao.close();

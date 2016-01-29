@@ -37,7 +37,12 @@ public class ServletCadastroUsuario extends HttpServlet{
 			}
 		}
 		else if(req.equals("cadastroComerciante")){
-			cadastrarComerciante(req);
+			try {
+				cadastrarComerciante(req);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		else if(req.equals("cadastroAnunciante")){
 			cadastrarAnunciante(req);

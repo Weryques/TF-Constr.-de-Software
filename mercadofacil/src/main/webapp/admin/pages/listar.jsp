@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <%@page import="br.com.mercadofacil.modelo.Produto"%>
-<%@page import="br.com.mercadofacil.Dao.ProdutoDao"%>
+<%@page import="br.com.mercadofacil.jdbc.ProdutoDAO"%>
 <%@page import="java.util.ArrayList" %>
 <head>
 
@@ -377,7 +377,7 @@
 				<!-- Inicio da tabela -->
 				
 				<% //Produto p=new Produto();
- 				ProdutoDao pd=new ProdutoDao();
+ 				ProdutoDAO pd=new ProdutoDAO();
  				ArrayList<Produto> ListaDeProdutos = new ArrayList();
  				ListaDeProdutos=pd.getLista("Todos");
  				int tam= ListaDeProdutos.size(),i;

@@ -15,32 +15,34 @@ public class ProdutoDAO {
 
 	// insert
 	public void InseriProduto(Produto produto) {
-
-		String sql = " insert into produto(nome,valorCompa,valorVenda,categoria,descricao,imagem,cnpjSupermercado,cnpjAnunciante)"
-				+ "values(?,?,?,?,?,?,?,?)";
+		boolean resultadoInsert;
+		String sql = " insert into produto(nome,valor,categoria,descricao,cnpjAnunciante,emailAnunciante,"
+				+ "razaoSocialAnunciante,nomeFantasiaSupermercado,razaoSocialSupermercado)"
+				+ "values(?,?,?,?,?,?,?,?,?)";
 
 		try {
 
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setString(1, produto.getNome());
-			stmt.setDouble(2, produto.getValorDeCompra());
-			stmt.setDouble(3, produto.getValorDeVenda());
-			stmt.setString(4, produto.getCategoria());
-			stmt.setString(5, produto.getDescricao());
-			stmt.setString(6, produto.getImagem());
-			stmt.setString(7, produto.getCnpjSupermercado());
-			stmt.setString(8, produto.getCnpjAnunciante());
+			stmt.setDouble(2, produto.getValor());
+			stmt.setString(3, produto.getCategoria());
+			stmt.setString(4, produto.getDescricao());
+			stmt.setString(5, produto.getCnpjAnunciante());
+			stmt.setString(6, produto.getEmailAnunciante());
+			stmt.setString(7, produto.getRazaoSocialAnunciante());
+			stmt.setString(8, produto.getNomeFantasiaSupermercado());
+			stmt.setString(9, produto.getRazaoSocialSupermercado());
 
 			stmt.execute();
 			stmt.close();
+			resultadoInsert=true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-
+			resultadoInsert=false;
 			e.printStackTrace();
 
 		}
-
 	}
 	
     public  ArrayList<Produto> getLista(String categoria) throws SQLException{
@@ -61,7 +63,7 @@ public class ProdutoDAO {
           
         	produto.setNome(rs.getString("nome"));
         	produto.setCategoria(rs.getString("categoria"));
-        	produto.setValorDeVenda(rs.getDouble("valorVenda"));
+        	//produto.setValorDeVenda(rs.getDouble("valorVenda"));
         	//produto.setDescricao(rs.getString("descricao"));
           
            listaCursos.add(produto);
