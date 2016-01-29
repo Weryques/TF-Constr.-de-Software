@@ -63,7 +63,7 @@ public class ProdutoDAO {
           
         	produto.setNome(rs.getString("nome"));
         	produto.setCategoria(rs.getString("categoria"));
-        	//produto.setValorDeVenda(rs.getDouble("valorVenda"));
+        	produto.setValor(rs.getDouble("valor"));
         	//produto.setDescricao(rs.getString("descricao"));
           
            listaCursos.add(produto);

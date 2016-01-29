@@ -381,7 +381,7 @@
 
 							<div class="form-group col-md-6">
 								<button type="submit"
-									class="btn btn-outline btn-primary btn-lg " onclick="validaDados()">Salvar</button>
+								name="opcao" value="Salvar" class="btn btn-outline btn-primary btn-lg " onclick="validaDados()">Salvar</button>
 								<button type="button"
 									class="btn btn-outline btn-warning  btn-lg">Limpar</button>
 							</div>

@@ -5,4 +5,5 @@ br\com\mercadofacil\jdbc\ConsumidorDAO.class
 br\com\mercadofacil\jdbc\ComercianteDAO.class
 br\com\mercadofacil\jdbc\ServicoDAO.class
 br\com\mercadofacil\jdbc\AnuncianteDAO.class
+br\com\mercadofacil\controlador\ServletConsultaProduto.class
 br\com\mercadofacil\jdbc\FabricaConexao.class

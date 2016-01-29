@@ -16,7 +16,7 @@ import br.com.mercadofacil.modelo.Produto;
 public class ServletCadastroProduto extends HttpServlet{
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-					
+		
 			Produto produto = new Produto();			
 			produto.setNome(req.getParameter("NomeProduto"));			
 			produto.setValor(Double.parseDouble(req.getParameter("PrecoDeCompraProduto")));
@@ -37,6 +37,9 @@ public class ServletCadastroProduto extends HttpServlet{
 			RequestDispatcher  view  = req.getRequestDispatcher("admin/pages/cadastroProdutos.jsp");
 			view.forward(req, res);
 			view.forward(req, res);
+			
+		
+			
 		
 	}
 }

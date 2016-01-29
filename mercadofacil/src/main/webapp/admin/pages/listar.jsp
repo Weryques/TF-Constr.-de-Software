@@ -34,7 +34,13 @@
     <![endif]-->
 
 </head>
-
+<script type="text/javascript">
+	function validaDados(){
+		var tagSelect = document.Categoria.opcao;
+		var itemSelecionado = tagSelect.options[tagSelect.selectedIndex].value;		
+	}
+	
+	</script>
 <body>
 
     <div id="wrapper">
@@ -359,30 +365,32 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- weliton -->
-         <div class="col-md-12" id="ProdutosCadastrados">
-			<h3 class="text-center text-primary">
-			 Produtos Cadastrados 
+             <h3 class="text-center text-primary">
+			 	Produtos Cadastrados 
 			</h3>
-			<div class="form-group">
+			<form name="Categoria" action="../../consultarproduto">
+			<div class="form-group col-md-12" >
 				  <label for="sel1">Categoria:</label>
-				  <select class="form-control" id="Categoria">
-				   	<option>---Todos---</option>
-				    <option>Secos e Molhados</option>
-				    <option>Frios</option>
-				    <option>Hortifruti</option>
-				    <option>Mercearia</option>
-				    <option>Utilidades</option>
+				  
+				  <select class="form-control" name="opcao">
+				   	<option value="Todos">---Todos---</option>
+				    <option value="Secos e Molhados">Secos e Molhados</option>
+				    <option value="Frios">Frios</option>
+				    <option value="Hortifruti">Hortifruti</option>
+				    <option value="Mercearia">Mercearia</option>
+				    <option value="Utilidades">Utilidades</option>
 				  </select>
 				</div>
-				<!-- Inicio da tabela -->
 				
-				<% //Produto p=new Produto();
- 				ProdutoDAO pd=new ProdutoDAO();
- 				ArrayList<Produto> ListaDeProdutos = new ArrayList();
- 				ListaDeProdutos=pd.getLista("Todos");
- 				int tam= ListaDeProdutos.size(),i;
- 				//for(i=0;i<tam;i++){
-	 			//ListaDeProdutos.get(i).getNome();%>
+			</form>
+         <div class="col-md-12" id="ProdutosCadastrados">
+				<!-- Inicio da tabela -->
+			<% //Produto p=new Produto();
+			ProdutoDAO pd=new ProdutoDAO();
+			ArrayList<Produto> ListaDeProdutos = new ArrayList();
+			ListaDeProdutos=pd.getLista("Todos");
+			int tam= ListaDeProdutos.size(),i;%>
+				
 				
 			<table class="table table-hover table-bordered">
 				<thead>
@@ -397,7 +405,7 @@
 							Categoria
 						</th>
 						<th>
-							Preçoo
+							Preço
 						</th>
 					</tr>
 				</thead>
@@ -414,7 +422,7 @@
 							<%=ListaDeProdutos.get(i).getCategoria() %>
 						</td>
 						<td>
-							<%=ListaDeProdutos.get(i).getValorDeVenda() %>R$
+							<%=ListaDeProdutos.get(i).getValor() %>R$
 						</td>
 					</tr>
 					<%} %>
