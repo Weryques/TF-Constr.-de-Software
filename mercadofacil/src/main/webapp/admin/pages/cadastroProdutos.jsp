@@ -321,22 +321,24 @@
 							action="../../cadastrarproduto">
 							<div class="form-group col-md-5">
 
-								<label for="NomeProduto" > Nome do Produto </label> <input
+								<label for="NomeProduto"> Nome do Produto </label> <input
 									type="text" class="form-control" name="NomeProduto" required>
 							</div>
-							
+
 							<div class="form-group col-md-2">
 
 								<label for="PrecoDeVendaProduto"> Preço de Venda </label> <input
-									type="Number" class="form-control" name="PrecoDeVendaProduto" required>
+									type="Number" class="form-control" name="PrecoDeVendaProduto"
+									required>
 							</div>
 							<div class="form-group col-md-2">
 								<label for="quantidade"> Quantidade </label> <input
-									type="Number" class="form-control" name="PrecoDeCompraProduto" required>
+									type="Number" class="form-control" name="PrecoDeCompraProduto"
+									required>
 							</div>
 							<div class="form-group col-md-3">
-								<label for="sel1">Categoria:</label>
-								 <select Id="Categoria" class="form-control">
+								<label for="sel1">Categoria:</label> <select Id="Categoria"
+									class="form-control">
 									<option value="1">---Nenhum---</option>
 									<option value="2">Secos e Molhados</option>
 									<option value="3">Frios</option>
@@ -354,16 +356,19 @@
 									type="email" class="form-control" name="emailAnunciante">
 							</div>
 							<div class="form-group col-md-4">
-								<label for="razaoSocialAnunciante"> Razão Social Anunciante </label> <input
-									type="text" class="form-control" name="razaoSocialAnunciante">
+								<label for="razaoSocialAnunciante"> Razão Social
+									Anunciante </label> <input type="text" class="form-control"
+									name="razaoSocialAnunciante">
 							</div>
 							<div class="form-group col-md-6">
-								<label for="nomeFantasiaSupermercado"> Nome Fantasia do Supermercado </label> <input
-									type="text" class="form-control" name="nomeFantasiaSupermercado">
+								<label for="nomeFantasiaSupermercado"> Nome Fantasia do
+									Supermercado </label> <input type="text" class="form-control"
+									name="nomeFantasiaSupermercado">
 							</div>
 							<div class="form-group col-md-6">
-								<label for="razaoSocialSupermercado"> Razao Social do Supermercado </label> <input
-									type="text" class="form-control" name="razaoSocialSupermercado">
+								<label for="razaoSocialSupermercado"> Razao Social do
+									Supermercado </label> <input type="text" class="form-control"
+									name="razaoSocialSupermercado">
 							</div>
 							<!-- inicio imagem
 							tag imagem removida 
@@ -380,8 +385,9 @@
 							</div>
 
 							<div class="form-group col-md-6">
-								<button type="submit"
-								name="opcao" value="Salvar" class="btn btn-outline btn-primary btn-lg " onclick="validaDados()">Salvar</button>
+								<button type="submit" name="opcao" value="Salvar"
+									class="btn btn-outline btn-primary btn-lg "
+									onclick="validaDados()">Salvar</button>
 								<button type="button"
 									class="btn btn-outline btn-warning  btn-lg">Limpar</button>
 							</div>

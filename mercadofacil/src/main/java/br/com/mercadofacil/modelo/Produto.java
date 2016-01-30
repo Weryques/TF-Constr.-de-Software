@@ -8,17 +8,33 @@ package br.com.mercadofacil.modelo;
  *
  */
 public class Produto {
+	private int id;
 	private String nome;
 	private Double valor;
 	private String categoria;
 	private String descricao;
-	
+
 	private String cnpjAnunciante;
 	private String emailAnunciante;
 	private String razaoSocialAnunciante;
 	private String nomeFantasiaSupermercado;
 	private String razaoSocialSupermercado;
 	private String imagem;
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the nome

@@ -47,12 +47,10 @@
 		var tagSelect = document.Categoria.opcao;
 		var itemSelecionado = tagSelect.options[tagSelect.selectedIndex].value;
 	}
-	function ConfirmaExclusao() {
+	function ConfirmaExclusao(S) {
 		var resp = confirm("Deseja confirmar exclusão?");
-		if (resp == false) {
-			return;
-		} else {
-			window.location = href = "../../deletarproduto";
+		if (resp == true) {
+			location.href= "../../deletarproduto?id="+S;	
 		}
 	}
 </script>
@@ -353,16 +351,18 @@
 									<%
 										for (i = 0; i < tam; i++) {
 									%>
+
 									<tr class="info">
-										<td><%=i + 1%></td>
+										<td><%=ListaDeProdutos.get(i).getId()%></td>
 										<td><%=ListaDeProdutos.get(i).getNome()%></td>
 										<td><%=ListaDeProdutos.get(i).getCategoria()%></td>
 										<td><%=ListaDeProdutos.get(i).getValor()%>R$</td>
 										<td><a class="glyphicon glyphicon-pencil"> Editar</a></td>
-										<td><a class="glyphicon glyphicon-trash"
-											style="color: red" onclick="ConfirmaExclusao()"> Excluir</a>
-										</td>
+										<td><a
+											class="glyphicon glyphicon-trash" style="color: red"
+											onclick="ConfirmaExclusao(<%=ListaDeProdutos.get(i).getId()%>)"> Excluir</a></td>
 									</tr>
+
 									<%
 										}
 									%>
