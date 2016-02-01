@@ -3,24 +3,44 @@
  */
 package br.com.mercadofacil.jdbc;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import br.com.mercadofacil.modelo.Endereco;
+
 /**
  * @author weryquessantos
  *
  */
 public class EnderecoDAO {
-	public String inserirEndereco(String logradouro, int numero, String bairro, String complemento, String cep, String cidade, String estado){
+	public void inserirEndereco(Endereco endereco) throws SQLException{
 		String insertEndereco = "INSERT INTO mercadofacil.endereco ("
 				+ "logradouro, numero, bairro, complemento, cep, cidade, estado) "
-				+ "VALUES('"+ logradouro +"', '"+ numero +"', '"+ bairro +"', '"+ complemento + "', '"+ cep + "', '"+ cidade +"', '"+ estado +"')";
+				+ "VALUES('"+ endereco.getLogradouro() +"', '"+ endereco.getNumero() +"', '"+ endereco.getBairro()
+				+"', '"+ endereco.getComplemento() + "', '"+ endereco.getCep() + "', '"+ endereco.getCidade() +"', '"+ endereco.getEstado() +"')";
 		
-		return insertEndereco;
+		
+		Statement stmt = null;
+		
+		stmt.executeQuery(insertEndereco);
+		
 	}
 	
-	public String selecionarIdEndereco(int numero, String cep, String cidade){
+	public int selecionarIdEndereco(Endereco endereco) throws SQLException{ //O throws retorna a excessão para o servlet que chamou e lá é tratada
+		int idEndereco = 0;
+		
 		String selectIdEndereco = ""
 				+ " SELECT id FROM mercadofacil.endereco"
-				+ " WHERE numero = '"+ numero +"' AND cep = '"+ cep +"' AND cidade = '"+ cidade+ "'";
+				+ " WHERE numero = '"+ endereco.getNumero() +"' AND cep = '"+ endereco.getCep() +"' AND cidade = '"+ endereco.getCidade() + "'";
 		
-		return selectIdEndereco;
+		Statement stmt = null;
+		ResultSet resultado = null;
+		
+		resultado = stmt.executeQuery(selectIdEndereco);
+			
+		idEndereco = resultado.getInt("id");
+			
+		return idEndereco;
 	}
 }

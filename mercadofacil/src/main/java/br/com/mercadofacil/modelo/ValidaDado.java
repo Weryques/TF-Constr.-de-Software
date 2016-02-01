@@ -3,6 +3,8 @@
  */
 package br.com.mercadofacil.modelo;
 
+import java.util.InputMismatchException;
+
 /**
  * @author weryquessantos
  *
@@ -77,7 +79,7 @@ public class ValidaDado {
 	
 	public boolean validarCNPJ(String cnpj){
 		boolean resultado = false;
-		
+
 		return resultado;
 	}
 }

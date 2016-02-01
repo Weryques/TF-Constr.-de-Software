@@ -3,18 +3,25 @@
  */
 package br.com.mercadofacil.jdbc;
 
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import br.com.mercadofacil.modelo.Anunciante;
+
 /**
  * @author weryquessantos
  *
  */
 public class AnuncianteDAO {
-	public String inserirAnunciante(String cnpj, String email, String senha, String razaoSocial, String nome, 
-			String telefone, String celular, String tipoPerfil, int idEndereco){
-		String insertAnunciante = "INSERT INTO mercadofacil.anunciante ("
+	public void inserirAnunciante(Anunciante anunciante, int idEndereco) throws SQLException{
+		String insertAnunciante = "INSERT INTO anunciante ("
 				+ "cnpj, email, senha, razaoSocial, nome, telefone, celular, tipoPerfil, idEndereco) "
-				+ "VALUES('"+ cnpj +"', '"+ email +"', md5('"+ senha +"'), '"+ nome +"', '"+ telefone +"', '"+ celular +"', '"+ tipoPerfil +"'"
+				+ "VALUES('"+ anunciante.getCnpjAnunciante() +"', '"+ anunciante.getEmail() +"', md5('"+ anunciante.getSenha() +"'), "
+						+ "'"+ anunciante.getNomeCompleto() +"', '"+ anunciante.getTelefone() +"', '"+ anunciante.getCelular() +"', '"+ anunciante.getTipoPerfil() +"'"
 						+ "'"+ idEndereco +"')";
 		
-		return insertAnunciante;
+		 Statement stmt = null;
+		 
+		 stmt.executeQuery(insertAnunciante);
 	}
 }

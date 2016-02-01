@@ -27,7 +27,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 		if(req == null){
-			req.getRequestDispatcher("visao/cadastro.jsp").forward(req, res);
+			req.getRequestDispatcher("loja/cadastro.jsp").forward(req, res);
 		}
 		else if(req.equals("cadastroConsumidor")){
 			try {
@@ -45,10 +45,15 @@ public class ServletCadastroUsuario extends HttpServlet{
 			}
 		}
 		else if(req.equals("cadastroAnunciante")){
-			cadastrarAnunciante(req);
+			try {
+				cadastrarAnunciante(req);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		else{
-			req.getRequestDispatcher("visao/cadastro.jsp").forward(req, res);
+			req.getRequestDispatcher("loja/cadastro.jsp").forward(req, res);
 		}
 	}
 
@@ -85,36 +90,27 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 		ConsumidorDAO consumidorDAO = new ConsumidorDAO();
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
-		ResultSet resultado = null;
-		Statement stmt = null;
 		ValidaDado valida = new ValidaDado();
 
 		try {
 			if(valida.validarCPF(consumidor.getCpfConsumidor()) == true){
-				stmt = conexao.createStatement();
 
-				/**Grava endereço no banco de dados*/
-				stmt.executeUpdate(enderecoDAO.inserirEndereco(consumidor.getEndereco().getLogradouro(), consumidor.getEndereco().getNumero(), 
-						consumidor.getEndereco().getBairro(), consumidor.getEndereco().getComplemento(), consumidor.getEndereco().getCep(), 
-						consumidor.getEndereco().getCidade(), consumidor.getEndereco().getEstado()));
+				//grava endereco
+				enderecoDAO.inserirEndereco(consumidor.getEndereco());
 
-				/**Pego o id do endereço gravado antes*/
-				resultado = stmt.executeQuery(enderecoDAO.selecionarIdEndereco(consumidor.getEndereco().getNumero(), consumidor.getEndereco().getCep(), 
-						consumidor.getEndereco().getCidade()));
-
-				/**Gravo o consumidor no banco de dados com id do endereço pegado na string sql anterior*/
-				stmt.executeUpdate(consumidorDAO.inserirConsumidor(consumidor.getCpfConsumidor(), consumidor.getEmail(), consumidor.getSenha(), consumidor.getNomeCompleto(), 
-						consumidor.getTelefone(), consumidor.getCelular(), consumidor.getTipoPerfil(), Integer.parseInt(resultado.getString("id"))));
+				int idEndereco = enderecoDAO.selecionarIdEndereco(consumidor.getEndereco());
+				
+				//grava consumidor
+				consumidorDAO.inserirConsumidor(consumidor, idEndereco);
 
 				conexao.commit(); //fecha transação, efetiva comandos
-				stmt.close(); //fecha statement
 				conexao.close(); //fecha conexao com o banco de dados
 			}
 			else{
-				throw new SQLException("CPF inválido!"); //cria uma exceção
+				throw new Exception("CPF inválido!"); //cria uma exceção
 			}
-		} catch (SQLException e) {
-			System.out.println("Erro em cadastrar consumidor: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
+		} catch (Exception e) {
+			System.out.println("Erro em cadastrar consumidor: "+ e.getMessage());
 			conexao.rollback(); //desfaz toda a transação caso haja exceção
 		}
 	}
@@ -154,37 +150,23 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 		ComercianteDAO comercianteDAO = new ComercianteDAO();
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
-		ResultSet resultado = null;
-		Statement stmt;
 
 		//aqui pode-se inserir os teste de validação das informações antes de grava-las no banco de dados
 
 		try {
-			stmt = conexao.createStatement();
 
-			/**Grava endereço no banco de dados*/
-			stmt.executeUpdate(enderecoDAO.inserirEndereco(comerciante.getEndereco().getLogradouro(), comerciante.getEndereco().getNumero(), 
-					comerciante.getEndereco().getBairro(), comerciante.getEndereco().getComplemento(), comerciante.getEndereco().getCep(), 
-					comerciante.getEndereco().getCidade(), comerciante.getEndereco().getEstado()));
+			//grava endereco
+			enderecoDAO.inserirEndereco(comerciante.getEndereco());
 
-			/**Pego o id do endereço gravado antes*/
-			resultado = stmt.executeQuery(enderecoDAO.selecionarIdEndereco(comerciante.getEndereco().getNumero(), 
-					comerciante.getEndereco().getCep(), 
-					comerciante.getEndereco().getCidade()));
-
-			/**Grava supermercado no banco de dados*/
-			stmt.executeQuery(comercianteDAO.inserirSupermercado(comerciante.getSupermercado().getNomeFantasia(), 
-					comerciante.getSupermercado().getRazaoSocial()));
-
-			/**Grava comerciante no banco de dados*/
-			stmt.executeQuery(comercianteDAO.inserirComerciante(comerciante.getCnpjComerciante(), comerciante.getEmail(), comerciante.getSenha(), 
-					comerciante.getNomeCompleto(), comerciante.getTelefone(), comerciante.getCelular(), 
-					comerciante.getTipoPerfil(), Integer.parseInt(resultado.getString("id")), 
-					comerciante.getSupermercado().getNomeFantasia(), comerciante.getSupermercado().getRazaoSocial()));
+			int idEndereco = enderecoDAO.selecionarIdEndereco(comerciante.getEndereco());
+	
+			comercianteDAO.inserirSupermercado(comerciante.getSupermercado());
+			
+			comercianteDAO.inserirComerciante(comerciante, idEndereco);
 			
 			conexao.commit(); //fecha transação, efetiva comandos
-			stmt.close(); //fecha statement
 			conexao.close(); //fecha conexão
+			
 		} catch (SQLException e) {
 			System.out.println("Erro em cadastrar comerciante: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
 			conexao.rollback(); //desfaz todos os comandos em caso de exceção
@@ -195,13 +177,16 @@ public class ServletCadastroUsuario extends HttpServlet{
 	 * @param req
 	 * @throws SQLException 
 	 */
-	private void cadastrarAnunciante(ServletRequest req){
+	private void cadastrarAnunciante(ServletRequest req) throws SQLException{
 		FabricaConexao conn = new FabricaConexao();
 		Anunciante anunciante = new Anunciante();
 		Connection conexao = null;
 
 		conexao = conn.getConexao();
 
+		//Abre transação
+		conexao.setAutoCommit(false);
+		
 		anunciante.getEndereco().setCep(req.getParameter("cep"));
 		anunciante.getEndereco().setCidade(req.getParameter("cidade"));
 		anunciante.getEndereco().setEstado(req.getParameter("estado"));
@@ -221,33 +206,21 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 		AnuncianteDAO anuncianteDAO = new AnuncianteDAO();
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
-		ResultSet resultado = null;
-		Statement stmt = null;
 
 		//aqui pode-se inserir os teste de validação das informações antes de grava-las no banco de dados
 
 		try {
-			stmt = conexao.createStatement();
+			enderecoDAO.inserirEndereco(anunciante.getEndereco());
 
-			/**Grava endereço no banco de dados*/
-			stmt.executeUpdate(enderecoDAO.inserirEndereco(anunciante.getEndereco().getLogradouro(), anunciante.getEndereco().getNumero(), 
-					anunciante.getEndereco().getBairro(), anunciante.getEndereco().getComplemento(), anunciante.getEndereco().getCep(), 
-					anunciante.getEndereco().getCidade(), anunciante.getEndereco().getEstado()));
+			int idEndereco = enderecoDAO.selecionarIdEndereco(anunciante.getEndereco());
 
-			/**Pego o id do endereço gravado antes*/
-			resultado = stmt.executeQuery(enderecoDAO.selecionarIdEndereco(anunciante.getEndereco().getNumero(), 
-					anunciante.getEndereco().getCep(), 
-					anunciante.getEndereco().getCidade()));
+			anuncianteDAO.inserirAnunciante(anunciante, idEndereco);
 
-			/**Gravar anunciante no banco de dados*/
-			stmt.executeQuery(anuncianteDAO.inserirAnunciante(anunciante.getCnpjAnunciante(), anunciante.getEmail(), 
-					anunciante.getSenha(), anunciante.getRazaoSocial(), anunciante.getNomeCompleto(), anunciante.getTelefone(), 
-					anunciante.getCelular(), anunciante.getTipoPerfil(), Integer.parseInt(resultado.getString("id"))));
-
-			stmt.close();
+			conexao.commit();
 			conexao.close();
 		} catch (SQLException e) {
 			System.out.println("Erro em cadastrar anunciante: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
+			conexao.rollback();
 		}
 	}
 }
