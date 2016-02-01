@@ -2,9 +2,7 @@ package br.com.mercadofacil.controlador;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -99,7 +97,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 				enderecoDAO.inserirEndereco(consumidor.getEndereco());
 
 				int idEndereco = enderecoDAO.selecionarIdEndereco(consumidor.getEndereco());
-				
+
 				//grava consumidor
 				consumidorDAO.inserirConsumidor(consumidor, idEndereco);
 
@@ -125,7 +123,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		Connection conexao = null;
 
 		conexao = conn.getConexao();
-		
+
 		//Abrir transação
 		conexao.setAutoCommit(false); //a transação não "commita" sozinha
 
@@ -150,25 +148,27 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 		ComercianteDAO comercianteDAO = new ComercianteDAO();
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
-
-		//aqui pode-se inserir os teste de validação das informações antes de grava-las no banco de dados
+		ValidaDado valida = new ValidaDado();
 
 		try {
-
+			if(valida.validarCNPJ(comerciante.getCnpjComerciante()) == true){
 			//grava endereco
-			enderecoDAO.inserirEndereco(comerciante.getEndereco());
+				enderecoDAO.inserirEndereco(comerciante.getEndereco());
 
-			int idEndereco = enderecoDAO.selecionarIdEndereco(comerciante.getEndereco());
-	
-			comercianteDAO.inserirSupermercado(comerciante.getSupermercado());
-			
-			comercianteDAO.inserirComerciante(comerciante, idEndereco);
-			
-			conexao.commit(); //fecha transação, efetiva comandos
-			conexao.close(); //fecha conexão
-			
-		} catch (SQLException e) {
-			System.out.println("Erro em cadastrar comerciante: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
+				int idEndereco = enderecoDAO.selecionarIdEndereco(comerciante.getEndereco());
+
+				comercianteDAO.inserirSupermercado(comerciante.getSupermercado());
+
+				comercianteDAO.inserirComerciante(comerciante, idEndereco);
+
+				conexao.commit(); //fecha transação, efetiva comandos
+				conexao.close(); //fecha conexão
+			}
+			else{
+				throw new Exception("CNPJ inválido!");
+			}
+		} catch (Exception e) {
+			System.out.println("Erro em cadastrar comerciante: "+ e.getMessage());
 			conexao.rollback(); //desfaz todos os comandos em caso de exceção
 		}
 	}
@@ -186,7 +186,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 		//Abre transação
 		conexao.setAutoCommit(false);
-		
+
 		anunciante.getEndereco().setCep(req.getParameter("cep"));
 		anunciante.getEndereco().setCidade(req.getParameter("cidade"));
 		anunciante.getEndereco().setEstado(req.getParameter("estado"));
@@ -206,10 +206,10 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 		AnuncianteDAO anuncianteDAO = new AnuncianteDAO();
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
-
-		//aqui pode-se inserir os teste de validação das informações antes de grava-las no banco de dados
-
+		ValidaDado valida = new ValidaDado();
+		
 		try {
+			if(valida.validarCNPJ(anunciante.getCnpjAnunciante()) == true){
 			enderecoDAO.inserirEndereco(anunciante.getEndereco());
 
 			int idEndereco = enderecoDAO.selecionarIdEndereco(anunciante.getEndereco());
@@ -218,8 +218,12 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 			conexao.commit();
 			conexao.close();
-		} catch (SQLException e) {
-			System.out.println("Erro em cadastrar anunciante: "+ e.getMessage() +"\nCodigo do erro: "+ e.getErrorCode());
+			}
+			else{
+				throw new Exception("CNPJ inválido!");
+			}
+		} catch (Exception e) {
+			System.out.println("Erro em cadastrar anunciante: "+ e.getMessage());
 			conexao.rollback();
 		}
 	}
