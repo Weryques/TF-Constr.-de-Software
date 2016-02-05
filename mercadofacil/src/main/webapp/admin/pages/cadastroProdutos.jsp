@@ -266,7 +266,7 @@
 								<li><a href="#"> Graficos</a></li>
 								<li><a href="#"> Tabelas</a></li>
 							</ul> <!-- /.nav-second-level --></li>
-						<li><a href="listar.jsp"><i class="fa fa-table fa-fw"></i>
+						<li><a href="../../consultarproduto?categoria=Todos"><i class="fa fa-table fa-fw"></i>
 								Listar</a></li>
 						<li><a href="cadastroProdutos.jsp" class="active"><i
 								class="fa fa-edit fa-fw"></i> Cadastro de Produtos</a></li>
@@ -289,7 +289,7 @@
 						<li><a href="#"><i class="fa fa-files-o fa-fw"></i>
 								Paginas<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="../../visao/home.jsp"> Ir para loja</a></li>
+								<li><a href="../../loja/home.jsp"> Ir para loja</a></li>
 								<li><a href="login.jsp"> Logout</a></li>
 							</ul> <!-- /.nav-second-level --></li>
 					</ul>
@@ -337,14 +337,14 @@
 									required>
 							</div>
 							<div class="form-group col-md-3">
-								<label for="sel1">Categoria:</label> <select Id="Categoria"
+								<label for="sel1">Categoria:</label> <select name="Categoria"
 									class="form-control">
-									<option value="1">---Nenhum---</option>
-									<option value="2">Secos e Molhados</option>
-									<option value="3">Frios</option>
-									<option value="4">Hortifruti</option>
-									<option value="5">Mercearia</option>
-									<option value="6">Utilidades</option>
+									<option value="Nenhum">---Nenhum---</option>
+									<option value="Secos e Molhados">Secos e Molhados</option>
+									<option value="Frios">Frios</option>
+									<option value="Hortifruti">Hortifruti</option>
+									<option value="Mercearia">Mercearia</option>
+									<option value="Utilidades">Utilidades</option>
 								</select>
 							</div>
 							<div class="form-group col-md-4">

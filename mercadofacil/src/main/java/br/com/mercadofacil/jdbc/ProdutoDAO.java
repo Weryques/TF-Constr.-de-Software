@@ -10,7 +10,6 @@ import br.com.mercadofacil.modelo.Produto;
 
 public class ProdutoDAO {
 
-	private Connection conexao;
 	Connection con = new FabricaConexao().getConexao();
 
 	// insert
@@ -36,10 +35,8 @@ public class ProdutoDAO {
 
 			stmt.execute();
 			stmt.close();
-			resultadoInsert = true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			resultadoInsert = false;
 			e.printStackTrace();
 
 		}

@@ -31,21 +31,8 @@ public class ServletDeletaProduto extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		// req.getRequestDispatcher("admin/pages/cadastroProdutos.jsp").forward(req,
-		// res);
-		req.getRequestDispatcher("admin/pages/listar.jsp").forward(req, res);
-		
+		req.getRequestDispatcher("consultarproduto");
 	
-
-	}
-	protected void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		 
-		req.getRequestDispatcher("admin/pages/listar.jsp");
-		
-	}
-
-	
+	}	
 	
 }

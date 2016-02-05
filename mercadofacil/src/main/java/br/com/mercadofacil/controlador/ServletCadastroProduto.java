@@ -2,12 +2,11 @@ package br.com.mercadofacil.controlador;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import br.com.mercadofacil.jdbc.ProdutoDAO;
 import br.com.mercadofacil.modelo.Produto;
@@ -15,9 +14,10 @@ import br.com.mercadofacil.modelo.Produto;
 @WebServlet(value = "/cadastrarproduto")
 public class ServletCadastroProduto extends HttpServlet {
 	@Override
-	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		Produto produto = new Produto();
+		System.out.println("Nome "+produto.getNome());
 		produto.setNome(req.getParameter("NomeProduto"));
 		produto.setValor(Double.parseDouble(req.getParameter("PrecoDeCompraProduto")));
 		produto.setCategoria(req.getParameter("Categoria"));
@@ -30,12 +30,7 @@ public class ServletCadastroProduto extends HttpServlet {
 
 		ProdutoDAO produtoD = new ProdutoDAO();
 		produtoD.InseriProduto(produto);
-
-		// req.getRequestDispatcher("admin/pages/cadastroProdutos.jsp").forward(req,
-		// res);
-		RequestDispatcher view = req.getRequestDispatcher("admin/pages/cadastroProdutos.jsp");
-		view.forward(req, res);
-		view.forward(req, res);
+		res.sendRedirect("admin/pages/cadastroProdutos.jsp");
 
 	}
 }
