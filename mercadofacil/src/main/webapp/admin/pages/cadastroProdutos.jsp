@@ -384,7 +384,7 @@
 								<textarea class="form-control " rows="3" name="descricao"></textarea>
 							</div>
 
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-12">
 								<button type="submit" name="opcao" value="Salvar"
 									class="btn btn-outline btn-primary btn-lg "
 									onclick="validaDados()">Salvar</button>

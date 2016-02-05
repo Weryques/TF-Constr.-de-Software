@@ -14,30 +14,32 @@
  	<script src="../js/bootstrap.min.js"></script>
  	
  	<!-- Barra de navegação - inicio-->
- 	<nav class="navbar navbar-inverse navbar-fixed-top">
- 	
- 		<div class="container-fluid">
-  			<div class="navbar-header">
-   				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  				</button>
-  				 
-    <a class="navbar-brand" href="#">Mercado Fácil</a>
- 			</div>
-  	<div id="navbar" class="navbar-collapse collapse">
-  		<ul class="nav navbar-nav navbar-right">
-    		<li><a href="#">Início</a></li>
-    		<li><a href="#">Opções</a></li>
-    		<li><a href="#">Perfil</a></li>
-    		<li><a href="#">Ajuda</a></li>
-   		</ul>
-  	</div>
-  	
- 		</div>
-	</nav>
+	<div>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span> 
+						<span class="icon-bar"></span> <span class="icon-bar"></span> 
+						<span class="icon-bar"></span>
+					</button>
+
+					<a class="navbar-brand" href="#">Mercado Fácil</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Início</a></li>
+						<li><a href="#">Opções</a></li>
+						<li><a href="#">Perfil</a></li>
+						<li><a href="#">Ajuda</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 	<!-- Barra de navegação - fim -->
 	
 	<!-- Container principal - inicio -->
@@ -54,14 +56,38 @@
  
  				<div class="form-group col-md-4">
    					<label for="campo2">E-mail</label>
-  					<input type="text" class="form-control" id="campo3">
+  					<input type="text" class="form-control" id="campo2">
+ 				</div>
+ 				
+ 				<div class="form-group col-md-4">
+   					<label for="campo3">Repita o e-mail</label>
+   					<input type="text" class="form-control" id="campo3">
  				</div>
  
  				<div class="form-group col-md-4">
-   					<label for="campo3">Campo Três</label>
-   					<input type="text" class="form-control" id="campo3">
+   					<label for="campo4">Telefone</label>
+   					<input type="text" class="form-control" id="campo4">
  				</div>
 
+				<div class="form-group col-md-4">
+   					<label for="campo5">Celular</label>
+   					<input type="text" class="form-control" id="campo5">
+ 				</div>
+ 				
+ 				<div class="form-group col-md-4">
+   					<label for="campo6">CPF</label>
+   					<input type="text" class="form-control" id="campo6">
+ 				</div>
+ 				
+ 				<div class="form-group col-md-4">
+   					<label for="campo7">Senha</label>
+   					<input type="text" class="form-control" id="campo7">
+ 				</div>
+ 				
+ 				<div class="form-group col-md-4">
+   					<label for="campo8">Repita a senha</label>
+   					<input type="text" class="form-control" id="campo8">
+ 				</div>
 			</div>
 			
 			<hr />

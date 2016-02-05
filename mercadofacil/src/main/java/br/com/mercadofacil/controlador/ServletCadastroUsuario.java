@@ -9,6 +9,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import br.com.mercadofacil.jdbc.AnuncianteDAO;
 import br.com.mercadofacil.jdbc.ComercianteDAO;
@@ -23,7 +25,7 @@ import br.com.mercadofacil.modelo.ValidaDado;
 @WebServlet(value = "/cadastrar")
 public class ServletCadastroUsuario extends HttpServlet{
 	@Override
-	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		if(req == null){
 			req.getRequestDispatcher("loja/cadastro.jsp").forward(req, res);
 		}
@@ -54,7 +56,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			req.getRequestDispatcher("loja/cadastro.jsp").forward(req, res);
 		}
 	}
-
+	
 	/**
 	 * @param req
 	 * @throws SQLException 
