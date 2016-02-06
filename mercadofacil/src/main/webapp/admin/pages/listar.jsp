@@ -298,7 +298,7 @@
 					<li><a href="#"><i class="fa fa-files-o fa-fw"></i>
 							Paginas<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
-							<li><a href="../../loja/home.jsp"> Ir para loja</a></li>
+							<li><a href="../../mercadofacil/loja/home.jsp"> Ir para loja</a></li>
 							<li><a href="admin/pages/login.jsp"> Logout</a></li>
 						</ul> <!-- /.nav-second-level --></li>
 				</ul>
