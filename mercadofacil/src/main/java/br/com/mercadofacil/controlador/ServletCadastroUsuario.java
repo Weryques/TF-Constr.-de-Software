@@ -61,7 +61,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 	 * @param req
 	 * @throws SQLException 
 	 */
-	private void cadastrarConsumidor(ServletRequest req) throws SQLException {
+	private void cadastrarConsumidor(HttpServletRequest req) throws SQLException {
 		FabricaConexao conn = new FabricaConexao();
 		Consumidor consumidor = new Consumidor();
 		Connection conexao = null;
@@ -119,7 +119,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 	 * @param req
 	 * @throws SQLException 
 	 */
-	private void cadastrarComerciante(ServletRequest req) throws SQLException {
+	private void cadastrarComerciante(HttpServletRequest req) throws SQLException {
 		FabricaConexao conn = new FabricaConexao();
 		Comerciante comerciante = new Comerciante();
 		Connection conexao = null;
@@ -179,7 +179,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 	 * @param req
 	 * @throws SQLException 
 	 */
-	private void cadastrarAnunciante(ServletRequest req) throws SQLException{
+	private void cadastrarAnunciante(HttpServletRequest req) throws SQLException{
 		FabricaConexao conn = new FabricaConexao();
 		Anunciante anunciante = new Anunciante();
 		Connection conexao = null;
