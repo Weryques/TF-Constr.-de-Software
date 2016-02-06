@@ -1,0 +1,21 @@
+/* @CHARSET "ISO-8859-1"; */
+/* #CadastroProdutos { */
+/* 	border-style: groove ; */
+/* 	padding-bottom:30px;	 */
+/* } */
+/* #ProdutosCadastrados{ */
+/* 	border-style: groove; */
+/* 	padding-bottom:30px; */
+/* } */
+nav{
+	opacity:0.8;
+}
+body{
+	background-color:menu;
+}
+.footer{
+	margin-top:5px;
+	border-style: solid 1px;
+	background-color:threedlightshadow ;
+	
+}

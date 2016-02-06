@@ -47,14 +47,14 @@
 		<h3 class="page-header">Cadastro de usuário</h3>
 		
 		<!-- Formulário - inicio-->
-		<form action="#">
+		<form action="#" class="form-group col-md-10">
 			<div class="row">
  				<div class="form-group col-md-4">
   					 <label for="campo1">Nome completo</label>
   					 <input type="text" class="form-control" id="campo1">
 				</div>
  
- 				<div class="form-group col-md-4">
+ 				<div class="form-group col-md-3">
    					<label for="campo2">E-mail</label>
   					<input type="text" class="form-control" id="campo2">
  				</div>

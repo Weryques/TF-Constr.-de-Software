@@ -1,12 +1,4 @@
-br\com\mercadofacil\jdbc\ProdutoDAO.class
-br\com\mercadofacil\jdbc\EnderecoDAO.class
-br\com\mercadofacil\modelo\ValidaDado.class
-br\com\mercadofacil\controlador\ServletCadastroProduto.class
-br\com\mercadofacil\jdbc\ConsumidorDAO.class
-br\com\mercadofacil\jdbc\ComercianteDAO.class
-br\com\mercadofacil\controlador\ServletDeletaProduto.class
-br\com\mercadofacil\jdbc\ServicoDAO.class
-br\com\mercadofacil\controlador\ServletDeletaUsuario.class
-br\com\mercadofacil\jdbc\AnuncianteDAO.class
-br\com\mercadofacil\controlador\ServletConsultaProduto.class
-br\com\mercadofacil\jdbc\FabricaConexao.class
+br/com/mercadofacil/controlador/ServletConsultaProduto.class
+br/com/mercadofacil/jdbc/ProdutoDAO.class
+br/com/mercadofacil/controlador/ServletCadastroUsuario.class
+br/com/mercadofacil/controlador/ServletDeletaProduto.class
