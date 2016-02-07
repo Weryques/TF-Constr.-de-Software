@@ -5,8 +5,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,18 +23,21 @@ import br.com.mercadofacil.modelo.ValidaDado;
 @WebServlet(value = "/cadastrar")
 public class ServletCadastroUsuario extends HttpServlet{
 	@Override
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		if(req == null){
-			req.getRequestDispatcher("loja/cadastro.jsp").forward(req, res);
+	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String tipoRequisicao = req.getParameter("tipoRequisicao");
+		
+		if(tipoRequisicao == null){
+			req.getRequestDispatcher("../loja/cadastro.jsp").forward(req, res);
 		}
-		else if(req.equals("cadastroConsumidor")){
+		else if(tipoRequisicao.equals("cadastroConsumidor")){
 			try {
+				System.out.println("testec");
 				cadastrarConsumidor(req);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		else if(req.equals("cadastroComerciante")){
+		else if(tipoRequisicao.equals("cadastroComerciante")){
 			try {
 				cadastrarComerciante(req);
 			} catch (SQLException e) {
@@ -44,7 +45,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 				e.printStackTrace();
 			}
 		}
-		else if(req.equals("cadastroAnunciante")){
+		else if(tipoRequisicao.equals("cadastroAnunciante")){
 			try {
 				cadastrarAnunciante(req);
 			} catch (SQLException e) {
@@ -53,7 +54,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			}
 		}
 		else{
-			req.getRequestDispatcher("loja/cadastro.jsp").forward(req, res);
+			req.getRequestDispatcher("../loja/cadastro.jsp").forward(req, res);
 		}
 	}
 	

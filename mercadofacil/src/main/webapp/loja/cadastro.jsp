@@ -14,8 +14,7 @@
  	<script src="../js/bootstrap.min.js"></script>
  	
  	<!-- Barra de navegação - inicio-->
-	<div>
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-inverse">
 
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -39,29 +38,34 @@
 				</div>
 			</div>
 		</nav>
-	</div>
 	<!-- Barra de navegação - fim -->
 	
-	<!-- Container principal - inicio -->
-	<div id="main" class="container-fluid">
-		<h3 class="page-header">Cadastro de usuário</h3>
-		
-		<!-- Formulário - inicio-->
-		<form action="#" class="form-group col-md-10">
+	<div class="container text-center">
+		<button type="button" class="btn btn-default" onclick="mudarEstadoForm('consumidor')">Cadastrar-se como cliente</button>	
+		<button type="button" class="btn btn-default" onclick="mudarEstadoForm('comerciante')">Cadastrar-se como comerciante</button>
+		<button type="button" class="btn btn-default" onclick="mudarEstadoForm('anunciante')">Cadastrar-se como anunciante</button>	
+	</div>
+	
+	<!-- Container consumidor - inicio -->
+	<div id="consumidor" class="container col-sm-offset-2" style="display: none;">
+		<h3 class="page-header text-center">Cadastro de usuário</h3>
+
+		<!-- Formulário consumidor - inicio-->
+		<form action="../cadastrar" class="form-group col-md-10">
 			<div class="row">
  				<div class="form-group col-md-4">
   					 <label for="campo1">Nome completo</label>
   					 <input type="text" class="form-control" id="campo1">
 				</div>
  
- 				<div class="form-group col-md-3">
+ 				<div class="form-group col-md-4">
    					<label for="campo2">E-mail</label>
-  					<input type="text" class="form-control" id="campo2">
+  					<input type="email" class="form-control" id="campo2">
  				</div>
  				
  				<div class="form-group col-md-4">
    					<label for="campo3">Repita o e-mail</label>
-   					<input type="text" class="form-control" id="campo3">
+   					<input type="email" class="form-control" id="campo3">
  				</div>
  
  				<div class="form-group col-md-4">
@@ -81,20 +85,20 @@
  				
  				<div class="form-group col-md-4">
    					<label for="campo7">Senha</label>
-   					<input type="text" class="form-control" id="campo7">
+   					<input type="password" class="form-control" id="campo7">
  				</div>
  				
  				<div class="form-group col-md-4">
    					<label for="campo8">Repita a senha</label>
-   					<input type="text" class="form-control" id="campo8">
+   					<input type="password" class="form-control" id="campo8">
  				</div>
 			</div>
 			
 			<hr />
 			
 			<div id="actions" class="row">
-				<div class="col-md-12">
-					<button type="submit" class="btn btn-primary">Salvar</button>
+				<div class="col-md-12 col-sm-offset-5">
+					<button type="submit" class="btn btn-primary" name="tipoRequisicao" value="cadastroConsumidor">Salvar</button>
 					<a href="#" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>
@@ -103,4 +107,16 @@
 		
 	</div>
 	<!-- Container principal - fim -->
+	
+			<!-- script para exibir ou não a div do formulário -->
+			<script type="text/javascript">
+				function mudarEstadoForm(idElemento){
+					var display = document.getElementById(idElemento).style.display;
+				    
+					if(display == "none")
+				        document.getElementById(idElemento).style.display = 'block';
+				    else
+				        document.getElementById(idElemento).style.display = 'none';
+				}
+			</script>
 </body>
