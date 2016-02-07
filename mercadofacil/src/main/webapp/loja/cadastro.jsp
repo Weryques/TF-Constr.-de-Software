@@ -51,46 +51,92 @@
 		<h3 class="page-header text-center">Cadastro de usuário</h3>
 
 		<!-- Formulário consumidor - inicio-->
-		<form action="../cadastrar" class="form-group col-md-10">
+		<form action="../cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
+		
+			<hr />
+		 	<h4 class="text-center">Informações pessoais</h4>
+		 	<hr />
+			
 			<div class="row">
  				<div class="form-group col-md-4">
   					 <label for="campo1">Nome completo</label>
-  					 <input type="text" class="form-control" id="campo1">
+  					 <input type="text" class="form-control" id="campo1" name="nomeCompleto">
 				</div>
  
  				<div class="form-group col-md-4">
    					<label for="campo2">E-mail</label>
-  					<input type="email" class="form-control" id="campo2">
+  					<input type="email" class="form-control" id="campo2" name="email" placeholder="fulano@servidor.com">
  				</div>
  				
  				<div class="form-group col-md-4">
    					<label for="campo3">Repita o e-mail</label>
-   					<input type="email" class="form-control" id="campo3">
+   					<input type="email" class="form-control" id="campo3" placeholder="fulano@servidor.com">
  				</div>
  
  				<div class="form-group col-md-4">
    					<label for="campo4">Telefone</label>
-   					<input type="text" class="form-control" id="campo4">
+   					<input type="tel" class="form-control" id="campo4" name="telefone" placeholder="(00) 0000-0000">
  				</div>
 
 				<div class="form-group col-md-4">
    					<label for="campo5">Celular</label>
-   					<input type="text" class="form-control" id="campo5">
+   					<input type="text" class="form-control" id="campo5" name="celular" placeholder="(00) 0000-0000">
  				</div>
  				
  				<div class="form-group col-md-4">
    					<label for="campo6">CPF</label>
-   					<input type="text" class="form-control" id="campo6">
+   					<input type="text" class="form-control" id="campo6" name="cpf" placeholder="000.000.000-00">
  				</div>
  				
  				<div class="form-group col-md-4">
    					<label for="campo7">Senha</label>
-   					<input type="password" class="form-control" id="campo7">
+   					<input type="password" class="form-control" id="campo7" name="senha">
  				</div>
  				
  				<div class="form-group col-md-4">
    					<label for="campo8">Repita a senha</label>
    					<input type="password" class="form-control" id="campo8">
+ 				</div>
+			</div>
+			
+			<hr />
+			<h4 class="text-center">Endereço</h4>
+			<hr />
+			
+			<div class="row">
+				<div class="form-group col-md-4">
+  					 <label for="campo1">CEP</label>
+  					 <input type="text" class="form-control" id="campo1" name="cep" placeholder="00000-000">
+				</div>
+ 
+ 				<div class="form-group col-md-4">
+   					<label for="campo2">Cidade</label>
+  					<input type="text" class="form-control" id="campo2" name="cidade">
+ 				</div>
+ 
+ 				<div class="form-group col-md-4">
+   					<label for="campo4">Estado</label>
+   					<input type="text" class="form-control" id="campo4" name="estado">
+ 				</div>
+
+				<div class="form-group col-md-4">
+   					<label for="campo5">Bairro</label>
+   					<input type="text" class="form-control" id="campo5" name="bairro">
+ 				</div>
+ 				
+ 				<div class="form-group col-md-4">
+   					<label for="campo6">Logradouro</label>
+   					<input type="text" class="form-control" id="campo6" name="logradouro">
+ 				</div>
+ 				
+ 				<div class="form-group col-md-4">
+   					<label for="campo7">Complemento</label>
+   					<input type="text" class="form-control" id="campo7" name="complemento">
+ 				</div>
+ 				
+ 				<div class="form-group col-md-4">
+   					<label for="campo8">Número</label>
+   					<input type="text" class="form-control" id="campo8" name="numero">
  				</div>
 			</div>
 			

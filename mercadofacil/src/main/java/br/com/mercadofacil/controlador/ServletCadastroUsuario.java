@@ -31,7 +31,6 @@ public class ServletCadastroUsuario extends HttpServlet{
 		}
 		else if(tipoRequisicao.equals("cadastroConsumidor")){
 			try {
-				System.out.println("testec");
 				cadastrarConsumidor(req);
 			} catch (SQLException e) {
 				e.printStackTrace();
