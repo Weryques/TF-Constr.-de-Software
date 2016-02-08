@@ -96,12 +96,12 @@ public class ServletCadastroUsuario extends HttpServlet{
 			if(valida.validarCPF(consumidor.getCpfConsumidor()) == true){
 
 				//grava endereco
-				enderecoDAO.inserirEndereco(consumidor.getEndereco());
+				enderecoDAO.inserirEndereco(consumidor.getEndereco(), conexao);
 
-				int idEndereco = enderecoDAO.selecionarIdEndereco(consumidor.getEndereco());
+				int idEndereco = enderecoDAO.selecionarIdEndereco(consumidor.getEndereco(), conexao);
 
 				//grava consumidor
-				consumidorDAO.inserirConsumidor(consumidor, idEndereco);
+				consumidorDAO.inserirConsumidor(consumidor, idEndereco, conexao);
 
 				conexao.commit(); //fecha transação, efetiva comandos
 				conexao.close(); //fecha conexao com o banco de dados
@@ -111,6 +111,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			}
 		} catch (Exception e) {
 			System.out.println("Erro em cadastrar consumidor: "+ e.getMessage());
+			e.printStackTrace();
 			conexao.rollback(); //desfaz toda a transação caso haja exceção
 		}
 	}
@@ -155,13 +156,13 @@ public class ServletCadastroUsuario extends HttpServlet{
 		try {
 			if(valida.validarCNPJ(comerciante.getCnpjComerciante()) == true){
 			//grava endereco
-				enderecoDAO.inserirEndereco(comerciante.getEndereco());
+				enderecoDAO.inserirEndereco(comerciante.getEndereco(), conexao);
 
-				int idEndereco = enderecoDAO.selecionarIdEndereco(comerciante.getEndereco());
+				int idEndereco = enderecoDAO.selecionarIdEndereco(comerciante.getEndereco(), conexao);
 
-				comercianteDAO.inserirSupermercado(comerciante.getSupermercado());
+				comercianteDAO.inserirSupermercado(comerciante.getSupermercado(), conexao);
 
-				comercianteDAO.inserirComerciante(comerciante, idEndereco);
+				comercianteDAO.inserirComerciante(comerciante, idEndereco, conexao);
 
 				conexao.commit(); //fecha transação, efetiva comandos
 				conexao.close(); //fecha conexão
@@ -199,6 +200,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 		anunciante.setCnpjAnunciante(req.getParameter("cnpj"));
 		anunciante.setRazaoSocial(req.getParameter("razaoSocial"));
+		anunciante.setCausa(req.getParameter("causa"));
 		anunciante.setNomeCompleto(req.getParameter("nomeCompleto"));
 		anunciante.setEmail(req.getParameter("email"));
 		anunciante.setSenha(req.getParameter("senha"));
@@ -212,11 +214,11 @@ public class ServletCadastroUsuario extends HttpServlet{
 		
 		try {
 			if(valida.validarCNPJ(anunciante.getCnpjAnunciante()) == true){
-			enderecoDAO.inserirEndereco(anunciante.getEndereco());
+			enderecoDAO.inserirEndereco(anunciante.getEndereco(), conexao);
 
-			int idEndereco = enderecoDAO.selecionarIdEndereco(anunciante.getEndereco());
+			int idEndereco = enderecoDAO.selecionarIdEndereco(anunciante.getEndereco(), conexao);
 
-			anuncianteDAO.inserirAnunciante(anunciante, idEndereco);
+			anuncianteDAO.inserirAnunciante(anunciante, idEndereco, conexao);
 
 			conexao.commit();
 			conexao.close();

@@ -16,8 +16,8 @@ public class ValidaDado {
 		int digito = 0;
 		int sequencia = 10, soma = 0;
 
-		digitoVerificador1 = (int) (cpf.charAt(13) - 48);
-		digitoVerificador2 = (int) (cpf.charAt(14) - 48);
+		digitoVerificador1 = (int) (cpf.charAt(12) - 48);
+		digitoVerificador2 = (int) (cpf.charAt(13) - 48);
 
 		//calcular o primeiro digito verificador
 		for(int i = 0; i < 11; i++){
@@ -39,11 +39,14 @@ public class ValidaDado {
 		else if(resto >= 2){
 			digitoComparador = 11 - resto;
 		}
-
+		
+		sequencia = 11;
+		soma = 0;
+		
 		if(digitoComparador == digitoVerificador1){		
 			//calcular o segundo digito verificador
 			for(int i = 0; i < 13; i++){
-				if(cpf.charAt(i) != '.' || cpf.charAt(i) != '-'){
+				if(cpf.charAt(i) != '.' && cpf.charAt(i) != '-'){
 					digito = (int) (cpf.charAt(i) - 48);
 
 					soma = soma + (digito * sequencia);

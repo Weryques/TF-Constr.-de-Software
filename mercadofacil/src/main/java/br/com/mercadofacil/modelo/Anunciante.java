@@ -10,6 +10,7 @@ package br.com.mercadofacil.modelo;
 public class Anunciante extends Usuario{
 	private String cnpjAnunciante;
 	private String razaoSocial;
+	private String causa;
 	
 	/**
 	 * @return the cnpjAnunciante
@@ -34,5 +35,17 @@ public class Anunciante extends Usuario{
 	 */
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
+	}
+	/**
+	 * @return the causa
+	 */
+	public String getCausa() {
+		return causa;
+	}
+	/**
+	 * @param causa the causa to set
+	 */
+	public void setCausa(String causa) {
+		this.causa = causa;
 	}
 }

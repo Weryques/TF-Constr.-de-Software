@@ -3,6 +3,7 @@
  */
 package br.com.mercadofacil.jdbc;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -14,25 +15,27 @@ import br.com.mercadofacil.modelo.Supermercado;
  *
  */
 public class ComercianteDAO {
-	public void inserirComerciante(Comerciante comerciante, int idEndereco) throws SQLException{
+	public void inserirComerciante(Comerciante comerciante, int idEndereco, Connection conexao) throws SQLException{
 		String insertComerciante = "INSERT INTO comerciante ("
 				+ "cnpj, email, senha, nome, telefone, celular, tipoPerfil, idEndereco, nfEmpresa, rsEmpresa) "
 				+ "VALUES('"+ comerciante.getCnpjComerciante() +"', '"+ comerciante.getEmail() +"', md5('"+ comerciante.getSenha() +"'), "
 						+ "'"+ comerciante.getNomeCompleto() +"', '"+ comerciante.getTelefone() +"', '"+ comerciante.getCelular() +"', '"+ comerciante.getTipoPerfil() +"', '"
 						+ ""+ idEndereco +"', '"+ comerciante.getSupermercado().getNomeFantasia() +"', '"+ comerciante.getSupermercado().getRazaoSocial() +"')";
 		
-		Statement stmt = null;
+		Statement stmt = conexao.createStatement();
 		
-		stmt.executeQuery(insertComerciante);
+		stmt.executeUpdate(insertComerciante);
+		stmt.close();
 	}
 	
-	public void inserirSupermercado(Supermercado supermercado) throws SQLException{
+	public void inserirSupermercado(Supermercado supermercado, Connection conexao) throws SQLException{
 		String insertSupermercado = "INSERT INTO supermercado ("
 				+ "nomeFantasia, razaoSocial) "
 				+ "VALUES('"+ supermercado.getNomeFantasia() +"', '"+ supermercado.getRazaoSocial() +"')";
 		
-		Statement stmt = null;
+		Statement stmt = conexao.createStatement();
 		
-		stmt.executeQuery(insertSupermercado);
+		stmt.executeUpdate(insertSupermercado);
+		stmt.close();
 	}
 }
