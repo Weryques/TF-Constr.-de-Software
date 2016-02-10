@@ -31,21 +31,21 @@ public class ServletCadastroUsuario extends HttpServlet{
 		}
 		else if(tipoRequisicao.equals("cadastroConsumidor")){
 			try {
-				cadastrarConsumidor(req);
+				cadastrarConsumidor(req, res);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(tipoRequisicao.equals("cadastroComerciante")){
 			try {
-				cadastrarComerciante(req);
+				cadastrarComerciante(req, res);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(tipoRequisicao.equals("cadastroAnunciante")){
 			try {
-				cadastrarAnunciante(req);
+				cadastrarAnunciante(req, res);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -59,7 +59,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 	 * @param req
 	 * @throws SQLException 
 	 */
-	private void cadastrarConsumidor(HttpServletRequest req) throws SQLException {
+	private void cadastrarConsumidor(HttpServletRequest req, HttpServletResponse res) throws SQLException {
 		FabricaConexao conn = new FabricaConexao();
 		Consumidor consumidor = new Consumidor();
 		Connection conexao = null;
@@ -104,7 +104,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 				conexao.commit(); //fecha transação, efetiva comandos
 				conexao.close(); //fecha conexao com o banco de dados
 				
-				
+				res.sendRedirect("/index.jsp");
 			}
 			else{
 				throw new Exception("CPF inválido!"); //cria uma exceção
@@ -120,7 +120,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 	 * @param req
 	 * @throws SQLException 
 	 */
-	private void cadastrarComerciante(HttpServletRequest req) throws SQLException {
+	private void cadastrarComerciante(HttpServletRequest req, HttpServletResponse res) throws SQLException {
 		FabricaConexao conn = new FabricaConexao();
 		Comerciante comerciante = new Comerciante();
 		Connection conexao = null;
@@ -146,9 +146,6 @@ public class ServletCadastroUsuario extends HttpServlet{
 		comerciante.setCelular(req.getParameter("celular"));
 		comerciante.setTipoPerfil("comerciante");
 
-		comerciante.getSupermercado().setNomeFantasia(req.getParameter("nomeFantasia"));
-		comerciante.getSupermercado().setRazaoSocial(req.getParameter("razaoSocial"));
-
 		ComercianteDAO comercianteDAO = new ComercianteDAO();
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
 		ValidaDado valida = new ValidaDado();
@@ -159,8 +156,6 @@ public class ServletCadastroUsuario extends HttpServlet{
 				enderecoDAO.inserirEndereco(comerciante.getEndereco(), conexao);
 
 				int idEndereco = enderecoDAO.selecionarIdEndereco(comerciante.getEndereco(), conexao);
-
-				comercianteDAO.inserirSupermercado(comerciante.getSupermercado(), conexao);
 
 				comercianteDAO.inserirComerciante(comerciante, idEndereco, conexao);
 
@@ -180,7 +175,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 	 * @param req
 	 * @throws SQLException 
 	 */
-	private void cadastrarAnunciante(HttpServletRequest req) throws SQLException{
+	private void cadastrarAnunciante(HttpServletRequest req, HttpServletResponse res) throws SQLException{
 		FabricaConexao conn = new FabricaConexao();
 		Anunciante anunciante = new Anunciante();
 		Connection conexao = null;

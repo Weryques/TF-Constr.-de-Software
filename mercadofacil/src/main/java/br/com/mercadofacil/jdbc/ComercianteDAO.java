@@ -4,6 +4,7 @@
 package br.com.mercadofacil.jdbc;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -17,10 +18,10 @@ import br.com.mercadofacil.modelo.Supermercado;
 public class ComercianteDAO {
 	public void inserirComerciante(Comerciante comerciante, int idEndereco, Connection conexao) throws SQLException{
 		String insertComerciante = "INSERT INTO comerciante ("
-				+ "cnpj, email, senha, nome, telefone, celular, tipoPerfil, idEndereco, nfEmpresa, rsEmpresa) "
+				+ "cnpj, email, senha, nome, telefone, celular, tipoPerfil, idEndereco) "
 				+ "VALUES('"+ comerciante.getCnpjComerciante() +"', '"+ comerciante.getEmail() +"', md5('"+ comerciante.getSenha() +"'), "
 						+ "'"+ comerciante.getNomeCompleto() +"', '"+ comerciante.getTelefone() +"', '"+ comerciante.getCelular() +"', '"+ comerciante.getTipoPerfil() +"', '"
-						+ ""+ idEndereco +"', '"+ comerciante.getSupermercado().getNomeFantasia() +"', '"+ comerciante.getSupermercado().getRazaoSocial() +"')";
+						+ ""+ idEndereco +"')";
 		
 		Statement stmt = conexao.createStatement();
 		
@@ -37,5 +38,18 @@ public class ComercianteDAO {
 		
 		stmt.executeUpdate(insertSupermercado);
 		stmt.close();
+	}
+	
+	public ResultSet selectCEP(String cep, Connection conexao) throws SQLException{
+		String selectCEP = "SELECT nfEmpresa FROM (A (comerciante natural join endereco) where A.cep = '"+ cep +"')";
+		
+		Statement stmt = conexao.createStatement();
+		ResultSet retornoSelect = null;
+		
+		retornoSelect = stmt.executeQuery(selectCEP);
+		stmt.close();
+		
+		
+		return retornoSelect;
 	}
 }

@@ -42,7 +42,7 @@
 		<h3 class="page-header text-center">Cadastro de usuário</h3>
 
 		<!-- Formulário consumidor - inicio-->
-		<form action="/cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
+		<form action="cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
 		
 			<hr />
 		 	<h4 class="text-center">Informações pessoais</h4>
@@ -136,7 +136,7 @@
 			<div id="actions" class="row">
 				<div class="col-md-12 col-sm-offset-5">
 					<button type="submit" class="btn btn-primary" name="tipoRequisicao" value="cadastroConsumidor">Salvar</button>
-					<a href="cadastropessoafisica.jsp" class="btn btn-default">Cancelar</a>
+					<a href="index.jsp" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>
 		</form>

@@ -47,7 +47,7 @@
 		<h3 class="page-header text-center">Cadastro de usuário</h3>
 
 		<!-- Formulário comerciante - inicio-->
-		<form action="/cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
+		<form action="cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
 		
 			<hr />
 		 	<h4 class="text-center">Informações pessoais</h4>
@@ -154,7 +154,7 @@
 		<h3 class="page-header text-center">Cadastro de usuário</h3>
 
 		<!-- Formulário anunciante - inicio-->
-		<form action="/cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
+		<form action="cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
 		
 			<hr />
 		 	<h4 class="text-center">Informações pessoais</h4>

@@ -20,20 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
 
-	<!--search start here-->
-
-	<div class="search">
-		<i> </i>
-		<div class="s-bar">
-	  	 	<form action="consultarcep">
-				<input type="text" name = "cep" placeholder="CEP 00000-000">
-			<input type="submit"  name="cepProcura" value="Procurar"/>
-	  	</form>
-	</div>
-	</div>
-	<!--search end here-->
-	
-	<div id="supermercados" class="container" style="display: none;">
+	<div id="supermercados" class="container">
 
 	</div>
 
@@ -46,9 +33,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			}
 		}
 	</script>
-	
-	<div class="copyright">
-	 	<p>&copy; 2015 Flat Search Box . All rights reserved | Template by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
-	</div>	
 </body>
 </html>
