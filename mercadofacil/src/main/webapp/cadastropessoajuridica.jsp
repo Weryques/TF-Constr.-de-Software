@@ -6,12 +6,12 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<title>Mercado Fácil - Cadastro</title>
 
- 	<link href="../css/bootstrap.min.css" rel="stylesheet">
- 	<link href="../css/style.css" rel="stylesheet">
+ 	<link href="css/bootstrap.min.css" rel="stylesheet">
+ 	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-	<script src="../js/jquery.min.js"></script>
- 	<script src="../js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+ 	<script src="js/bootstrap.min.js"></script>
  	
  	<!-- Barra de navegação - inicio-->
 		<nav class="navbar navbar-inverse">
@@ -47,7 +47,7 @@
 		<h3 class="page-header text-center">Cadastro de usuário</h3>
 
 		<!-- Formulário comerciante - inicio-->
-		<form action="../cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
+		<form action="/cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
 		
 			<hr />
 		 	<h4 class="text-center">Informações pessoais</h4>
@@ -141,7 +141,7 @@
 			<div id="actions" class="row">
 				<div class="col-md-12 col-sm-offset-5">
 					<button type="submit" class="btn btn-primary" name="tipoRequisicao" value="cadastroConsumidor">Salvar</button>
-					<a href="../loja/cadastro.jsp" class="btn btn-default">Cancelar</a>
+					<a href="cadastropessoajuridica.jsp" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>
 		</form>
@@ -154,7 +154,7 @@
 		<h3 class="page-header text-center">Cadastro de usuário</h3>
 
 		<!-- Formulário anunciante - inicio-->
-		<form action="../cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
+		<form action="/cadastrar" method="post" class="form-group col-md-10 col-sm-offset-1">
 		
 			<hr />
 		 	<h4 class="text-center">Informações pessoais</h4>
@@ -258,7 +258,7 @@
 			<div id="actions" class="row">
 				<div class="col-md-12 col-sm-offset-5">
 					<button type="submit" class="btn btn-primary" name="tipoRequisicao" value="cadastroConsumidor">Salvar</button>
-					<a href="../loja/cadastro.jsp" class="btn btn-default">Cancelar</a>
+					<a href="cadastropessoajuridica.jsp" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>
 		</form>

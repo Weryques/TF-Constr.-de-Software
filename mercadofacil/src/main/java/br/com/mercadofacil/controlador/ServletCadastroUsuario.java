@@ -27,7 +27,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		String tipoRequisicao = req.getParameter("tipoRequisicao");
 		
 		if(tipoRequisicao == null){
-			req.getRequestDispatcher("../loja/cadastro.jsp").forward(req, res);
+			req.getRequestDispatcher("/404.html").forward(req, res);
 		}
 		else if(tipoRequisicao.equals("cadastroConsumidor")){
 			try {
@@ -51,7 +51,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			}
 		}
 		else{
-			req.getRequestDispatcher("../loja/cadastro.jsp").forward(req, res);
+			req.getRequestDispatcher("/404.html").forward(req, res);
 		}
 	}
 	
@@ -103,6 +103,8 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 				conexao.commit(); //fecha transação, efetiva comandos
 				conexao.close(); //fecha conexao com o banco de dados
+				
+				
 			}
 			else{
 				throw new Exception("CPF inválido!"); //cria uma exceção
