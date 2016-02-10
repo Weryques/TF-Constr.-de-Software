@@ -15,13 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  */
 public class ServletAutenticacao extends HttpServlet{
-	
-	/* (non-Javadoc)
-	 * @see javax.servlet.http.HttpServlet#service(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-	 */
 	@Override
 	protected void service(HttpServletRequest requisicao, HttpServletResponse resposta) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.service(requisicao, resposta);
+		
 	}
 }

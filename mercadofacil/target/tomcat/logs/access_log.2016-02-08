@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [08/Feb/2016:00:20:14 -0200] "POST /mercadofacil/cadastrar HTTP/1.1" 200 - http-bio-8080-exec-1 77624
+0:0:0:0:0:0:0:1 - - [08/Feb/2016:01:00:27 -0200] "POST /mercadofacil/cadastrar HTTP/1.1" 200 - http-bio-8080-exec-1 351154

@@ -78,28 +78,28 @@ public class ValidaDado {
 		int digito;
 		int soma = 0, j = 0, k = 0;
 
-		digitoVerificador1 = (int) (cnpj.charAt(17) - 48);
-		digitoVerificador2 = (int) (cnpj.charAt(18) - 48);
+		digitoVerificador1 = (int) (cnpj.charAt(16) - 48);
+		digitoVerificador2 = (int) (cnpj.charAt(17) - 48);
 
 		//calculo do primeiro digito
 		j = 5;
 		k = 9;
-		for(int i = 0; i < 15; i++){
+		for(int i = 0; i < 14; i++){
 			if(cnpj.charAt(i) != '.' || cnpj.charAt(i) != '/' || cnpj.charAt(i) != '-'){
 				digito = (int) (cnpj.charAt(i) - 48);
 
-				if(i < 4){
+				if(i < 3){
 					soma += digito * j;
 					j--;
 					if(j == 2){
 						j = 5;
 					}
 				}
-				else if(i > 3 && i < 8){
+				else if(i > 2 && i < 7){
 					soma += digito * k;
 					k--;
 				}
-				else if(i >= 8){
+				else if(i >= 7){
 					soma += digito * j;
 					j--;
 				}
@@ -122,15 +122,15 @@ public class ValidaDado {
 			j = 6;
 			k = 9;
 			soma = 0;
-			for(int i = 0; i < 17; i++){
+			for(int i = 0; i < 16; i++){
 				if(cnpj.charAt(i) != '.' || cnpj.charAt(i) != '/' || cnpj.charAt(i) != '-'){
 					digito = (int) (cnpj.charAt(i) - 48);
 
-					if(i < 5){
+					if(i < 4){
 						soma += digito * j;
 						j--;
 					}
-					else if(i > 4 && i < 13){
+					else if(i > 3 && i < 12){
 						soma += digito * k;
 						k--;
 					}

@@ -8,6 +8,7 @@
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/ValidaDado.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletDeletaProduto.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletConsultaProduto.java
+/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletConsultaCEP.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/EnderecoDAO.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Comerciante.java
 /Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Supermercado.java

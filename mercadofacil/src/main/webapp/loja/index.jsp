@@ -22,9 +22,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="search">
 	<i> </i>
 	<div class="s-bar">
-	   <form>
+	   <form action="../consultarcep">
 		<input type="text" value="Digite seu CEP" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Digite seu CEP';}">
-		<input type="submit"  value="Procurar"/>
+		<input type="submit"  name="cep" value="Procurar"/>
 	  </form>
 	</div>
 </div>

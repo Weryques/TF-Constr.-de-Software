@@ -40,7 +40,6 @@ public class ServletCadastroUsuario extends HttpServlet{
 			try {
 				cadastrarComerciante(req);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -48,7 +47,6 @@ public class ServletCadastroUsuario extends HttpServlet{
 			try {
 				cadastrarAnunciante(req);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -86,7 +84,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		consumidor.setSenha(req.getParameter("senha"));
 		consumidor.setTelefone(req.getParameter("telefone"));
 		consumidor.setCelular(req.getParameter("celular"));
-		consumidor.setTipoPerfil("tipoPerfil");
+		consumidor.setTipoPerfil("consumidor");
 
 		ConsumidorDAO consumidorDAO = new ConsumidorDAO();
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
@@ -144,7 +142,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		comerciante.setSenha(req.getParameter("senha"));
 		comerciante.setTelefone(req.getParameter("telefone"));
 		comerciante.setCelular(req.getParameter("celular"));
-		comerciante.setTipoPerfil("tipoPerfil");
+		comerciante.setTipoPerfil("comerciante");
 
 		comerciante.getSupermercado().setNomeFantasia(req.getParameter("nomeFantasia"));
 		comerciante.getSupermercado().setRazaoSocial(req.getParameter("razaoSocial"));
@@ -206,7 +204,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		anunciante.setSenha(req.getParameter("senha"));
 		anunciante.setTelefone(req.getParameter("telefone"));
 		anunciante.setCelular(req.getParameter("celular"));
-		anunciante.setTipoPerfil("tipoPerfil");
+		anunciante.setTipoPerfil("anunciante");
 
 		AnuncianteDAO anuncianteDAO = new AnuncianteDAO();
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
