@@ -9,7 +9,6 @@ public class FabricaConexao {
 	public Connection getConexao() {
 	     try {
 	         return DriverManager.getConnection("jdbc:mysql://localhost/mercadofacil?user=root");
-	    
 	     } catch (SQLException e) {
 	    	 System.out.println(e.getSQLState());
 	    	 System.out.println(e.getMessage());
