@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:37:52 -0200] "GET / HTTP/1.1" 404 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:37:54 -0200] "GET /mercadofacil/index.jsp HTTP/1.1" 200 1856 http-bio-8080-exec-2 44
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:37:54 -0200] "GET /mercadofacil/css/styleIndex.css HTTP/1.1" 304 - http-bio-8080-exec-3 5
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:37:54 -0200] "GET /mercadofacil/images/search.png HTTP/1.1" 304 - http-bio-8080-exec-5 4
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:37:54 -0200] "GET /mercadofacil/images/fundo1.jpeg HTTP/1.1" 200 1920235 http-bio-8080-exec-4 30
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:38:21 -0200] "GET /mercadofacil/consultarcep?cep=74444-000&cepProcura=Procurar HTTP/1.1" 200 - http-bio-8080-exec-8 323
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:51:34 -0200] "GET / HTTP/1.1" 404 - http-bio-8080-exec-10 0
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:51:37 -0200] "GET /mercadofacil/loja/cadastro.jsp HTTP/1.1" 404 1011 http-bio-8080-exec-10 3
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:51:43 -0200] "GET / HTTP/1.1" 404 - http-bio-8080-exec-10 0
+0:0:0:0:0:0:0:1 - - [11/Feb/2016:19:51:43 -0200] "GET / HTTP/1.1" 404 - http-bio-8080-exec-10 0

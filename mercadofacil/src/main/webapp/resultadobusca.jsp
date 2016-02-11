@@ -1,8 +1,4 @@
-<!--Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -20,18 +16,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
 
-	<div id="supermercados" class="container">
-
+	<div class="container">
+	
+	<hr />
+	
+	<h3 class="text-center page-header">Supermercados encontrados</h3>
+	
+	<hr />
+	
+	<table>
+      <c:forEach items="${supermercados}" var="supermercado">
+        <tr>
+          <td><c:out value="${supermercado}" /><td>
+        </tr>
+      </c:forEach>
+    </table>
 	</div>
-
-	<script type="text/javascript">
-		function mudarEstado(id){
-			var display = document.getElementById(id).style.display;
-			
-			if(display = "none"){
-				document.getElementById(id).style.display = 'block';
-			}
-		}
-	</script>
 </body>
 </html>
