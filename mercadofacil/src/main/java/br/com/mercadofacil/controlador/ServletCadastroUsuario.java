@@ -23,7 +23,7 @@ import br.com.mercadofacil.modelo.ValidaDado;
 @WebServlet(value = "/cadastrar")
 public class ServletCadastroUsuario extends HttpServlet{
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String tipoRequisicao = req.getParameter("tipoRequisicao");
 		
 		if(tipoRequisicao == null){

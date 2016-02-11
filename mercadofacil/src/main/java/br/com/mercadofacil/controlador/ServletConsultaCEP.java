@@ -4,12 +4,10 @@
 package br.com.mercadofacil.controlador;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,12 +27,15 @@ public class ServletConsultaCEP extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String requisicao = req.getParameter("cepProcura");
-				
+		
+		System.out.println("consultarcep chamado");
+		
 		if(requisicao == null){
 			req.getRequestDispatcher("/index.jsp").forward(req, resp);
 		}
 		else if(requisicao.equals("Procurar")){
 			try {
+				System.out.println("cep");
 				procurarSupermercado(req, resp);
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -50,7 +51,6 @@ public class ServletConsultaCEP extends HttpServlet{
 		Connection conexao = null;
 		ComercianteDAO comerciante = new ComercianteDAO();
 		ResultSet retornoSelect = null;
-		List<String> supermercados = new ArrayList<String>();
 		
 		conexao = conn.getConexao();
 		
@@ -58,22 +58,24 @@ public class ServletConsultaCEP extends HttpServlet{
 		
 		try{
 			retornoSelect = comerciante.selectCEP(req.getParameter("cep"), conexao);
-						
-			if(retornoSelect != null){
-				while(retornoSelect.next()){
-					supermercados.add(retornoSelect.getString("nfEmpresa"));
-				}
-			}		
 			
-			resp.sendRedirect("resultadobusca.jsp");
-			req.setAttribute("supermercados", supermercados);
+			ArrayList<String> supermercados = new ArrayList<String>();
+			
+			while(retornoSelect.next()){
+				supermercados.add(retornoSelect.getString("nfEmpresa"));
+			}
+			
+			req.setAttribute("supermercados", supermercados);;
 			
 			conexao.commit();
 			conexao.close();
-			retornoSelect.close();
 		}
 		catch(Exception e){
 			conexao.rollback();
-		}		
+		}
+		
+		resp.sendRedirect("/resultadobusca.jsp");
+
+		retornoSelect.close();
 	}
 }
