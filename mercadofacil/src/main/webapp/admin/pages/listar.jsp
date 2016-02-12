@@ -57,6 +57,13 @@
 			location.href= "deletarproduto?id="+id;	
 		}
 	}
+	function editar() {
+		var tagSelect = document.Categoria.opcao;		
+		var itemSelecionado = tagSelect.options[tagSelect.selectedIndex].value;
+		if(itemSelecionado!==""){
+			window.location.href="consultarproduto?categoria="+itemSelecionado;
+		}		
+	}
 
 </script>
 <body onload="t" id="wrapper">
@@ -347,6 +354,7 @@
 						<table class="table table-hover table-bordered">
 							<thead>
 								<tr>
+									<th>Imagem</th>
 									<th>#</th>
 									<th>Nome</th>
 									<th>Categoria</th>
@@ -361,15 +369,19 @@
 								%>
 
 								<tr class="info">
+									<td> 
+										<img alt="Bootstrap Image Preview" src="http://lorempixel.com/80/80/" class="img-thumbnail" />
+											
+									</td>
 									<td><%=ListaDeProdutos.get(i).getId()%></td>
 									<td><%=ListaDeProdutos.get(i).getNome()%></td>
 									<td><%=ListaDeProdutos.get(i).getCategoria()%></td>
 									<td><%=ListaDeProdutos.get(i).getValor()%>R$</td>
-									<td><a class="glyphicon glyphicon-pencil"> Editar</a></td>
-									<td><a class="glyphicon glyphicon-trash"
+									<td><h4><a class="glyphicon glyphicon-pencil"> Editar</a></h4></td>
+									<td><h4><a class="glyphicon glyphicon-trash"
 										style="color: red"
 										onclick="ConfirmaExclusao(<%=ListaDeProdutos.get(i).getId()%>)">
-											Excluir</a></td>
+											Excluir</a></h4></td>
 								</tr>
 
 								<%

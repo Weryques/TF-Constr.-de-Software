@@ -1,5 +1,5 @@
-br/com/mercadofacil/controlador/ServletConsultaProduto.class
-br/com/mercadofacil/jdbc/ProdutoDAO.class
-br/com/mercadofacil/controlador/ServletCadastroUsuario.class
-br/com/mercadofacil/controlador/ServletDeletaProduto.class
-br/com/mercadofacil/controlador/ServletConsultaCEP.class
+br\com\mercadofacil\jdbc\ProdutoDAO.class
+br\com\mercadofacil\controlador\ServletConsultaCEP.class
+br\com\mercadofacil\controlador\ServletCadastroUsuario.class
+br\com\mercadofacil\controlador\ServletDeletaProduto.class
+br\com\mercadofacil\controlador\ServletConsultaProduto.class

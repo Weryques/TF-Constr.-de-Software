@@ -61,9 +61,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="#"><span ></span> Usúario  </a><label>/</label></li>
-       			 	<li><a href="#"><span ></span> Carrinho  </a><label>/</label></li>
-     				<li><a href="../admin/index.jsp">  Admin </a> </li>		
+					<li><a href="#" class="glyphicon glyphicon-user"><span ></span>Usuário  </a><label>/</label></li>
+       			 	<li><a href="carrinhoCompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
+     				<li><a href="../admin/index.jsp" class="glyphicon glyphicon-lock">Admin </a> </li>		
 				</ul>
 				<div class="clearfix"> </div>
 			</div>

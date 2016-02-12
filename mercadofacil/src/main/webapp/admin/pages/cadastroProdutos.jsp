@@ -383,7 +383,15 @@
 								<label for="descricao"> Descrição </label>
 								<textarea class="form-control " rows="3" name="descricao"></textarea>
 							</div>
-
+							<div class="form-group col-md-6">
+								<label for="exampleInputFile">
+									Imagen
+								</label>
+								<input type="file" id="exampleInputFile">
+								<p class="help-block">
+									Escolha uma imagem para o produto.
+								</p>
+							</div>
 							<div class="form-group col-md-12">
 								<button type="submit" name="opcao" value="Salvar"
 									class="btn btn-outline btn-primary btn-lg "

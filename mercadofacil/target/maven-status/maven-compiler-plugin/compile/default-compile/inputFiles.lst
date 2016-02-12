@@ -1,24 +1,24 @@
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/ProdutoDAO.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/ComercianteDAO.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Usuario.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Servico.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/ConsumidorDAO.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/ServicoDAO.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletDeletaUsuario.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/ValidaDado.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletDeletaProduto.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletConsultaProduto.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletConsultaCEP.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/EnderecoDAO.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Comerciante.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Supermercado.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Consumidor.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletAutenticacao.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletCadastroUsuario.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/FabricaConexao.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletCadastroServico.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/jdbc/AnuncianteDAO.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Endereco.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/controlador/ServletCadastroProduto.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Anunciante.java
-/Users/weryquessantos/git/TF-Constr.-de-Software/mercadofacil/src/main/java/br/com/mercadofacil/modelo/Produto.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\ValidaDado.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\jdbc\AnuncianteDAO.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\Produto.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\controlador\ServletCadastroProduto.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\jdbc\ConsumidorDAO.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\jdbc\FabricaConexao.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\Endereco.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\controlador\ServletCadastroServico.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\controlador\ServletDeletaProduto.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\Consumidor.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\jdbc\EnderecoDAO.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\Anunciante.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\Servico.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\controlador\ServletDeletaUsuario.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\jdbc\ProdutoDAO.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\controlador\ServletConsultaProduto.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\controlador\ServletCadastroUsuario.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\jdbc\ServicoDAO.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\jdbc\ComercianteDAO.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\Comerciante.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\controlador\ServletAutenticacao.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\controlador\ServletConsultaCEP.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\Supermercado.java
+C:\Users\Weliton Lima\git\TF-Constr.-de-Software\mercadofacil\src\main\java\br\com\mercadofacil\modelo\Usuario.java

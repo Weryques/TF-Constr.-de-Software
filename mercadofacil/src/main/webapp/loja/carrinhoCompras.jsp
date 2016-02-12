@@ -55,9 +55,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="account.html">My Account</a> <label>/</label></li>
-					<li><a href="#">My Cart</a> <label>/</label></li>
-					<li><a href="checkout.html">  Checkout </a> </li>		
+					<li><a href="#" class="glyphicon glyphicon-user"><span ></span>Usúario  </a><label>/</label></li>
+       			 	<li><a href="loja/carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
+     				<li><a href="../admin/index.jsp" class="glyphicon glyphicon-lock">Admin </a> </li>			
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-nav">
 					<span class="menu"> </span>
 					<ul>
-						<li  ><a href="index.html" >Home  </a><label>- </label> </li>
+						<li  ><a href="home.jsp" >Home  </a><label>- </label> </li>
 						<li><a href="location.html" > Locations</a><label>- </label></li>
 						<li><a href="specials.html">Specials </a><label>- </label></li>
 						<li class="active1"><a href="404.html" > Order Online</a><label>- </label></li>
