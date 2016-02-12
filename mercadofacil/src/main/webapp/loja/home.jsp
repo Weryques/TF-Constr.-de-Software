@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <head>
-<title>Food shop A Hotel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+<title>Supermercado Único</title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -47,13 +47,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="home.jsp">Mercado Fácil</a></h1>
+				<h1><a href="home.jsp">Supermercado Único</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
 					<ul class="header-grid">
-						<li  ><a href="account.html">My Account   </a> <label>/</label></li>
-						<li ><a href="login.jsp">  Login </a> </li>		
+						<li  ><a href="account.html">Minha conta   </a> <label>/</label></li>
+						<li ><a href="login.jsp">  Entrar </a> </li>		
 					</ul>
 					<div class="act">
 						<a href="#" class="done">Donec actortor </a>

@@ -1,13 +1,9 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<%@page isErrorPage="true" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<title>Mercado FÃ¡cil - 404 Error</title>
+<title>Mercado Fácil - 404 Error</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
