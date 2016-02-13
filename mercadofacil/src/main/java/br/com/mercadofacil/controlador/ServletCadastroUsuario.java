@@ -27,7 +27,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		String tipoRequisicao = req.getParameter("tipoRequisicao");
 		
 		if(tipoRequisicao == null){
-			req.getRequestDispatcher("/404.html").forward(req, res);
+			req.getRequestDispatcher("/404.jsp").forward(req, res);
 		}
 		else if(tipoRequisicao.equals("cadastroConsumidor")){
 			try {
@@ -51,7 +51,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			}
 		}
 		else{
-			req.getRequestDispatcher("/404.html").forward(req, res);
+			req.getRequestDispatcher("/404.jsp").forward(req, res);
 		}
 	}
 	
@@ -119,8 +119,9 @@ public class ServletCadastroUsuario extends HttpServlet{
 	/**
 	 * @param req
 	 * @throws SQLException 
+	 * @throws IOException 
 	 */
-	private void cadastrarComerciante(HttpServletRequest req, HttpServletResponse res) throws SQLException {
+	private void cadastrarComerciante(HttpServletRequest req, HttpServletResponse res) throws SQLException, IOException {
 		FabricaConexao conn = new FabricaConexao();
 		Comerciante comerciante = new Comerciante();
 		Connection conexao = null;
@@ -161,6 +162,8 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 				conexao.commit(); //fecha transação, efetiva comandos
 				conexao.close(); //fecha conexão
+				
+				res.sendRedirect("/loginpessoajuridica.jsp");
 			}
 			else{
 				throw new Exception("CNPJ inválido!");
@@ -168,14 +171,16 @@ public class ServletCadastroUsuario extends HttpServlet{
 		} catch (Exception e) {
 			System.out.println("Erro em cadastrar comerciante: "+ e.getMessage());
 			conexao.rollback(); //desfaz todos os comandos em caso de exceção
+			res.sendRedirect("/cadastropessoajuridica.jsp");
 		}
 	}
 
 	/**
 	 * @param req
 	 * @throws SQLException 
+	 * @throws IOException 
 	 */
-	private void cadastrarAnunciante(HttpServletRequest req, HttpServletResponse res) throws SQLException{
+	private void cadastrarAnunciante(HttpServletRequest req, HttpServletResponse res) throws SQLException, IOException{
 		FabricaConexao conn = new FabricaConexao();
 		Anunciante anunciante = new Anunciante();
 		Connection conexao = null;
@@ -217,6 +222,8 @@ public class ServletCadastroUsuario extends HttpServlet{
 
 			conexao.commit();
 			conexao.close();
+			
+			res.sendRedirect("/loginpessoajuridica.jsp");
 			}
 			else{
 				throw new Exception("CNPJ inválido!");
@@ -224,6 +231,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		} catch (Exception e) {
 			System.out.println("Erro em cadastrar anunciante: "+ e.getMessage());
 			conexao.rollback();
+			res.sendRedirect("/cadastropessoafisica.jsp");
 		}
 	}
 }
