@@ -52,4 +52,17 @@ public class ComercianteDAO {
 		
 		return retornoSelect;
 	}
+	
+	public ResultSet selectTudo(String senha, String email, Connection conexao) throws SQLException{
+		String selectTudo = "SELECT * FROM comerciante WHERE email = '"+ email +"'"
+				+ " AND senha = md5('"+ senha +"')";
+		
+		Statement stmt = conexao.createStatement();
+		ResultSet retornoSelect = null;
+		
+		retornoSelect = stmt.executeQuery(selectTudo);
+		stmt.close();
+		
+		return retornoSelect;
+	}
 }

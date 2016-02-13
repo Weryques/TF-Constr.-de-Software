@@ -24,7 +24,7 @@
 	
 	<hr />
 	
-	<table>
+	<table class="col-sm-offset-2">
       <c:forEach items="${supermercados}" var="supermercado">
         <tr>
           <td><c:out value="${supermercado}" /><td>
