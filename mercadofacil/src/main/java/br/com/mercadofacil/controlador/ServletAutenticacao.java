@@ -73,7 +73,7 @@ public class ServletAutenticacao extends HttpServlet{
 				//colocando comerciante na sessão
 				req.getSession().setAttribute("comerciante", comerciante);
 				
-				resp.sendRedirect("/comerciante/paginacomerciante.jsp");//redireciona pra página do perfil do comerciante
+				resp.sendRedirect("/comerciante/principal.jsp");//redireciona pra página do perfil do comerciante
 				
 				conexao.commit();
 				conexao.close();

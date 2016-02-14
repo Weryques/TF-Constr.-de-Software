@@ -24,9 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
-<!--//fonts-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+
 
 
 </head>
@@ -35,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="four">
 			<h2>OOPS! - Acho que perdermos isso!</h2>
 			<h3>404 Error!</h3>
-			<a href="index.jsp" class="details">Voltar</a>
+			<a href="/mercadofacil/index.jsp" class="details">Voltar</a>
 		</div>
 	</div>
 </body>
