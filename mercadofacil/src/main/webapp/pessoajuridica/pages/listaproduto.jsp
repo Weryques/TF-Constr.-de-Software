@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>MF Admin - Listar</title>
+<title>Lista de Produtos</title>
 
 <!-- Bootstrap Core CSS -->
 <link
@@ -78,7 +78,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand active" href="admin/pages/painelAdmin.jsp">Mercado
+			<a class="navbar-brand active" href="../../comerciante/principal.jsp">Mercado
 				Fácil</a>
 		</div>
 		<!-- /.navbar-header -->
