@@ -142,11 +142,11 @@
                    <div class="info-box">
                         <span class="arrow"></span>
                             <div class="">
-                            	<a href="/admin/listar.jsp" class="btn btn-info" role="button">Ver supermercados cadastrados</a>
+                            	<a href="../admin/pages/listar.jsp" class="btn btn-info" role="button">Ver supermercados cadastrados</a>
                             	<a href="#" class="btn btn-info" role="button">Cadastrar novo supermercado</a>
                             	<a href="#" class="btn btn-info" role="button">Ver produtos cadastrados</a>
                             	<a href="#" class="btn btn-default" role="button">Excluir supermercados</a>
-                               	<a href="/admin/cadastroProdutos.jsp" class="btn btn-info" role="button">Cadastrar produtos</a><br>
+                               	<a href="../admin/pages/cadastroProdutos.jsp" class="btn btn-info" role="button">Cadastrar produtos</a><br>
                                	<a href="#" class="btn btn-default" role="button">Excluir produtos</a>
                             </div>
                    </div>
