@@ -30,7 +30,7 @@ public class ServletCadastroProduto extends HttpServlet {
 
 		ProdutoDAO produtoD = new ProdutoDAO();
 		produtoD.InseriProduto(produto);
-		res.sendRedirect("admin/pages/cadastroProdutos.jsp");
+		res.sendRedirect("pessoajuridica/pages/cadastroproduto.jsp");
 
 	}
 }

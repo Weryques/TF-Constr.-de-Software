@@ -31,7 +31,7 @@ public class ServletDeletaProduto extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		RequestDispatcher  view  = req.getRequestDispatcher("admin/pages/redirecionaAposDeletar.jsp");
+		RequestDispatcher  view  = req.getRequestDispatcher("pessoajuridica/pages/redirecionaaposdeletar.jsp");
 		view.forward(req, res);
 	}	
 	

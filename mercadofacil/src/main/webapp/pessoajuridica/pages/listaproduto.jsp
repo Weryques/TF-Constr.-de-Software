@@ -103,7 +103,7 @@
 		<div class="navbar-default sidebar" role="navigation">
 			<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
-						<li><a href="paineladmin.jsp"><i
+						<li><a href="../../comerciante/principal.jsp"><i
 								class="fa fa-dashboard fa-fw"></i> Principal</a></li>
 						<li><a href="../../consultarproduto?categoria=Todos"><i class="fa fa-table fa-fw"></i>
 								Listar</a></li>

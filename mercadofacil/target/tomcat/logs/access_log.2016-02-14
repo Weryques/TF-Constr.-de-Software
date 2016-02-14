@@ -173,3 +173,10 @@
 0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:01:48 -0200] "GET /mercadofacil/pessoajuridica/pages/css/styleHomeLoginCarrinho.css HTTP/1.1" 404 1652 http-bio-8080-exec-6 1
 0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:01:48 -0200] "GET /mercadofacil/pessoajuridica/pages/js/easing.js HTTP/1.1" 404 1652 http-bio-8080-exec-9 1
 0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:01:48 -0200] "GET /mercadofacil/pessoajuridica/pages/js/move-top.js HTTP/1.1" 404 1652 http-bio-8080-exec-2 1
+0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:11:22 -0200] "GET /mercadofacil/pessoajuridica/pages/redirecionaaposdeletar.jsp HTTP/1.1" 200 365 http-bio-8080-exec-3 41
+0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:11:22 -0200] "GET /mercadofacil/pessoajuridica/pages/consultarproduto?categoria=Todos HTTP/1.1" 404 1652 http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:11:23 -0200] "GET /mercadofacil/pessoajuridica/pages/css/bootstrap.css HTTP/1.1" 404 1652 http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:11:23 -0200] "GET /mercadofacil/pessoajuridica/pages/js/jquery.min.js HTTP/1.1" 404 1652 http-bio-8080-exec-4 1
+0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:11:23 -0200] "GET /mercadofacil/pessoajuridica/pages/css/styleHomeLoginCarrinho.css HTTP/1.1" 404 1652 http-bio-8080-exec-5 2
+0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:11:23 -0200] "GET /mercadofacil/pessoajuridica/pages/js/easing.js HTTP/1.1" 404 1652 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [14/Feb/2016:01:11:23 -0200] "GET /mercadofacil/pessoajuridica/pages/js/move-top.js HTTP/1.1" 404 1652 http-bio-8080-exec-10 2
