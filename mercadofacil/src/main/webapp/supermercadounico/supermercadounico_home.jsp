@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -58,7 +59,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="#" class="glyphicon glyphicon-user"><span ></span>Usuário  </a><label>/</label></li>
+				<% if(session.getAttribute("consumidor") != null){
+					
+					out.prin("");
+				}
+				%>
+					<li><a href="#" class="glyphicon glyphicon-user"><span ></span><c:out value="${sessionScope.consumidor.nome}"/>  </a><label>/</label></li>
        			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
      				<li><a href="../loginpessoajuridica.jsp" class="glyphicon glyphicon-lock">Admin </a> </li>		
 				</ul>
@@ -160,58 +166,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!---->
 			<div class="col-md-8 food-grid">
 				<div class="cup">
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="../images/p1.jpg" class="img-responsive" alt=""></a>
-						<p>Lorem ipsum dolor sit consectetur</p>
+					<div class="col-md-5 cup-in">
+						<a href="#"><img src="../images/p1.jpg" class="img-responsive" alt=""></a>
+						<p>Produto 1</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
-							<a href="#" class="details">Details</a>
+							<a href="#" class="details">Detalhes</a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="../images/p2.jpg" class="img-responsive" alt=""></a>
-						<p>Lorem ipsum dolor sit consectetur</p>
+					<div class="col-md-5 cup-in">
+						<a href="#"><img src="../images/p2.jpg" class="img-responsive" alt=""></a>
+						<p>Produto 2</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
-							<a href="single.html" class="details">Details</a>
+							<a href="#" class="details">Detalhes</a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="../images/p3.jpg" class="img-responsive" alt=""></a>
-						<p>Lorem ipsum dolor sit consectetur</p>
+					<div class="col-md-5 cup-in">
+						<a href="#"><img src="../images/p3.jpg" class="img-responsive" alt=""></a>
+						<p>Produto 3</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
-							<a href="single.html" class="details">Details</a>
+							<a href="#" class="details">Detalhes</a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 					
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="../images/p4.jpg" class="img-responsive" alt=""></a>
-						<p>Lorem ipsum dolor sit consectetur</p>
+					<div class="col-md-5 cup-in">
+						<a href="#"><img src="../images/p4.jpg" class="img-responsive" alt=""></a>
+						<p>Produto 4</p>
 						<span class="dollar">$25.89</span>
 						<div class="details-in">
-							<a href="single.html" class="details">Details</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="../images/p5.jpg" class="img-responsive" alt=""></a>
-						<p>Lorem ipsum dolor sit consectetur</p>
-						<span class="dollar">$25.89</span>
-						<div class="details-in">
-							<a href="single.html" class="details">Details</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="../images/p6.jpg" class="img-responsive" alt=""></a>
-						<p>Lorem ipsum dolor sit consectetur</p>
-						<span class="dollar">$25.89</span>
-						<div class="details-in">
-							<a href="single.html" class="details">Details</a>
+							<a href="#" class="details">Detalhes</a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -219,44 +207,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<!---->
 					<div class="browse">
-						<p class="vit">Mollis vitae oigu edlobit <span>vulipur felis ...</span></p>
-						<a href="single.html" class="more">Browse More</a>
+						<p class="vit">Procurar mais <span>...</span></p>
+						<a href="#" class="more">Procurar</a>
 						<div class="clearfix"> </div>
 						<div class="arrow">
 							<a href="#"><img src="../images/arrow.png" alt=""></a>
 						</div>
 					</div>
 				<!---->
-				<div class="content-sit">
-					<div class="col-md-6 amet">
-						<h3>Adpiscing labo</h3>
-						<p>Lorem ipsum dolor sit amet </p>
-						<div class="egg">
-							<a href="single.html"><img src="../images/pic.jpg" class="img-responsive" alt=""></a>
-						</div>
-						<p class="para-in">Rem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incidi. </p>
-					</div>
-					<div class="col-md-6 amet-in">
-						<h3>Consentur liqua</h3>
-						<p>Lorem ipsum dolor sit amet </p>
-						<div class="amet-grid">
-							<div class="now"><span>Nov</span>2014</div>
-							<p class="sed"><span>Lorem ipsum dolor sit amet </span> <span>consecteturLorem ipsum dolor sit</span> <span>amet, consectetur adipisicing</span></p>
-						<div class="clearfix"> </div>
-						</div>
-						<div class="amet-grid">
-							<div class="now"><span>Dec</span>2014</div>
-							<p class="sed"><span>Lorem ipsum dolor sit amet </span> <span>consecteturLorem ipsum dolor sit</span> <span>amet, consectetur adipisicing</span></p>
-						<div class="clearfix"> </div>
-						</div>
-						<div class="amet-grid">
-							<div class="now"><span>Oct</span>2014</div>
-							<p class="sed"><span>Lorem ipsum dolor sit amet </span> <span>consecteturLorem ipsum dolor sit</span> <span>amet, consectetur adipisicing</span></p>
-						<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>

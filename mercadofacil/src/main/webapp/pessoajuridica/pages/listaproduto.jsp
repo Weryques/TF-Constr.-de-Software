@@ -109,15 +109,6 @@
 								Listar</a></li>
 						<li><a href="cadastroproduto.jsp" class="active"><i
 								class="fa fa-edit fa-fw"></i> Cadastro de Produtos</a></li>
-						<li><a href="#"><i class="fa fa-sitemap fa-fw"></i>
-								Categorias<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li ><a href="#">Secos e Molhados</a></li>
-								<li ><a href="#">Hortifruti</a></li>
-								<li ><a href="#">Mercearia</a></li>
-								<li ><a href="#">Utilidades</a></li>
-								<li ><a href="#">Frios</a></li>
-							</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 			<!-- /.sidebar-collapse -->

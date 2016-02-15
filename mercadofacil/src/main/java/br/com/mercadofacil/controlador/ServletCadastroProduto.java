@@ -18,6 +18,7 @@ public class ServletCadastroProduto extends HttpServlet {
 
 		Produto produto = new Produto();
 		System.out.println("Nome "+produto.getNome());
+		
 		produto.setNome(req.getParameter("NomeProduto"));
 		produto.setValor(Double.parseDouble(req.getParameter("PrecoDeCompraProduto")));
 		produto.setCategoria(req.getParameter("Categoria"));
@@ -27,7 +28,7 @@ public class ServletCadastroProduto extends HttpServlet {
 		produto.setEmailAnunciante(req.getParameter("emailAnunciante"));
 		produto.setRazaoSocialAnunciante(req.getParameter("razaoSocialAnunciante"));
 		produto.setNomeFantasiaSupermercado(req.getParameter("nomeFantasiaSupermercado"));
-
+	
 		ProdutoDAO produtoD = new ProdutoDAO();
 		produtoD.InseriProduto(produto);
 		res.sendRedirect("pessoajuridica/pages/cadastroproduto.jsp");
