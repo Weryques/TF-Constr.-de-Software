@@ -140,7 +140,7 @@
 			
 			<div id="actions" class="row">
 				<div class="col-md-12 col-sm-offset-5">
-					<button type="submit" class="btn btn-primary" name="tipoRequisicao" value="cadastroConsumidor">Salvar</button>
+					<button type="submit" class="btn btn-primary" name="tipoRequisicao" value="cadastroComerciante">Salvar</button>
 					<a href="cadastropessoajuridica.jsp" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>
@@ -257,7 +257,7 @@
 			
 			<div id="actions" class="row">
 				<div class="col-md-12 col-sm-offset-5">
-					<button type="submit" class="btn btn-primary" name="tipoRequisicao" value="cadastroConsumidor">Salvar</button>
+					<button type="submit" class="btn btn-primary" name="tipoRequisicao" value="cadastroAnunciante">Salvar</button>
 					<a href="cadastropessoajuridica.jsp" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>

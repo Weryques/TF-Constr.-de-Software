@@ -81,21 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!---->
 	<div class="container">
-		<div class="account">
-		<h2>Entrar</h2>
-			<form action="../autenticar" method="post">
-			<div>
-				<span>E-mail</span>
-				<input name="email" type="text" required> 				
-			</div>
-			<div>
-				<span class="word-in">Senha</span>
-				<input name="email" type="password" required> 
-			</div>
-				<a class="forgot" href="../cadastropessoafisica.jsp">Não tem uma conta?</a>
-				<button type="submit" class="btn btn-success btn-md" name="login" value="consumidor">Entrar</button>
-			</form>
-		</div>
+		
 	
 	</div>
 

@@ -4,6 +4,7 @@
 package br.com.mercadofacil.jdbc;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -26,5 +27,18 @@ public class ConsumidorDAO {
 		
 		stmt.executeUpdate(insertConsumidor);
 		stmt.close();
+	}
+
+	public ResultSet selectTudo(String senha, String email, Connection conexao) throws SQLException {
+		ResultSet resultado = null;
+		String selectTudo = "SELECT * FROM consumidor WHERE senha = md5('"+ senha +"') AND email = '"+ email +"'";
+		
+		Statement stmt = conexao.createStatement();
+		
+		resultado = stmt.executeQuery(selectTudo);
+		stmt.close();
+		
+		
+		return resultado;
 	}
 }

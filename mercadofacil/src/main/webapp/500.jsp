@@ -21,7 +21,7 @@
 				exception.printStackTrace(new java.io.PrintWriter(out));
 			%></pre>
 			<br />
-			<a href="index.jsp" class="details">Voltar</a>
+			<a href="/mercadofacil/index.jsp" class="details">Voltar</a>
 		</div>
 	</div>
 </body>

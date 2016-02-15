@@ -47,13 +47,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="home.jsp">Supermercado Único</a></h1>
+				<h1><a href="supermercadounico_home.jsp">Supermercado Único</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
 					<ul class="header-grid">
 						<li  ><a href="account.html">Minha conta   </a> <label>/</label></li>
-						<li ><a href="loginpessoafisica.jsp">  Entrar </a> </li>		
+						<li ><a href="supermercadounico_loginpessoafisica.jsp">  Entrar </a> </li>		
 					</ul>
 				<div class="clearfix"> </div>
 				</div>
@@ -69,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-nav">
 					<span class="menu"> </span>
 					<ul>
-						<li class="active" ><a href="home.jsp" >Home  </a><label>- </label> </li>
+						<li class="active" ><a href="supermercadounico_home.jsp" >Home  </a><label>- </label> </li>
 					</ul>
 					<!--script-->
 				<script>
