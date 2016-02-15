@@ -5,9 +5,9 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<title>Food shop A Hotel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+<title>Supermercado Único</title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -41,23 +41,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-in">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="visao/index.jsp">Food Shop</a></h1>
+				<h1><a href="home.jsp">Supermercado Único</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
-					<ul class="header-grid">
-						<li ><a href="account.html">My Account   </a> <label>/</label></li>
-						<li  ><a href="visao/login.jsp">  Login </a> </li>		
-					</ul>
-					<div class="act">
-						<a href="#" class="done">Donec actortor </a>
-					</div>
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="account.html">My Account</a> <label>/</label></li>
-					<li><a href="#">My Cart</a> <label>/</label></li>
-					<li><a href="checkout.html">  Checkout </a> </li>		
+					<li><a href="account.html">Minha conta</a> <label>/</label></li>
+					<li><a href="#">Meu carrinho</a> <label>/</label></li>	
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -66,11 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-nav">
 					<span class="menu"> </span>
 					<ul>
-						<li  ><a href="index.html" >Home  </a><label>- </label> </li>
-						<li><a href="location.html" > Locations</a><label>- </label></li>
-						<li><a href="specials.html">Specials </a><label>- </label></li>
-						<li><a href="404.html" > Order Online</a><label>- </label></li>
-						<li><a href="contact.html">Contacts</a></li>
+						<li  ><a href="home.jsp" >Home  </a><label>- </label> </li>
 					</ul>
 					<!--script-->
 				<script>
@@ -82,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 					<div class="search">
 						<form>
-							<input type="text" value="Search store here ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+							<input type="text" value="Procurar aqui..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 							<input type="submit" value="">
 						</form>
 					</div>
@@ -94,18 +82,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!---->
 	<div class="container">
 		<div class="account">
-		<h2>Login</h2>
-			<form>
+		<h2>Entrar</h2>
+			<form action="../autenticar" method="post">
 			<div>
-				<span>User Name</span>
-				<input type="text"> 				
+				<span>E-mail</span>
+				<input name="email" type="text" required> 				
 			</div>
 			<div>
-				<span class="word-in">Password</span>
-				<input type="password"> 
+				<span class="word-in">Senha</span>
+				<input name="email" type="password" required> 
 			</div>
-				<a class="forgot" href="#">Forgot Your Password?</a>
-				<input type="submit" value="Login"> 
+				<a class="forgot" href="../cadastropessoafisica.jsp">Não tem uma conta?</a>
+				<button type="submit" class="btn btn-success btn-md" name="login" value="consumidor">Entrar</button>
 			</form>
 		</div>
 	
@@ -115,20 +103,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 		<div class="col-md-8 footer-bottom ">
-		<h4>Aenean condimentum suscipit dolor</h4>
-		<p>Proin ullamcorper urna quis velit mollis molestie suscipit nisl consectetur
-uspendisse venenatis dolor et nunc iaculis ege</p>
 		<p class="footer-grid">Copyright &copy; 2015 Food shop Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 
 		</div>
-			<div class="col-md-4 footer-bottom ">
-				<h4>Muscipit dolor</h4>
-				<ul class="social-icons">
-					<li><a href="#"><span> </span> </a></li>
-					<li class="tin"><a href="#"><span> </span></a></li>
-					<li class="linked"><a href="#"><span> </span> </a></li>
-				</ul>
-			</div>
 				<div class="clearfix"> </div>
 		</div>	
 	</div>

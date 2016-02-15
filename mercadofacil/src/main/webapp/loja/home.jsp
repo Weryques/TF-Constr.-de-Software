@@ -53,17 +53,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-top-in">
 					<ul class="header-grid">
 						<li  ><a href="account.html">Minha conta   </a> <label>/</label></li>
-						<li ><a href="login.jsp">  Entrar </a> </li>		
+						<li ><a href="loginpessoafisica.jsp">  Entrar </a> </li>		
 					</ul>
-					<div class="act">
-						<a href="#" class="done">Donec actortor </a>
-					</div>
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
 					<li><a href="#" class="glyphicon glyphicon-user"><span ></span>Usuário  </a><label>/</label></li>
-       			 	<li><a href="carrinhoCompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
-     				<li><a href="../admin/index.jsp" class="glyphicon glyphicon-lock">Admin </a> </li>		
+       			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
+     				<li><a href="../loginpessoajuridica.jsp" class="glyphicon glyphicon-lock">Admin </a> </li>		
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -73,10 +70,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="menu"> </span>
 					<ul>
 						<li class="active" ><a href="home.jsp" >Home  </a><label>- </label> </li>
-						<li><a href="location.html" > Locations</a><label>- </label></li>
-						<li><a href="specials.html">Specials </a><label>- </label></li>
-						<li><a href="404.html" > Order Online</a><label>- </label></li>
-						<li><a href="contact.html">Contacts</a></li>
 					</ul>
 					<!--script-->
 				<script>
@@ -88,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 					<div class="search">
 						<form>
-							<input type="text" value="Search store here ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+							<input type="text" value="Procurar aqui..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 							<input type="submit" value="">
 						</form>
 					</div>
@@ -102,26 +95,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   <div class="wmuSliderWrapper">
 				<article style="position: absolute; width: 100%; opacity: 0;"> 
 				   	<div class="banner-wrap">
-				   	      <h2>Raesent coodo </h2>
-						  <h5>Mollis voluipun</h5>
-						  <p>Neque rutrum <span>enmos ligu sed lorbei</span></p>				   		 
+				   	      <h2>Café </h2>
+						  <h5>--</h5>
+						  <p>-- <span>--</span></p>				   		 
 				   	 </div>
 					 
 			</article>
 			 <article style="position: absolute; width: 100%; opacity: 0;"> 
 				   	<div class="banner-wrap">
-					  		<h2>Raesent coodo </h2>
-						  <h5>Mollis voluipun</h5>
-						  <p>Neque rutrum <span>enmos ligu sed lorbei</span></p>
+					  		<h2>Café </h2>
+						  <h5>--</h5>
+						  <p>-- <span>--</span></p>
 				   		 
 				   	 </div>
 					 
 			</article>
 			 <article style="position: absolute; width: 100%; opacity: 0;"> 
 				   	<div class="banner-wrap">
-				   	       <h2>Raesent coodo </h2>
-						  <h5>Mollis voluipun</h5>
-						  <p>Neque rutrum <span>enmos ligu sed lorbei</span></p>
+				   	       <h2>Café </h2>
+						  <h5>--</h5>
+						  <p>-- <span>--</span></p>
 				   		 
 				   	 </div>
 					 
@@ -146,30 +139,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="content-grid">
 			<div class="col-md-4 grid-food">
 				<div class="popular">
-				<h3>Popular Products</h3>
-				<p>Lorem ipsum dolor site amet vivamus laoreet desp</p>
+				<h3>Produtos populares</h3>
+				<p>Produtos mais procurados</p>
 				<ul class="popular-in">
-					<li><a href="single.html"><i> </i>Lorem ipsum dolor sit amet, consectetur </a></li>
-					<li><a href="single.html"><i> </i>Sed in velit sed felis mollis vulputate vitae </a></li>
-					<li><a href="single.html"><i> </i>Nulla id neque lacus, rutrum euismod ligu</a></li>
-					<li><a href="single.html"><i> </i>Sed lobortis lorem nec orci vulputate</a></li>							
+					<li><a href="#"><i> </i>--</a></li>
+					<li><a href="#"><i> </i>--</a></li>
+					<li><a href="#"><i> </i>--</a></li>
+					<li><a href="#"><i> </i>--</a></li>							
 				</ul>
 				</div>
 				<div class="popular phone">
-					<h3>Order online/phone</h3>
-					<p>Vivamus vel eros nulla sed pellentesque sem</p>
+					<h3>E-mail/Telefone</h3>
+					<p>Contate-nos</p>
 					<ul class="number">
-						<li><span><i> </i>(000) 888 88888</span></li>
-						<li><a href="mailto:info@sitename.com"><i class="mail"> </i>info@sitename.com </a></li>					
+						<li><a href="mailto:superunico@servidor.com"><i class="mail"> </i>superunico@servidor.com </a></li>	
+						<li><span><i> </i>(00) 0000-0000 </span></li>				
 					</ul>
-				</div>
-				<div class="popular">
-					<h3>Crder online/phone</h3>
-					<p>Cosectrurer admpsuing tempor nulla incidi esuismod</p>
-					<form>
-					<input type="text" value="your email id here" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'your email id here';}">
-					<input type="submit" value="Subscribe" >
-					</form>
 				</div>
 			</div>
 			<!---->
@@ -281,20 +266,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 		<div class="col-md-8 footer-bottom ">
-		<h4>Aenean condimentum suscipit dolor</h4>
-		<p>Proin ullamcorper urna quis velit mollis molestie suscipit nisl consectetur
-uspendisse venenatis dolor et nunc iaculis ege</p>
 		<p class="footer-grid">Copyright &copy; 2015 Food shop Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 
 		</div>
-			<div class="col-md-4 footer-bottom ">
-				<h4>Muscipit dolor</h4>
-				<ul class="social-icons">
-					<li><a href="#"><span> </span> </a></li>
-					<li class="tin"><a href="#"><span> </span></a></li>
-					<li class="linked"><a href="#"><span> </span> </a></li>
-				</ul>
-			</div>
 				<div class="clearfix"> </div>
 		</div>	
 	</div>
