@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.mercadofacil.jdbc.ComercianteDAO;
 import br.com.mercadofacil.jdbc.FabricaConexao;
@@ -39,11 +40,25 @@ public class ServletAutenticacao extends HttpServlet{
 				e.printStackTrace();
 			}
 		}
+		else if(tipoLogin.equals("consumidor")){
+			entrarComoConsumidor(req, resp);
+		}
+		else if(tipoLogin.equals("anunciante")){
+			entrarComoAnunciante(req, resp);
+		}
 		else{
 			
 		}
 	}
 	
+	private void entrarComoAnunciante(HttpServletRequest req, HttpServletResponse resp) {
+		
+	}
+
+	private void entrarComoConsumidor(HttpServletRequest req, HttpServletResponse resp) {
+		
+	}
+
 	private void entrarComoComerciante(HttpServletRequest req, HttpServletResponse resp) throws SQLException{
 		FabricaConexao conn = new FabricaConexao();
 		Connection conexao = null;
@@ -71,7 +86,8 @@ public class ServletAutenticacao extends HttpServlet{
 				comerciante.setTipoPerfil(resultado.getString("tipoPerfil"));
 				
 				//colocando comerciante na sessão
-				req.getSession().setAttribute("comerciante", comerciante);
+				HttpSession session = req.getSession(true);//retorna um sessão caso exista, se não existe ele cria e retorna
+				session.setAttribute("comerciante", comerciante);
 				
 				resp.sendRedirect("/comerciante/principal.jsp");//redireciona pra página do perfil do comerciante
 				
@@ -80,7 +96,7 @@ public class ServletAutenticacao extends HttpServlet{
 				resultado.close();
 			}
 			else{ //email ou senha errado ou não tem cadastro
-				
+				//retornar erro
 			}
 		}
 		catch(Exception e){

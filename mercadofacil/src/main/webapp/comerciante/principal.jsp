@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -42,10 +43,9 @@
   </head>
 
   <body>
+
   <!-- container section start -->
-  <section id="container" class="">
-     
-      
+  <section id="container" class="">      
       <header class="header dark-bg">
             <div class="toggle-nav">
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
@@ -64,7 +64,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Pegar nome da sessão</span>
+                            <span class="username"><c:out value="${sessionScope.comerciante.nome}" /></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">

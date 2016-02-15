@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.Date" %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,7 +52,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">pega nome da sessão</span>
+                            <span class="username"><c:out value="${sessionScope.comerciante.nome}" /></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
