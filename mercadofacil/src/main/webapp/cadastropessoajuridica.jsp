@@ -81,7 +81,7 @@
  				
  				<div class="form-group col-md-4">
    					<label for="campo6">CNPJ</label>
-   					<input type="text" class="form-control" id="campo6" name="cnpj" placeholder="00.000.000/0000-00">
+   					<input type="text" class="form-control" id="campo6" name="cnpj" placeholder="Digite apenas números">
  				</div>
  				
  				<div class="form-group col-md-4">

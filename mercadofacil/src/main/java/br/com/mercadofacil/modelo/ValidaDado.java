@@ -8,6 +8,8 @@ package br.com.mercadofacil.modelo;
  *
  */
 public class ValidaDado {
+	private static final int[] pesoCNPJ = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
+	
 	public boolean validarCPF(String cpf){
 		boolean resultado = false;
 
@@ -70,87 +72,23 @@ public class ValidaDado {
 
 		return resultado;
 	}
+	
+	private static int calcularDigito(String str, int[] peso) {
+	      int soma = 0;
+	      for (int indice=str.length()-1, digito; indice >= 0; indice-- ) {
+	         digito = Integer.parseInt(str.substring(indice,indice+1));
+	         soma += digito*peso[peso.length-str.length()+indice];
+	      }
+	      soma = 11 - soma % 11;
+	      return soma > 9 ? 0 : soma;
+	   }
+
 
 	public boolean validarCNPJ(String cnpj){
-		boolean resultado = false;
+		if ((cnpj==null)||(cnpj.length()!=14)) return false;
 
-		int digitoVerificador1, digitoVerificador2;
-		int digito;
-		int soma = 0, j = 0, k = 0;
-
-		digitoVerificador1 = (int) (cnpj.charAt(16) - 48);
-		digitoVerificador2 = (int) (cnpj.charAt(17) - 48);
-
-		//calculo do primeiro digito
-		j = 5;
-		k = 9;
-		for(int i = 0; i < 14; i++){
-			if(cnpj.charAt(i) != '.' || cnpj.charAt(i) != '/' || cnpj.charAt(i) != '-'){
-				digito = (int) (cnpj.charAt(i) - 48);
-
-				if(i < 3){
-					soma += digito * j;
-					j--;
-					if(j == 2){
-						j = 5;
-					}
-				}
-				else if(i > 2 && i < 7){
-					soma += digito * k;
-					k--;
-				}
-				else if(i >= 7){
-					soma += digito * j;
-					j--;
-				}
-			}
-		}
-
-		int resto, digitoComparador;
-
-		resto = soma % 11;
-
-		if(resto < 2){
-			digitoComparador = 0;
-		}
-		else{
-			digitoComparador = 11 - resto;
-		}
-
-		if(digitoComparador == digitoVerificador1){		
-			//calculo do segundo digito
-			j = 6;
-			k = 9;
-			soma = 0;
-			for(int i = 0; i < 16; i++){
-				if(cnpj.charAt(i) != '.' || cnpj.charAt(i) != '/' || cnpj.charAt(i) != '-'){
-					digito = (int) (cnpj.charAt(i) - 48);
-
-					if(i < 4){
-						soma += digito * j;
-						j--;
-					}
-					else if(i > 3 && i < 12){
-						soma += digito * k;
-						k--;
-					}
-				}
-			}
-
-			resto = soma % 11;
-
-			if(resto < 2){
-				digitoComparador = 0;
-			}
-			else{
-				digitoComparador = 11 - resto;
-			}
-
-			if(digitoComparador == digitoVerificador2){
-				resultado = true;
-			}
-		}
-
-		return resultado;
+	      Integer digito1 = calcularDigito(cnpj.substring(0,12), pesoCNPJ);
+	      Integer digito2 = calcularDigito(cnpj.substring(0,12) + digito1, pesoCNPJ);
+	      return cnpj.equals(cnpj.substring(0,12) + digito1.toString() + digito2.toString());
 	}
 }

@@ -53,16 +53,28 @@ public class ComercianteDAO {
 		return retornoSelect;
 	}
 	
-	public ResultSet selectTudo(String senha, String email, Connection conexao) throws SQLException{
-		String selectTudo = "SELECT * FROM comerciante WHERE email = '"+ email +"'"
-				+ " AND senha = md5('"+ senha +"')";
+	public Comerciante selectTudo(Comerciante comerciante, Connection conexao) throws SQLException{
+		String selectTudo = "SELECT * FROM comerciante WHERE email = '"+ comerciante.getEmail() +"'"
+				+ " AND senha = md5('"+ comerciante.getSenha() +"')";
 		
 		Statement stmt = conexao.createStatement();
-		ResultSet retornoSelect = null;
+		ResultSet resultado = null;
 		
-		retornoSelect = stmt.executeQuery(selectTudo);
+		resultado = stmt.executeQuery(selectTudo);
+		
+		if(resultado.next()){
+			comerciante.setNomeCompleto(resultado.getString("nome"));
+			comerciante.setCelular(resultado.getString("celular"));
+			comerciante.setCnpjComerciante(resultado.getString("cnpj"));
+			comerciante.setEmail(resultado.getString("email"));
+			comerciante.setTelefone(resultado.getString("telefone"));
+			comerciante.setTipoPerfil(resultado.getString("tipoPerfil"));
+			comerciante.getEndereco().setCidade(resultado.getString("cidade"));
+		}
+			
 		stmt.close();
-		
-		return retornoSelect;
+		resultado.close();
+
+		return comerciante;
 	}
 }

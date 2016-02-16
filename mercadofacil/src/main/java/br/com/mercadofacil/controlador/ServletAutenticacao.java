@@ -32,7 +32,6 @@ public class ServletAutenticacao extends HttpServlet{
 		String tipoLogin = req.getParameter("login");
 		
 		if(tipoLogin == null){
-			
 		}
 		else if(tipoLogin.equals("comerciante")){
 			try {
@@ -52,7 +51,6 @@ public class ServletAutenticacao extends HttpServlet{
 			entrarComoAnunciante(req, resp);
 		}
 		else{
-			
 		}
 	}
 	
@@ -114,39 +112,31 @@ public class ServletAutenticacao extends HttpServlet{
 		conexao.setAutoCommit(false);
 		
 		try{
-			ResultSet resultado = null;
 			Comerciante comerciante = new Comerciante();
 			ComercianteDAO comercianteDAO = new ComercianteDAO();
 			
 			comerciante.setEmail(req.getParameter("email"));
 			comerciante.setSenha(req.getParameter("senha"));
 			
-			resultado = comercianteDAO.selectTudo(comerciante.getSenha(), comerciante.getEmail(), conexao);
+			comerciante = comercianteDAO.selectTudo(comerciante, conexao);
 			
-			if(resultado.next()){ //se tem proximo, então achou alguém
-				comerciante.setNomeCompleto(resultado.getString("nome"));
-				comerciante.setCelular(resultado.getString("celular"));
-				comerciante.setCnpjComerciante(resultado.getString("cnpj"));
-				comerciante.setEmail(resultado.getString("email"));
-				comerciante.setTelefone(resultado.getString("telefone"));
-				comerciante.setTipoPerfil(resultado.getString("tipoPerfil"));
-				
+			if(comerciante.getEmail() != null){ //então achou alguém
 				//colocando comerciante na sessão
 				HttpSession session = req.getSession(true);//retorna um sessão caso exista, se não existe ele cria e retorna
 				session.setAttribute("comerciante", comerciante);
 				
-				resp.sendRedirect("/comerciante/principal.jsp");//redireciona pra página do perfil do comerciante
+				resp.sendRedirect("comerciante/principal.jsp");//redireciona pra página do perfil do comerciante
 				
 				conexao.commit();
 				conexao.close();
-				resultado.close();
 			}
 			else{ //email ou senha errado ou não tem cadastro
-				//retornar erro
+				
 			}
 		}
 		catch(Exception e){
 			conexao.rollback();
+			e.printStackTrace();
 		}
 	}
 }

@@ -1,4 +1,5 @@
 <%@page import="org.xml.sax.Parser"%>
+<%@page import="br.com.mercadofacil.modelo.Comerciante" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,7 +51,9 @@
 </head>
 
 <body>
-
+<%
+Comerciante comerciante = (Comerciante) session.getAttribute("comerciante");
+%>
 	<div id="wrapper">
 
 		<!-- Navigation -->

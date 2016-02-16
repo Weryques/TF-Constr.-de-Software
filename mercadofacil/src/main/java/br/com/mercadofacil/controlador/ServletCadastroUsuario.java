@@ -163,7 +163,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 				conexao.commit(); //fecha transação, efetiva comandos
 				conexao.close(); //fecha conexão
 				
-				res.sendRedirect("/loginpessoajuridica.jsp");
+				res.sendRedirect("/mercadofacil/loginpessoajuridica.jsp");
 			}
 			else{
 				throw new Exception("CNPJ inválido!");

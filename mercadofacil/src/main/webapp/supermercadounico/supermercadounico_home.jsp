@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="br.com.mercadofacil.modelo.Consumidor" %>
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -44,6 +45,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
+<%
+Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
+%>
 	<!--header-->
 	<div class="header">
 		<div class="container">
@@ -64,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					out.prin("");
 				}
 				%>
-					<li><a href="#" class="glyphicon glyphicon-user"><span ></span><c:out value="${sessionScope.consumidor.nome}"/>  </a><label>/</label></li>
+					<li><a href="#" class="glyphicon glyphicon-user"><span ></span> <% out.print(consumidor.getNomeCompleto()); %> </a><label>/</label></li>
        			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
      				<li><a href="../loginpessoajuridica.jsp" class="glyphicon glyphicon-lock">Admin </a> </li>		
 				</ul>

@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.util.Date" %>
+<%@page import="java.util.Date"%>
+<%@page import="br.com.mercadofacil.modelo.Comerciante" %>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -32,7 +33,11 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body>  
+<%
+	Comerciante comerciante = (Comerciante) session.getAttribute("comerciante");
+	Date date = new Date();
+%>
   <!-- container section start -->
   <section id="container" class="">
       <!--header start-->
@@ -52,7 +57,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username"><c:out value="${sessionScope.comerciante.nome}" /></span>
+                            <span class="username"><% out.print(comerciante.getNomeCompleto()); %></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -110,9 +115,9 @@
                             </div>
                             <div class="col-lg-4 col-sm-4 follow-info">
                                 <h6>
-                                    <span><i class="icon_clock_alt"></i>hora</span>
-                                    <span><i class="icon_calendar"></i>data</span>
-                                    <span><i class="icon_pin_alt"></i>cidade</span>
+                                    <span><i class="icon_clock_alt"></i><% out.print(date.getHours()); %></span>
+                                    <span><i class="icon_calendar"></i><% out.print(date.getDate()+"/"+date.getMonth()+"/"+date.getYear()); %></span>
+                                    <span><i class="icon_pin_alt"></i><% out.print(comerciante.getEndereco().getCidade()); %></span>
                                 </h6>
                             </div>
                           </div>
@@ -174,19 +179,19 @@
                                           <h1>Dados do perfil</h1>
                                           <div class="row">
                                               <div class="bio-row">
-                                                  <p><span>Nome completo</span>: pegar da sessão </p>
+                                                  <p><span>Nome completo</span>: <% out.print(comerciante.getNomeCompleto()); %></p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Tipo do perfil </span>: pegar da sessão </p>
+                                                  <p><span>Tipo do perfil </span>: <% out.print(comerciante.getTipoPerfil()); %> </p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>E-mail </span>: pegar da sessão</p>
+                                                  <p><span>E-mail </span>: <% out.print(comerciante.getEmail()); %></p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Celular </span>: pegar da sessão</p>
+                                                  <p><span>Celular </span>: <% out.print(comerciante.getCelular()); %></p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Telefone </span>:  pegar da sessão</p>
+                                                  <p><span>Telefone </span>:  <% out.print(comerciante.getTelefone()); %></p>
                                               </div>
                                           </div>
                                       </div>

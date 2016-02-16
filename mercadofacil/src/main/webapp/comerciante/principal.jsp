@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="br.com.mercadofacil.modelo.Comerciante" %>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -43,7 +44,9 @@
   </head>
 
   <body>
-
+<%
+Comerciante comerciante = (Comerciante) session.getAttribute("comerciante");
+%>
   <!-- container section start -->
   <section id="container" class="">      
       <header class="header dark-bg">
@@ -64,7 +67,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username"><c:out value="${sessionScope.comerciante.nome}" /></span>
+                            <span class="username"><%out.print(comerciante.getNomeCompleto()); %>></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
