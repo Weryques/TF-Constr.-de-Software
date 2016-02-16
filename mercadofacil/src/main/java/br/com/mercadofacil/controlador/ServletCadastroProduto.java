@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.omg.CORBA.portable.ValueOutputStream;
+
+import com.mysql.fabric.xmlrpc.base.Value;
+
 import br.com.mercadofacil.jdbc.ProdutoDAO;
 import br.com.mercadofacil.modelo.Produto;
 
@@ -17,17 +21,16 @@ public class ServletCadastroProduto extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		Produto produto = new Produto();
-		System.out.println("Nome "+produto.getNome());
-		
 		produto.setNome(req.getParameter("NomeProduto"));
-		produto.setValor(Double.parseDouble(req.getParameter("PrecoDeCompraProduto")));
+		produto.setValor(Double.parseDouble(req.getParameter("PrecoDeVendaProduto")));
 		produto.setCategoria(req.getParameter("Categoria"));
 		produto.setDescricao(req.getParameter("descricao"));
+		produto.setQuantidade(Integer.parseInt(req.getParameter("quantidade")));
 		// produto.setImagem(req.getParameter("imagem"));
-		produto.setCnpjAnunciante(req.getParameter("cnpjAnunciante"));
-		produto.setEmailAnunciante(req.getParameter("emailAnunciante"));
-		produto.setRazaoSocialAnunciante(req.getParameter("razaoSocialAnunciante"));
-		produto.setNomeFantasiaSupermercado(req.getParameter("nomeFantasiaSupermercado"));
+		//produto.setCnpjAnunciante(req.getParameter("cnpjAnunciante"));
+		//produto.setEmailAnunciante(req.getParameter("emailAnunciante"));
+		//produto.setRazaoSocialAnunciante(req.getParameter("razaoSocialAnunciante"));
+		//produto.setNomeFantasiaSupermercado(req.getParameter("nomeFantasiaSupermercado"));
 	
 		ProdutoDAO produtoD = new ProdutoDAO();
 		produtoD.InseriProduto(produto);

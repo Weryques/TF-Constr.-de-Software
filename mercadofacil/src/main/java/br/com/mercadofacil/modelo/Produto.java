@@ -13,7 +13,8 @@ public class Produto {
 	private Double valor;
 	private String categoria;
 	private String descricao;
-
+	private int quantidade;
+	
 	private String cnpjAnunciante;
 	private String emailAnunciante;
 	private String razaoSocialAnunciante;
@@ -136,5 +137,14 @@ public class Produto {
 	public void setRazaoSocialSupermercado(String razaoSocialSupermercado) {
 		this.razaoSocialSupermercado = razaoSocialSupermercado;
 	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	
 
 }
