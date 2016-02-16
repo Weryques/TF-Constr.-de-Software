@@ -137,9 +137,9 @@ Comerciante comerciante = (Comerciante) session.getAttribute("comerciante");
 									type="number" class="form-control" name="PrecoDeVendaProduto"
 									required>
 							</div>
-							<div class="form-group col-md-2">
+							<div class="form-group col-md-2 ">
 								<label for="quantidade"> Quantidade: </label> <input
-									type="number" class="form-control" name="PrecoDeCompraProduto"
+									type="number" class="form-control" name="quantidade"
 									required>
 							</div>
 							<div class="form-group col-md-3">

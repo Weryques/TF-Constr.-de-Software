@@ -16,8 +16,8 @@ public class ProdutoDAO {
 	public void InseriProduto(Produto produto) {
 		boolean resultadoInsert;
 		String sql = " insert into produto(nome,valor,categoria,descricao,cnpjAnunciante,emailAnunciante,"
-				+ "razaoSocialAnunciante,nomeFantasiaSupermercado,razaoSocialSupermercado)"
-				+ "values(?,?,?,?,?,?,?,?,?)";
+				+ "razaoSocialAnunciante,nomeFantasiaSupermercado,razaoSocialSupermercado,quantidade)"
+				+ "values(?,?,?,?,?,?,?,?,?,?)";
 
 		try {
 
@@ -32,6 +32,7 @@ public class ProdutoDAO {
 			stmt.setString(7, produto.getRazaoSocialAnunciante());
 			stmt.setString(8, produto.getNomeFantasiaSupermercado());
 			stmt.setString(9, produto.getRazaoSocialSupermercado());
+			stmt.setInt(10, produto.getQuantidade());
 
 			stmt.execute();
 			stmt.close();
