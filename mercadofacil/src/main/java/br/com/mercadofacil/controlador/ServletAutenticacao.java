@@ -88,7 +88,7 @@ public class ServletAutenticacao extends HttpServlet{
 				HttpSession session = req.getSession(true);//retorna um sessão caso exista, se não existe ele cria e retorna
 				session.setAttribute("consumidor", consumidor);
 				
-				resp.sendRedirect("/supermercadounico/supermercadounico_home.jsp");//redireciona pra página do perfil do consumidor
+				resp.sendRedirect("/supermercadounico/supermercadounico_home_logado.jsp");//redireciona pra página do perfil do consumidor
 				
 				conexao.commit();
 				conexao.close();

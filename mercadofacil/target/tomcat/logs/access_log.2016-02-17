@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:17:32 -0200] "GET /mercadofacil/ HTTP/1.1" 200 2053 http-bio-8080-exec-1 76
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:17:32 -0200] "GET /mercadofacil/css/styleIndex.css HTTP/1.1" 304 - http-bio-8080-exec-7 26
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:17:32 -0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-8 0
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:17:40 -0200] "GET /mercadofacil/supermercadounico/supermercadounico_home.jsp HTTP/1.1" 500 3960 http-bio-8080-exec-9 1022
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:17:40 -0200] "GET /mercadofacil/supermercadounico/css/bootstrap.css HTTP/1.1" 404 449 http-bio-8080-exec-2 8
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:18:29 -0200] "GET /mercadofacil/supermercadounico/supermercadounico_home.jsp HTTP/1.1" 500 4140 http-bio-8080-exec-10 122
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:18:29 -0200] "GET /mercadofacil/supermercadounico/css/bootstrap.css HTTP/1.1" 404 449 http-bio-8080-exec-1 2
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:22:17 -0200] "GET /mercadofacil/supermercadounico/supermercadounico_home.jsp HTTP/1.1" 200 8091 http-bio-8080-exec-3 84
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:22:17 -0200] "GET /mercadofacil/css/styleHomeLoginCarrinho.css HTTP/1.1" 304 - http-bio-8080-exec-9 2
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:22:17 -0200] "GET /mercadofacil/css/style.css HTTP/1.1" 404 449 http-bio-8080-exec-9 1
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:22:17 -0200] "GET /mercadofacil/js/move-top.js HTTP/1.1" 304 - http-bio-8080-exec-5 5
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:22:17 -0200] "GET /mercadofacil/js/easing.js HTTP/1.1" 304 - http-bio-8080-exec-6 5
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:22:17 -0200] "GET /mercadofacil/js/scripts.js HTTP/1.1" 404 449 http-bio-8080-exec-4 4
+0:0:0:0:0:0:0:1 - - [17/Feb/2016:00:22:17 -0200] "GET /mercadofacil/js/jquery.wmuSlider.js HTTP/1.1" 304 - http-bio-8080-exec-10 5
