@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@page import="br.com.mercadofacil.modelo.Consumidor" %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Food shop A Hotel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+<title>Supermercado Único - Meu Carrinho</title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -36,28 +37,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 
 </head>
-<body> 
+<body>
+<%
+Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
+%>
 	<!--header-->
 	<div class="header-in">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="visao/index.jsp">Food Shop</a></h1>
+				<h1><a href="visao/index.jsp">Supermercado Único</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
 					<ul class="header-grid">
-						<li ><a href="account.html">My Account   </a> <label>/</label></li>
-						<li ><a href="visao/login.jsp">  Login </a> </li>		
+						<li ><a href="account.html">Minha conta   </a> <label>/</label></li>
 					</ul>
-					<div class="act">
-						<a href="#" class="done">Donec actortor </a>
-					</div>
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="#" class="glyphicon glyphicon-user"><span ></span>Usúario  </a><label>/</label></li>
-       			 	<li><a href="loja/carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
-     				<li><a href="../admin/index.jsp" class="glyphicon glyphicon-lock">Admin </a> </li>			
+					<li><a href="#" class="glyphicon glyphicon-user"><span ></span><% out.print(consumidor.getNomeCompleto()); %>  </a><label>/</label></li>
+       			 	<li><a href="loja/carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>	
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -67,10 +66,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="menu"> </span>
 					<ul>
 						<li  ><a href="home.jsp" >Home  </a><label>- </label> </li>
-						<li><a href="location.html" > Locations</a><label>- </label></li>
-						<li><a href="specials.html">Specials </a><label>- </label></li>
-						<li class="active1"><a href="404.html" > Order Online</a><label>- </label></li>
-						<li><a href="contact.html">Contacts</a></li>
 					</ul>
 					<!--script-->
 				<script>
@@ -92,8 +87,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		</div>
 	</div>
-	<!---->
-	<div class="container">
+	<!-- Espaço para o carrinho  -->
+		<div class="container">
 		 <div class="register-account">
     	     <h4 class="title">Shopping cart is empty</h4>
     	     <p class="cart">You have no items in your shopping cart.<br>Click<a href="index.html"> here</a> to continue shopping</p>

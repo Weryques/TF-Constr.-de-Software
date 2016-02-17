@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <head>
-<title>Supermercado Único</title>
+<title>Supermercado Único - Logado</title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -50,6 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <%
 Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
+
 %>
 	<!--header-->
 	<div class="header">
@@ -190,16 +191,38 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 
 								for (int i = 0; i < listaDeProdutos.size(); i++) {
 						%>
-						<div class="col-md-5 cup-in">
-							<a href="#"><img src="../images/p1.jpg"
-								class="img-responsive" alt=""></a>
-							<p><span class="dollar text-info"><%=listaDeProdutos.get(i).getNome()%></span></p><br>
-							<span class="dollar col-md-5"><%=listaDeProdutos.get(i).getValor()%>R$</span>
-							<button onclick= "" class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Comprar</button>
+						<div id="produto" class="col-md-5 cup-in">
+							<form>
+								<a href="#"><img src="../images/p1.jpg"
+									class="img-responsive" alt=""></a>
+								<input name="nomeProduto" <p><span class="dollar text-info"><%=listaDeProdutos.get(i).getNome()%></span></p> ><br>
+								<input name="valorProduto" <span class="dollar col-md-5">R$ <%=listaDeProdutos.get(i).getValor()%></span> >							
+								<button type="submit" class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Adicionar ao carrinho</button>
+							</form>
 						</div>
 						<%
+								}
 							}
-							}
+						%>
+						<%
+						Produto produtoCarrinho = new Produto();
+						ArrayList<Produto> produtosAddCarrinho = new ArrayList<Produto>();
+						
+						try{
+							String nomeProduto = request.getParameter("nomeProduto");
+							Double valorProduto = Double.parseDouble(request.getParameter("valorProduto"));
+							
+							produtoCarrinho.setNome(nomeProduto);
+							produtoCarrinho.setValor(valorProduto);
+						
+							produtosAddCarrinho.add(produtoCarrinho);
+							
+							
+						}
+						catch(Exception e){
+							e.printStackTrace();
+						}
+
 						%>
 					</div>
 					<!---->
@@ -227,6 +250,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				<div class="clearfix"> </div>
 		</div>	
 	</div>
+
 	<script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/scripts.js"></script>
@@ -245,6 +269,8 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 							
 						});
 					</script>
+			
+			<!-- Adicionar na sessão e incrementar contador -->		
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 </body>
