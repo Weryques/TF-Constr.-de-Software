@@ -29,16 +29,32 @@ public class ConsumidorDAO {
 		stmt.close();
 	}
 
-	public ResultSet selectTudo(String senha, String email, Connection conexao) throws SQLException {
+	public Consumidor selectTudo(Consumidor consumidor, Connection conexao) throws SQLException {
 		ResultSet resultado = null;
-		String selectTudo = "SELECT * FROM consumidor WHERE senha = md5('"+ senha +"') AND email = '"+ email +"'";
+		String selectTudo = "SELECT * FROM (consumidor natural join endereco) WHERE senha = md5('"+ consumidor.getSenha() +"') AND email = '"+ consumidor.getEmail() +"'";
 		
 		Statement stmt = conexao.createStatement();
 		
 		resultado = stmt.executeQuery(selectTudo);
+		
+		if(resultado.next()){
+			consumidor.setCelular(resultado.getString("celular"));
+			consumidor.setEmail(resultado.getString("email"));
+			consumidor.setNomeCompleto(resultado.getString("nome"));
+			consumidor.setTelefone(resultado.getString("telefone"));
+			consumidor.setTipoPerfil(resultado.getString("tipoPerfil"));
+			consumidor.getEndereco().setCidade(resultado.getString("cidade"));
+			consumidor.getEndereco().setBairro(resultado.getString("bairro"));
+			consumidor.getEndereco().setCep(resultado.getString("cep"));
+			consumidor.getEndereco().setComplemento(resultado.getString("complemento"));
+			consumidor.getEndereco().setEstado(resultado.getString("estado"));
+			consumidor.getEndereco().setLogradouro(resultado.getString("logradouro"));
+			consumidor.getEndereco().setNumero(resultado.getInt("numero"));
+		}
+		
 		stmt.close();
+		resultado.close();
 		
-		
-		return resultado;
+		return consumidor;
 	}
 }

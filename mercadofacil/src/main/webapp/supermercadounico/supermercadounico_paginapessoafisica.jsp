@@ -1,3 +1,4 @@
+<%@page import="br.com.mercadofacil.modelo.Consumidor" %>
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -13,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="../css/styleHomeLoginCarrinho.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="../css/styleHomeLoginCarrinho.css" rel="stylesheet" type="text/css" media="all" />
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,7 +38,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
-	<!--header-->
+<%
+
+Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
+
+%>
+<!--header-->
 	<div class="header-in">
 		<div class="container">
 			<div class="logo">
@@ -80,10 +86,122 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!---->
-	<div class="container">
-		
-	
-	</div>
+		<div class="row">
+                 <div class="col-lg-12">
+                    <section class="panel">
+                          <header class="panel-heading tab-bg-info">
+                              <ul class="nav nav-tabs">
+                                  <li>
+                                      <a data-toggle="tab" href="#profile">
+                                          <i class="icon-user"></i>
+                                          Perfil
+                                      </a>
+                                  </li>
+                                  <li class="">
+                                      <a data-toggle="tab" href="#edit-profile">
+                                          <i class="icon-envelope"></i>
+                                          Editar Perfil
+                                      </a>
+                                  </li>
+                              </ul>
+                          </header>
+                          
+                          <div class="panel-body">
+                             
+                              <div class="tab-content pagination">
+                      
+                              <!-- profile -->
+                              <div id="profile" class="tab-pane-active">
+                                    <section class="panel">
+                                      <div class="bio-graph-heading">
+                                                Sobre
+                                      </div>
+                                      <div class="panel-body bio-graph-info">
+                                          <h1>Dados do perfil</h1>
+                                          <div class="row">
+                                              <div class="bio-row">
+                                                  <p><span>Nome completo</span>: <% out.print(consumidor.getNomeCompleto()); %></p>
+                                              </div>
+                                              <div class="bio-row">
+                                                  <p><span>Tipo do perfil </span>: <% out.print(consumidor.getTipoPerfil()); %> </p>
+                                              </div>
+                                              <div class="bio-row">
+                                                  <p><span>E-mail </span>: <% out.print(consumidor.getEmail()); %></p>
+                                              </div>
+                                              <div class="bio-row">
+                                                  <p><span>Celular </span>: <% out.print(consumidor.getCelular()); %></p>
+                                              </div>
+                                              <div class="bio-row">
+                                                  <p><span>Telefone </span>:  <% out.print(consumidor.getTelefone()); %></p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </section>
+                                      <section>
+                                          <div class="row">                                              
+                                          </div>
+                                      </section>
+                               </div>
+                               
+                               <!-- edit-profile -->
+                                  <div id="edit-profile" class="tab-pane">
+                                    <section class="panel">  
+                                    
+                                    	<div class="profile-activity">                                          
+                                          <div class="act-time">                                      
+                                              <div class="activity-body act-in">
+                                                  <span class="arrow"></span>
+                                                  <div class="text">
+                                                  	<a href="#" class="btn btn-default" role="button">Excluir conta</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                       </div>                                        
+                                         
+                                          <div class="panel-body bio-graph-info">
+                                              <h1>Infomações do perfil</h1>
+                                              <form class="form-horizontal" role="form">                                                  
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Nome completo</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="f-name" placeholder=" ">
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Sobre</label>
+                                                      <div class="col-lg-10">
+                                                          <textarea name="" id="" class="form-control" cols="30" rows="5"></textarea>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">E-mail</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="email" placeholder=" ">
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Celular</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="mobile" placeholder=" ">
+                                                      </div>
+                                                  </div>
+
+                                                  <div class="form-group">
+                                                      <div class="col-lg-offset-2 col-lg-10">
+                                                          <button type="submit" class="btn btn-primary">Salvar</button>
+                                                          <button type="reset" class="btn btn-danger">Cancelar</button>
+                                                      </div>
+                                                  </div>
+                                              </form>
+                                          </div>
+                                      </section>
+                                  </div>
+                               </div>
+                               
+                              </div>
+                          </section>
+                       </div>
+               </div>
 
 	<!---->
 	<div class="footer">

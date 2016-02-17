@@ -67,35 +67,26 @@ public class ServletAutenticacao extends HttpServlet{
 		conexao.setAutoCommit(false);
 		
 		try{
-			ResultSet resultado = null;
 			Consumidor consumidor = new Consumidor();
 			ConsumidorDAO consumidorDAO = new ConsumidorDAO();
 			
 			consumidor.setEmail(req.getParameter("email"));
 			consumidor.setSenha(req.getParameter("senha"));
 			
-			resultado = consumidorDAO.selectTudo(consumidor.getSenha(), consumidor.getEmail(), conexao);
+			consumidor = consumidorDAO.selectTudo(consumidor, conexao);
 			
-			if(resultado.next()){
-				consumidor.setNomeCompleto(resultado.getString("nome"));
-				consumidor.setCelular(resultado.getString("celular"));
-				consumidor.setCpfConsumidor(resultado.getString("cnpj"));
-				consumidor.setEmail(resultado.getString("email"));
-				consumidor.setTelefone(resultado.getString("telefone"));
-				consumidor.setTipoPerfil(resultado.getString("tipoPerfil"));
-				
+			if(consumidor.getEmail() != null){
 				//colocando consumidor na sessão
-				HttpSession session = req.getSession(true);//retorna um sessão caso exista, se não existe ele cria e retorna
+				HttpSession session = req.getSession(true);//retorna uma sessão caso exista, se não existe ele cria e retorna
 				session.setAttribute("consumidor", consumidor);
 				
-				resp.sendRedirect("/supermercadounico/supermercadounico_home.jsp");//redireciona pra página do perfil do consumidor
+				resp.sendRedirect("/mercadofacil/supermercadounico/supermercadounico_home_logado.jsp");//redireciona para página do perfil do consumidor
 				
 				conexao.commit();
 				conexao.close();
-				resultado.close();
 			}
 			else{
-				resp.sendRedirect("/supermercadounico/supermercadounico_loginpessoafisica.jsp");
+				resp.sendRedirect("/mercadofacil/supermercadounico/supermercadounico_loginpessoafisica.jsp");
 			}
 		}
 		catch(Exception e){
@@ -125,13 +116,13 @@ public class ServletAutenticacao extends HttpServlet{
 				HttpSession session = req.getSession(true);//retorna um sessão caso exista, se não existe ele cria e retorna
 				session.setAttribute("comerciante", comerciante);
 				
-				resp.sendRedirect("comerciante/principal.jsp");//redireciona pra página do perfil do comerciante
+				resp.sendRedirect("/mercadofacil/comerciante/principal.jsp");//redireciona pra página do perfil do comerciante
 				
 				conexao.commit();
 				conexao.close();
 			}
 			else{ //email ou senha errado ou não tem cadastro
-				
+				resp.sendRedirect("/mercadofacil/loginpessoajuridica.jsp");
 			}
 		}
 		catch(Exception e){

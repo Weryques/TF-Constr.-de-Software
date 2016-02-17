@@ -48,6 +48,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
+<%
+Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
+%>
 	<!--header-->
 	<div class="header">
 		<div class="container">
@@ -57,15 +60,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="header-top-in">
 					<ul class="header-grid">
-						<li  ><a href="account.html">Minha conta   </a> <label>/</label></li>
-						<li ><a href="supermercadounico_loginpessoafisica.jsp">  Entrar </a> </li>		
+						<li  ><a href="supermercadounico_paginapessoafisica.jsp">Minha conta   </a> <label>/</label></li>
 					</ul>
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="#" class="glyphicon glyphicon-user"><span ></span> Usuário </a><label>/</label></li>
+					<li><a href="#" class="glyphicon glyphicon-user"><span ></span> <% out.print(consumidor.getNomeCompleto()); %> </a><label>/</label></li>
        			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
-     				<li><a href="../loginpessoajuridica.jsp" class="glyphicon glyphicon-lock">Admin </a> </li>		
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -130,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  <script src="../js/jquery.wmuSlider.js"></script> 
 			  <script>
        			$('.example1').wmuSlider({
-					 pagination : false,
+					 pagination : true,
 				});         
    		     </script> 	
 		<!---->
@@ -194,7 +195,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								class="img-responsive" alt=""></a>
 							<p><span class="dollar text-info"><%=listaDeProdutos.get(i).getNome()%></span></p><br>
 							<span class="dollar col-md-5"><%=listaDeProdutos.get(i).getValor()%>R$</span>
-							<button class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Comprar</button>
+							<button onclick= "" class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Comprar</button>
 						</div>
 						<%
 							}

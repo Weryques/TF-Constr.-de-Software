@@ -15,12 +15,37 @@ public class Produto {
 	private String descricao;
 	private int quantidade;
 	
-	private String cnpjAnunciante;
-	private String emailAnunciante;
-	private String razaoSocialAnunciante;
-	private String nomeFantasiaSupermercado;
-	private String razaoSocialSupermercado;
+	private Anunciante anunciante = new Anunciante();
+	private Supermercado supermercado = new Supermercado();
 	private String imagem;
+
+	/**
+	 * @return the anunciante
+	 */
+	public Anunciante getAnunciante() {
+		return anunciante;
+	}
+
+	/**
+	 * @param anunciante the anunciante to set
+	 */
+	public void setAnunciante(Anunciante anunciante) {
+		this.anunciante = anunciante;
+	}
+
+	/**
+	 * @return the supermercado
+	 */
+	public Supermercado getSupermercado() {
+		return supermercado;
+	}
+
+	/**
+	 * @param supermercado the supermercado to set
+	 */
+	public void setSupermercado(Supermercado supermercado) {
+		this.supermercado = supermercado;
+	}
 
 	/**
 	 * @return the id
@@ -90,13 +115,6 @@ public class Produto {
 		this.imagem = imagem;
 	}
 
-	public String getCnpjAnunciante() {
-		return cnpjAnunciante;
-	}
-
-	public void setCnpjAnunciante(String cnpjAnunciante) {
-		this.cnpjAnunciante = cnpjAnunciante;
-	}
 
 	public Double getValor() {
 		return valor;
@@ -106,37 +124,6 @@ public class Produto {
 		this.valor = valor;
 	}
 
-	public String getEmailAnunciante() {
-		return emailAnunciante;
-	}
-
-	public void setEmailAnunciante(String emailAnunciante) {
-		this.emailAnunciante = emailAnunciante;
-	}
-
-	public String getRazaoSocialAnunciante() {
-		return razaoSocialAnunciante;
-	}
-
-	public void setRazaoSocialAnunciante(String razaoSocialAnunciante) {
-		this.razaoSocialAnunciante = razaoSocialAnunciante;
-	}
-
-	public String getNomeFantasiaSupermercado() {
-		return nomeFantasiaSupermercado;
-	}
-
-	public void setNomeFantasiaSupermercado(String nomeFantasiaSupermercado) {
-		this.nomeFantasiaSupermercado = nomeFantasiaSupermercado;
-	}
-
-	public String getRazaoSocialSupermercado() {
-		return razaoSocialSupermercado;
-	}
-
-	public void setRazaoSocialSupermercado(String razaoSocialSupermercado) {
-		this.razaoSocialSupermercado = razaoSocialSupermercado;
-	}
 
 	public int getQuantidade() {
 		return quantidade;

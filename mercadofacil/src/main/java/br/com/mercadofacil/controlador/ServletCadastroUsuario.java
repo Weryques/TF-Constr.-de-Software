@@ -104,7 +104,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 				conexao.commit(); //fecha transação, efetiva comandos
 				conexao.close(); //fecha conexao com o banco de dados
 				
-				res.sendRedirect("/index.jsp");
+				res.sendRedirect("/mercadofacil/supermercadounico/supermercadounico_home.jsp");
 			}
 			else{
 				throw new Exception("CPF inválido!"); //cria uma exceção
@@ -171,7 +171,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		} catch (Exception e) {
 			System.out.println("Erro em cadastrar comerciante: "+ e.getMessage());
 			conexao.rollback(); //desfaz todos os comandos em caso de exceção
-			res.sendRedirect("/cadastropessoajuridica.jsp");
+			res.sendRedirect("/mercadofacil/cadastropessoajuridica.jsp");
 		}
 	}
 
@@ -223,7 +223,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 			conexao.commit();
 			conexao.close();
 			
-			res.sendRedirect("/loginpessoajuridica.jsp");
+			res.sendRedirect("/mercadofacil/loginpessoajuridica.jsp");
 			}
 			else{
 				throw new Exception("CNPJ inválido!");
@@ -231,7 +231,7 @@ public class ServletCadastroUsuario extends HttpServlet{
 		} catch (Exception e) {
 			System.out.println("Erro em cadastrar anunciante: "+ e.getMessage());
 			conexao.rollback();
-			res.sendRedirect("/cadastropessoafisica.jsp");
+			res.sendRedirect("/mercadofacil/cadastropessoafisica.jsp");
 		}
 	}
 }

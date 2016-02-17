@@ -54,7 +54,7 @@ public class ComercianteDAO {
 	}
 	
 	public Comerciante selectTudo(Comerciante comerciante, Connection conexao) throws SQLException{
-		String selectTudo = "SELECT * FROM comerciante WHERE email = '"+ comerciante.getEmail() +"'"
+		String selectTudo = "SELECT * FROM (comerciante natural join endereco) WHERE email = '"+ comerciante.getEmail() +"'"
 				+ " AND senha = md5('"+ comerciante.getSenha() +"')";
 		
 		Statement stmt = conexao.createStatement();

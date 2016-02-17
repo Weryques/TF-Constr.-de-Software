@@ -13,12 +13,6 @@
 			<h3>500 Error!</h3>
 			<pre><%				
 				out.print("<br />"+ exception.getMessage() +"<br />");
-				
-				out.print("<hr />");
-				out.print("Pilha de erros: ");
-				out.print("<hr />");
-				
-				exception.printStackTrace(new java.io.PrintWriter(out));
 			%></pre>
 			<br />
 			<a href="/mercadofacil/index.jsp" class="details">Voltar</a>
