@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
-	<%
+<%
 Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 %>
 	<!--header-->
@@ -68,8 +68,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 					<div class="clearfix"></div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="#" class="glyphicon glyphicon-user"><span></span>
-							<% out.print(consumidor.getNomeCompleto()); %> </a><label>/</label></li>
+					<li><a href="#" class="glyphicon glyphicon-user"><span></span><% out.print(consumidor.getNomeCompleto()); %> </a><label>/</label></li>
 					<li><a href="loja/carrinhocompras.jsp"
 						class="glyphicon glyphicon-shopping-cart"><span></span>Carrinho
 					</a><label>/</label></li>
@@ -111,109 +110,45 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 		ArrayList<Produto> produtosAddCarrinho = new ArrayList<Produto>();
 		produtosAddCarrinho = (ArrayList) session.getAttribute("produtosAddCarrinho");
 		
-		if(produtosAddCarrinho.size() == 0) { %>
-	<div class="container">
-		<div class="register-account">
-			<h4 class="title">Seu carrinho está vazio</h4>
-			<p class="cart">
-				Não há nenhum produto no seu carrinho.<br>Clique<a
-					href="supermercadounico_home_logado.jsp"> aqui</a> para continuar
-				comprando
-			</p>
-		</div>
-	</div>
-	<%
+		%>
+		
+		<% if(produtosAddCarrinho.isEmpty()) { %>
+			<div class="container">
+				<div class="register-account">
+					<h4 class="title">Seu carrinho está vazio</h4>
+					<p class="cart">Não há nenhum produto no seu carrinho.<br>Clique<a href="supermercadounico_home_logado.jsp"> aqui</a> para continuar comprando</p>
+				</div>
+			</div>
+		<%
 		}
 		else{ %>
 
-	<div class="cart">
-		<div class="cart-top">
-			<div class="cart-experience">
-				<h4>Carrinho</h4>
-			</div>
-			<div class="cart-login">
-				<div class="cart-login-img">
-					<img src="images/loggin_man.png">
-				</div>
-				<div class="cart-login-text">
-					<h5><%=consumidor.getNomeCompleto() %></h5>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="cart-bottom">
-			<div class="table">
-				<table>
-					<tbody>
-						<tr class="main-heading">
-							<th>Imagens</th>
-							<th class="long-txt">Descrição do produto</th>
-							<th>Quantidade</th>
-							<th>Preço</th>
-							<th>Total</th>
-						</tr>
-						
-						<% 
-						Double total = 0.0;
-						
-						for(int i = 0; i < produtosAddCarrinho.size(); i++){
-							total += produtosAddCarrinho.get(i).getValor();
-							%>
-						<tr class="cake-top">
-							<td class="cakes">
-								<div class="product-img">
-									<img src="images/cack1.png">
-								</div>
-							</td>
-							<td class="cake-text">
-								<div class="product-text">
-									<h3><%=produtosAddCarrinho.get(i).getNome() %></h3>
-								</div>
-							</td>
-							<td class="quantity">
-								<div class="product-right">
-									<input min="1" type="number" id="quantity" name="quantidade"
-									value ="1" class="form-control input-small">
-								</div>
-							</td>
-							<td class="price">
-								<h4><%=produtosAddCarrinho.get(i).getValor() %></h4>
-							</td>
-							<td class="top-remove">
-								<div class="close">
-									<h5>Remove</h5>
-								</div>
-							</td>
-						<%}
-						
-						%>
-
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="vocher">
-				<div class="dis-total">
-					<h1>Total: <%=total %></h1>
-					<div class="tot-btn">
-						<a class="shop" href="#">Back to Shop</a> <a class="check"
-							href="comprafinalizada.jsp">Clique para finalizar compra</a>
-					</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-	</div>
-	<div class="copy-right">
-		<p>
-			Â© 2016 Flat Cart Widget. All rights reserved | Template by <a
-				href="http://w3layouts.com/" target="_blank"> W3layouts </a>
-		</p>
-	</div>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Comprar</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <c:forEach items="${produtoList}" var="produto">
+		      <tr>
+		        <td>
+		          <!-- Adicionando o produto no carrinho de compras -->
+		          <form action="<c:url value="/carrinho"/>" method="POST">
+		            <input type="hidden" name="item.produto.id" 
+		                          value="${produto.id }"/>
+		            <input class="qtde" name="item.quantidade" value="1"/>
+		            <button type="submit">Comprar</button>
+		          </form>
+		        </td>
+		      </tr>          
+		    </c:forEach>
+		  </tbody>
+		</table>
+				
 
 	<%	
-	}
+	} /* fim do else */
 	%>
 	<!---->
 	<div class="footer">
