@@ -14,6 +14,7 @@ public class ProdutoDAO {
 
 	// insert
 	public void InseriProduto(Produto produto) {
+		boolean resultadoInsert;
 		String sql = " insert into produto(nome,valor,categoria,descricao,cnpjAnunciante,emailAnunciante,"
 				+ "razaoSocialAnunciante,nomeFantasiaSupermercado,razaoSocialSupermercado,quantidade)"
 				+ "values(?,?,?,?,?,?,?,?,?,?)";
@@ -26,11 +27,11 @@ public class ProdutoDAO {
 			stmt.setDouble(2, produto.getValor());
 			stmt.setString(3, produto.getCategoria());
 			stmt.setString(4, produto.getDescricao());
-			stmt.setString(5, produto.getAnunciante().getCnpjAnunciante());
-			stmt.setString(6, produto.getAnunciante().getEmail());
-			stmt.setString(7, produto.getAnunciante().getRazaoSocial());
-			stmt.setString(8, produto.getSupermercado().getNomeFantasia());
-			stmt.setString(9, produto.getSupermercado().getRazaoSocial());
+			stmt.setString(5, produto.getCnpjAnunciante());
+			stmt.setString(6, produto.getEmailAnunciante());
+			stmt.setString(7, produto.getRazaoSocialAnunciante());
+			stmt.setString(8, produto.getNomeFantasiaSupermercado());
+			stmt.setString(9, produto.getRazaoSocialSupermercado());
 			stmt.setInt(10, produto.getQuantidade());
 
 			stmt.execute();
