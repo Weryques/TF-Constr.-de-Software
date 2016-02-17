@@ -15,7 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Flat Cart Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <!--google fonts-->
 <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="../js/jquery-1.11.0.min.js"></script>
 
 <script>$(document).ready(function(c) {
 	$('.close').on('click', function(c){
@@ -50,15 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
    	  	 </div>
    	  	 <div class="cart-login-text">
    	  	 	<h5>Logged in as</h5>
-   	  	 </div> 	
-   	  	  <div class="lang_list">
-				<select tabindex="4" class="dropdown">
-					<option value="" class="label" value="">This is looking great</option>
-					<option value="1">Many variations</option>
-					<option value="2">Ipsum is simply</option>
-					<option value="3">Nemo enim ipsam</option>
-				</select>
-			 </div>  	 
+   	  	 </div> 	 	 
    	  	 <div class="clear"> </div>
    	  </div>
    	 <div class="clear"> </div>
@@ -116,20 +108,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  	     	    </td>
  	     	    <td class="quantity"> 	 	     	 
    	 	     	  <div class="product-right">
-   	 	     	  	 <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">				  
+   	 	     	  	 <input min="1" type="number" id="quantity" name="quantity" class="form-control input-small">				  
    	 	     	  </div>
    	 	     	</td>
    	 	     	<td>
    	 	     		<h4>$12.99</h4>
    	 	     	</td>
    	 	     	<td class="btm-remove">
-   	 	     		<h4>$25.98</h4>
    	 	     		<div class="close-btm">
-   	 	     	   <h5>Remove</h5>
+   	 	     	   <h5>Remover</h5>
    	 	        </div>
-   	 	     	</td>
-   	 	     	
-   	 	     
+   	 	     	</td>     
      	 	     </tr>
    	 	   </tbody>
    	 	</table>

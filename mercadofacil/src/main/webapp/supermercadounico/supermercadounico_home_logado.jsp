@@ -2,7 +2,7 @@
 <%@page import="br.com.mercadofacil.modelo.Consumidor" %>
 <%@page import="br.com.mercadofacil.modelo.Produto"%>
 <%@page import="br.com.mercadofacil.jdbc.ProdutoDAO"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList" %>
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -50,7 +50,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <%
 Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
-
 %>
 	<!--header-->
 	<div class="header">
@@ -67,7 +66,29 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				</div>
 				<ul class="grid-header">
 					<li><a href="#" class="glyphicon glyphicon-user"><span ></span> <% out.print(consumidor.getNomeCompleto()); %> </a><label>/</label></li>
-       			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho  </a><label>/</label></li>
+					
+					<%	
+						Produto produtoCarrinho = new Produto();
+						ArrayList<Produto> produtosAddCarrinho = new ArrayList<Produto>();
+						
+						try{
+							String nomeProduto = request.getParameter("nomeProduto");
+							Double valorProduto = Double.parseDouble(request.getParameter("valorProduto"));
+							
+							produtoCarrinho.setNome(nomeProduto);
+							produtoCarrinho.setValor(valorProduto);
+						
+							produtosAddCarrinho.add(produtoCarrinho);
+							
+							session.setAttribute("produtosAddCarrinho", produtosAddCarrinho);
+						}
+						catch(Exception e){
+							e.printStackTrace();
+						}
+
+						%>
+       			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho <%=produtosAddCarrinho.size()%>  </a><label>/</label></li>
+       			 	
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -204,26 +225,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 								}
 							}
 						%>
-						<%
-						Produto produtoCarrinho = new Produto();
-						ArrayList<Produto> produtosAddCarrinho = new ArrayList<Produto>();
 						
-						try{
-							String nomeProduto = request.getParameter("nomeProduto");
-							Double valorProduto = Double.parseDouble(request.getParameter("valorProduto"));
-							
-							produtoCarrinho.setNome(nomeProduto);
-							produtoCarrinho.setValor(valorProduto);
-						
-							produtosAddCarrinho.add(produtoCarrinho);
-							
-							
-						}
-						catch(Exception e){
-							e.printStackTrace();
-						}
-
-						%>
 					</div>
 					<!---->
 					<div class="browse">
