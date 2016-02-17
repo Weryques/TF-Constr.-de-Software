@@ -1,5 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="br.com.mercadofacil.modelo.Consumidor" %>
+<%@page import="br.com.mercadofacil.modelo.Produto"%>
+<%@page import="br.com.mercadofacil.jdbc.ProdutoDAO"%>
+<%@page import="java.util.ArrayList"%>
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -168,58 +171,55 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				</div>
 			</div>
 			<!---->
-			<div class="col-md-8 food-grid">
-				<div class="cup">
-					<div class="col-md-5 cup-in">
-						<a href="#"><img src="../images/p1.jpg" class="img-responsive" alt=""></a>
-						<p>Produto 1</p>
-						<span class="dollar">$25.89</span>
-						<div class="details-in">
-							<a href="#" class="details">Detalhes</a>
+				<%
+					//ArrayList<Produto> ListaDeProdutos = new ArrayList();
+					ArrayList<Produto> listaDeProdutos = new ArrayList<Produto>();
+					ProdutoDAO produtoDAO = new ProdutoDAO();
+					listaDeProdutos = produtoDAO.getLista("Todos");
+					//ArrayList<Produto> listaDeProdutos = (ArrayList) request.getAttribute("ListaDeProdutos");
+					int tamanhoDaLista = listaDeProdutos.size();
+					//System.out.println("tamanho da lista "+ListaDeProdutos.size());
+				%>
+				<div class="col-md-8 food-grid">
+					<div class="cup">
+						<%
+							if (listaDeProdutos.size() <= 0) {
+								%>
+								<div class="col-md-10 cup-in">
+								<a href="#"><img src="../images/opsNenhumProdutoCadastrado.jpg"
+									class="img-responsive" alt=""></a>
+								<p>Desculpe, Mas Não Encontramos Nenhum Produto Cadastrado</p>
+								<span class="dollar"></span>
+								<div class="clearfix"></div>
+							</div>
+							<% 
+							} else {
+
+								for (int i = 0; i < listaDeProdutos.size(); i++) {
+						%>
+						<div class="col-md-5 cup-in">
+							<a href="#"><img src="../images/p1.jpg"
+								class="img-responsive" alt=""></a>
+							<p><span class="dollar text-info"><%=listaDeProdutos.get(i).getNome()%></span></p><br>
+							<span class="dollar col-md-5"><%=listaDeProdutos.get(i).getValor()%>R$</span>
+							<button class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Comprar</button>
 						</div>
-						<div class="clearfix"> </div>
+						<%
+							}
+							}
+						%>
 					</div>
-					<div class="col-md-5 cup-in">
-						<a href="#"><img src="../images/p2.jpg" class="img-responsive" alt=""></a>
-						<p>Produto 2</p>
-						<span class="dollar">$25.89</span>
-						<div class="details-in">
-							<a href="#" class="details">Detalhes</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-5 cup-in">
-						<a href="#"><img src="../images/p3.jpg" class="img-responsive" alt=""></a>
-						<p>Produto 3</p>
-						<span class="dollar">$25.89</span>
-						<div class="details-in">
-							<a href="#" class="details">Detalhes</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					
-					<div class="col-md-5 cup-in">
-						<a href="#"><img src="../images/p4.jpg" class="img-responsive" alt=""></a>
-						<p>Produto 4</p>
-						<span class="dollar">$25.89</span>
-						<div class="details-in">
-							<a href="#" class="details">Detalhes</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<!---->
+					<!---->
 					<div class="browse">
-						<p class="vit">Procurar mais <span>...</span></p>
+						<p class="vit">
+							Procurar mais <span>...</span>
+						</p>
 						<a href="#" class="more">Procurar</a>
-						<div class="clearfix"> </div>
-						<div class="arrow">
-							<a href="#"><img src="../images/arrow.png" alt=""></a>
-						</div>
+						<div class="clearfix"></div>
+					
 					</div>
-				<!---->
-			</div>
+					<!---->
+				</div>
 			<div class="clearfix"> </div>
 		</div>
 		</div>
