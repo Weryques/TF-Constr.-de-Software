@@ -14,9 +14,11 @@ public class ValidaDado {
 		boolean resultado = false;
 
 
-		int digitoVerificador1 = 0, digitoVerificador2 = 0;
+		int digitoVerificador1 = 0;
+		int digitoVerificador2 = 0;
 		int digito = 0;
-		int sequencia = 10, soma = 0;
+		int sequencia = 10;
+		int soma = 0;
 
 		digitoVerificador1 = (int) (cpf.charAt(12) - 48);
 		digitoVerificador2 = (int) (cpf.charAt(13) - 48);
@@ -31,7 +33,8 @@ public class ValidaDado {
 			}
 		}
 
-		int resto = 0, digitoComparador = 0;
+		int resto = 0;
+		int digitoComparador = 0;
 
 		resto = soma % 11;
 
@@ -75,13 +78,16 @@ public class ValidaDado {
 	
 	private static int calcularDigito(String str, int[] peso) {
 	      int soma = 0;
+	      
 	      for (int indice=str.length()-1, digito; indice >= 0; indice-- ) {
 	         digito = Integer.parseInt(str.substring(indice,indice+1));
 	         soma += digito*peso[peso.length-str.length()+indice];
 	      }
+	      
 	      soma = 11 - soma % 11;
+	      
 	      return soma > 9 ? 0 : soma;
-	   }
+	}
 
 
 	public boolean validarCNPJ(String cnpj){
@@ -89,6 +95,7 @@ public class ValidaDado {
 
 	      Integer digito1 = calcularDigito(cnpj.substring(0,12), pesoCNPJ);
 	      Integer digito2 = calcularDigito(cnpj.substring(0,12) + digito1, pesoCNPJ);
+	      
 	      return cnpj.equals(cnpj.substring(0,12) + digito1.toString() + digito2.toString());
 	}
 }
