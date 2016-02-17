@@ -30,10 +30,10 @@ public class ConsumidorDAO {
 	}
 
 	public Consumidor selectTudo(Consumidor consumidor, Connection conexao) throws SQLException {
+		ResultSet resultado = null;
 		String selectTudo = "SELECT * FROM (consumidor natural join endereco) WHERE senha = md5('"+ consumidor.getSenha() +"') AND email = '"+ consumidor.getEmail() +"'";
 		
 		Statement stmt = conexao.createStatement();
-		ResultSet resultado = null;
 		
 		resultado = stmt.executeQuery(selectTudo);
 		

@@ -194,10 +194,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								class="img-responsive" alt=""></a>
 							<p><span class="dollar text-info"><%=listaDeProdutos.get(i).getNome()%></span></p><br>
 							<span class="dollar col-md-5"><%=listaDeProdutos.get(i).getValor()%>R$</span>
-							<button class="btn btn-outline glyphicon glyphicon-shopping-cart col-md-10">Comprar</button>
+							<button class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Comprar</button>
 						</div>
 						<%
-								}
+							}
 							}
 						%>
 					</div>

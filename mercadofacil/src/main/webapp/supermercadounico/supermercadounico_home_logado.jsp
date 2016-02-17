@@ -15,7 +15,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 <title>Supermercado Único - Logado</title>
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
@@ -32,6 +31,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
+
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
 
 <script type="text/javascript" src="../js/move-top.js"></script>
 <script type="text/javascript" src="../js/easing.js"></script>
@@ -63,8 +65,29 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="#" class="glyphicon glyphicon-user"><span ><% out.print(consumidor.getNomeCompleto()); %></span></a><label>/</label></li>
-       			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho </a><label>/</label></li>
+					<li><a href="#" class="glyphicon glyphicon-user"><span ></span> <% out.print(consumidor.getNomeCompleto()); %> </a><label>/</label></li>
+					
+					<%	
+						Produto produtoCarrinho = new Produto();
+						ArrayList<Produto> produtosAddCarrinho = new ArrayList<Produto>();
+						
+						try{
+							String nomeProduto = request.getParameter("nomeProduto");
+							Double valorProduto = Double.parseDouble(request.getParameter("valorProduto"));
+							
+							produtoCarrinho.setNome(nomeProduto);
+							produtoCarrinho.setValor(valorProduto);
+						
+							produtosAddCarrinho.add(produtoCarrinho);
+							
+							session.setAttribute("produtosAddCarrinho", produtosAddCarrinho);
+						}
+						catch(Exception e){
+							e.printStackTrace();
+						}
+
+						%>
+       			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho <%=produtosAddCarrinho.size()%>  </a><label>/</label></li>
        			 	
 				</ul>
 				<div class="clearfix"> </div>
@@ -130,7 +153,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 		  <script src="../js/jquery.wmuSlider.js"></script> 
 			  <script>
        			$('.example1').wmuSlider({
-					 pagination : false,
+					 pagination : true,
 				});         
    		     </script> 	
 		<!---->
@@ -175,53 +198,34 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				<div class="col-md-8 food-grid">
 					<div class="cup">
 						<%
-							if (listaDeProdutos.size() == 0) {
+							if (listaDeProdutos.size() <= 0) {
 								%>
 								<div class="col-md-10 cup-in">
-									<a href="#"><img src="../images/opsNenhumProdutoCadastrado.jpg"
+								<a href="#"><img src="../images/opsNenhumProdutoCadastrado.jpg"
 									class="img-responsive" alt=""></a>
-									<p>Desculpe, Mas Não Encontramos Nenhum Produto Cadastrado</p>
-									<span class="dollar"></span>
+								<p>Desculpe, Mas Não Encontramos Nenhum Produto Cadastrado</p>
+								<span class="dollar"></span>
 								<div class="clearfix"></div>
 							</div>
 							<% 
 							} else {
 
 								for (int i = 0; i < listaDeProdutos.size(); i++) {
-							%>
-									<div id="produto" class="col-md-5 cup-in">
-										<form>
-											<a href="#"> <img src="../images/p1.jpg" class="img-responsive" alt=""></a>
-											<input type="text" name="nomeProduto"  value="<%out.print(listaDeProdutos.get(i).getNome());%>"><br>
-											<input type="text" name="valorProduto" value="R$ <%out.print(listaDeProdutos.get(i).getValor());%>">							
-											<button type="submit" class="btn btn-default col-md-10">Comprar</button>
-										</form>
-									</div>
-							<%
+						%>
+						<div id="produto" class="col-md-5 cup-in">
+							<form>
+								<a href="#"><img src="../images/p1.jpg"
+									class="img-responsive" alt=""></a>
+								<input name="nomeProduto" <p><span class="dollar text-info"><%=listaDeProdutos.get(i).getNome()%></span></p> ><br>
+								<input name="valorProduto" <span class="dollar col-md-5">R$ <%=listaDeProdutos.get(i).getValor()%></span> >							
+								<button type="submit" class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Adicionar ao carrinho</button>
+							</form>
+						</div>
+						<%
 								}
 							}
 						%>
-						<%	
-						Produto produtoCarrinho = new Produto();
-						ArrayList<Produto> produtosAddCarrinho = new ArrayList<Produto>();
 						
-						try{
-							String nomeProduto = request.getParameter("nomeProduto");
-							Double valorProduto = Double.parseDouble(request.getParameter("valorProduto"));
-							
-							produtoCarrinho.setNome(nomeProduto);
-							produtoCarrinho.setValor(valorProduto);
-						
-							produtosAddCarrinho.add(produtoCarrinho);
-							
-							session.setAttribute("produtosAddCarrinho", produtosAddCarrinho);
-						}
-						catch(Exception e){
-							e.printStackTrace();
-							System.out.println(e.getMessage());
-						}
-
-						%>
 					</div>
 					<!---->
 					<div class="browse">
