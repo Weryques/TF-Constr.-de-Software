@@ -105,9 +105,9 @@
 					<ul class="nav" id="side-menu">
 						<li><a href="../../comerciante/principal.jsp"><i
 								class="fa fa-dashboard fa-fw"></i> Principal</a></li>
-						<li><a href="../../consultarproduto?categoria=Todos"><i class="fa fa-table fa-fw"></i>
+						<li><a href="consultarproduto?categoria=Todos"><i class="fa fa-table fa-fw"></i>
 								Listar</a></li>
-						<li><a href="cadastroproduto.jsp" class="active"><i
+						<li><a href="pessoajuridica/pages/cadastroproduto.jsp" class="active"><i
 								class="fa fa-edit fa-fw"></i> Cadastro de Produtos</a></li>
 					</ul>
 				</div>
