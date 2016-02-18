@@ -91,13 +91,13 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
                           <header class="panel-heading tab-bg-info">
                               <ul class="nav nav-tabs">
                                   <li>
-                                      <a data-toggle="tab" href="#profile">
+                                      <a data-toggle="tab" href="javascript:mudarEstado('profile')">
                                           <i class="icon-user"></i>
                                           Perfil
                                       </a>
                                   </li>
                                   <li class="">
-                                      <a data-toggle="tab" href="#edit-profile">
+                                      <a data-toggle="tab" href="javascript:mudarEstado('edit-profile')">
                                           <i class="icon-envelope"></i>
                                           Editar Perfil
                                       </a>
@@ -212,6 +212,18 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				<div class="clearfix"> </div>
 		</div>	
 	</div>
+	<script type="text/javascript">
+				function mudarEstado(id){
+					var display = document.getElementById(idForm).style.display;
+				    
+					if(display == "none"){
+				        document.getElementById(id).style.display = 'block';
+					}
+				    else{
+				        document.getElementById(id).style.display = 'none';
+				    }					
+				}
+			</script>
 	 <script type="text/javascript">
 						$(document).ready(function() {
 							/*

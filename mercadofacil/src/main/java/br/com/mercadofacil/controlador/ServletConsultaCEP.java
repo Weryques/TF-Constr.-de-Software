@@ -16,9 +16,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.mercadofacil.jdbc.ComercianteDAO;
 import br.com.mercadofacil.jdbc.FabricaConexao;
+import br.com.mercadofacil.modelo.Comerciante;
 
 /**
  * @author weryquessantos
@@ -48,32 +50,28 @@ public class ServletConsultaCEP extends HttpServlet{
 	private void procurarSupermercado(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException{
 		FabricaConexao conn = new FabricaConexao();
 		Connection conexao = null;
-		ComercianteDAO comerciante = new ComercianteDAO();
-		ResultSet retornoSelect = null;
-		List<String> supermercados = new ArrayList<String>();
 		
 		conexao = conn.getConexao();
 		
 		conexao.setAutoCommit(false);
 		
 		try{
-			retornoSelect = comerciante.selectCEP(req.getParameter("cep"), conexao);
-						
-			if(retornoSelect != null){
-				while(retornoSelect.next()){
-					supermercados.add(retornoSelect.getString("nfEmpresa"));
-				}
-			}		
+			List<?> supermercados = new ArrayList<Object>();
+			ComercianteDAO comercianteDAO = new ComercianteDAO();
+									
+			supermercados = comercianteDAO.selectCEP(req.getParameter("cep"), conexao);
+			
+			HttpSession session = req.getSession(true);
+			session.setAttribute("supermercados", supermercados);
 			
 			resp.sendRedirect("/mercadofacil/resultadobusca.jsp");
-			req.setAttribute("supermercados", supermercados);
 			
 			conexao.commit();
 			conexao.close();
-			retornoSelect.close();
 		}
 		catch(Exception e){
 			conexao.rollback();
+			e.printStackTrace();
 		}		
 	}
 }

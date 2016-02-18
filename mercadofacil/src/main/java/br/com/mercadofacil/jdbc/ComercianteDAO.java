@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.mercadofacil.modelo.Comerciante;
 import br.com.mercadofacil.modelo.Supermercado;
@@ -40,21 +42,27 @@ public class ComercianteDAO {
 		stmt.close();
 	}
 	
-	public ResultSet selectCEP(String cep, Connection conexao) throws SQLException{
-		String selectCEP = "SELECT nfEmpresa FROM (A (comerciante natural join endereco) where A.cep = '"+ cep +"')";
+	public List<String> selectCEP(String cep, Connection conexao) throws SQLException{
+		String selectCEP = "SELECT DISTINCT nfEmpresa FROM (comerciante natural join endereco) where cep = '"+ cep +"'";
 		
+		List<String> supermercados = new ArrayList<String>();
 		Statement stmt = conexao.createStatement();
 		ResultSet retornoSelect = null;
 		
 		retornoSelect = stmt.executeQuery(selectCEP);
+		
+		while(retornoSelect.next()){
+			supermercados.add(retornoSelect.getString("nfEmpresa"));
+		}
+		
 		stmt.close();
+		retornoSelect.close();
 		
-		
-		return retornoSelect;
+		return supermercados;
 	}
 	
 	public Comerciante selectTudo(Comerciante comerciante, Connection conexao) throws SQLException{
-		String selectTudo = "SELECT * FROM (comerciante natural join endereco) WHERE email = '"+ comerciante.getEmail() +"'"
+		String selectTudo = "SELECT DISTINCT * FROM (comerciante natural join endereco) WHERE email = '"+ comerciante.getEmail() +"'"
 				+ " AND senha = md5('"+ comerciante.getSenha() +"')";
 		
 		Statement stmt = conexao.createStatement();
