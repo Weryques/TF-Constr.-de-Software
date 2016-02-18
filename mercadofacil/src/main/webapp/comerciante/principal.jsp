@@ -146,7 +146,7 @@ Comerciante comerciante = (Comerciante) session.getAttribute("comerciante");
                         <span class="arrow"></span>
                             <div class="">
                             	<a href="../pessoajuridica/pages/listarproduto.jsp" class="btn btn-info" role="button">Ver supermercados cadastrados</a><br />
-                            	<a href="#" class="btn btn-info" role="button">Cadastrar novo supermercado</a><br />
+                            	<a href="../pessoajuridica/pages/cadastrosupermercado.jsp" class="btn btn-info" role="button">Cadastrar novo supermercado</a><br />
                             	<a href="../pessoajuridica/pages/listaproduto.jsp" class="btn btn-info" role="button">Ver produtos cadastrados</a><br />
                             	<a href="#" class="btn btn-default" role="button">Excluir supermercados</a><br />
                                	<a href="../pessoajuridica/pages/cadastroproduto.jsp" class="btn btn-info" role="button">Cadastrar produtos</a><br />
