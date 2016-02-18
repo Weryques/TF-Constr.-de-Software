@@ -8,43 +8,47 @@
 <title>Mercado Fácil - Digite seu CEP</title>
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css">
+<link href="js/bootstrap.js">
+<link href="css/bootstrap.min.css">
+<link href="js/booststrap.min.js">
+<link href="js/jquery.min.js">
 <!-- Custom Theme files -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="keywords" content="Flat Search Box Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<!--Google Fonts-->
-<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<!--Google Fonts-->
 
 <style>
 
 	.center{
  		margin: auto;
    	 	width: 30%;
-    	padding: 10px
+    	padding: 10px;
 	}
 </style>
 </head>
-<body>
-
+<body class="center">
 	<div class="container">
-		
-	<h1 class="center table table-striped">Supermercados encontrados</h1>
 	
-	<table class="center">
+	<h1 class="table table-striped">Supermercados encontrados</h1>
+	
+	<table>
       <% List<String> supermercados = new ArrayList<String>(); 
       	 supermercados = (List) session.getAttribute("supermercados");
        	
       	 for(int i = 0; i < supermercados.size(); i++){
       %>
         <tr>
-          <td><%=supermercados.get(i)%><td>
+          <td><%=supermercados.get(i)%> 
+          <%if(supermercados.get(i).equals("Supermercado Único")){ %> 
+         	 <a role ="button" href="/mercadofacil/supermercadounico/supermercadounico_home.jsp" class="btn btn-info">Ir</a><%
+          } %>
+          <td>
         </tr>
         
         <%
       	 }
         %>
     </table>
+    
+    <a role="button" href="/mercadofacil/index.jsp">Voltar</a>
 	</div>
 </body>
 </html>

@@ -55,7 +55,7 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
+                                <img alt="" src="#">
                             </span>
                             <span class="username"><% out.print(comerciante.getNomeCompleto()); %></span>
                             <b class="caret"></b>
@@ -211,7 +211,7 @@
                                               <div class="activity-body act-in">
                                                   <span class="arrow"></span>
                                                   <div class="text">
-                                                  	<a href="#" class="btn btn-default" role="button">Excluir conta</a>
+                                                  	<a onclick="popUpPergunta()" class="btn btn-default" role="button">Excluir conta</a>
                                                   </div>
                                               </div>
                                           </div>
@@ -278,6 +278,18 @@
     <!--custome script for all page-->
     <script src="js/scripts.js"></script>
 
+		<script type="text/javascript">
+				function popUpPergunta(){
+					var VouF = confirm("Deseja continuar e excluir sua conta?");
+					if(VouF){
+						alert("Conta deletada!");
+						window.location.href = "/mercadofacil/deletaconta?usuario=comerciante";
+					}
+					else{
+						alert(":)")
+					}	
+				}
+			</script>
   <script>
 
       //knob

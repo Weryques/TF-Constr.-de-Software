@@ -9,21 +9,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="pt-br">
 <head>
 <title>Supermercado Único</title>
-<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
-<link href="../css/styleHomeLoginCarrinho.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- Bootstrap CSS -->    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery.min.js"></script>
+
+	<!-- Custom Theme files -->
+	<!--theme-style-->
+	<link href="../css/styleHomeLoginCarrinho.css" rel="stylesheet" type="text/css" media="all" />
+
+	
+    <!--external css-->
+    <!-- font icon -->
+    <link href="css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Food shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
 <!--//fonts-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
@@ -91,32 +109,26 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
                           <header class="panel-heading tab-bg-info">
                               <ul class="nav nav-tabs">
                                   <li>
-                                      <a data-toggle="tab" href="javascript:mudarEstado('profile')">
-                                          <i class="icon-user"></i>
-                                          Perfil
-                                      </a>
+                                      <button type="button" class="btn btn-info" onclick="mudarEstado('profile')"><i class="icon-user"></i>Perfil</button>
                                   </li>
-                                  <li class="">
-                                      <a data-toggle="tab" href="javascript:mudarEstado('edit-profile')">
-                                          <i class="icon-envelope"></i>
-                                          Editar Perfil
-                                      </a>
+                                  <li>
+                                      <button type="button" class="btn btn-info" onclick="mudarEstado('edit-profile')"><i class="icon-envelope"></i>Editar Perfil</button>
                                   </li>
                               </ul>
                           </header>
                           
-                          <div class="panel-body">
+                          <div class="panel col-md-12 text-center">
                              
                               <div class="tab-content pagination">
                       
                               <!-- profile -->
-                              <div id="profile" class="tab-pane-active">
+                              <div id="profile" class="tab-pane-active" style="display: none;">
                                     <section class="panel">
                                       <div class="bio-graph-heading">
                                                 Sobre
                                       </div>
                                       <div class="panel-body bio-graph-info">
-                                          <h1>Dados do perfil</h1>
+                                          <h1>Dados do perfil</h1><br><br>
                                           <div class="row">
                                               <div class="bio-row">
                                                   <p><span>Nome completo</span>: <% out.print(consumidor.getNomeCompleto()); %></p>
@@ -143,7 +155,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
                                </div>
                                
                                <!-- edit-profile -->
-                                  <div id="edit-profile" class="tab-pane">
+                                  <div id="edit-profile" class="tab-pane" style="display: none;">
                                     <section class="panel">  
                                     
                                     	<div class="profile-activity">                                          
@@ -151,18 +163,18 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
                                               <div class="activity-body act-in">
                                                   <span class="arrow"></span>
                                                   <div class="text">
-                                                  	<a href="#" class="btn btn-default" role="button">Excluir conta</a>
+                                                  	<a onclick="popUpPergunta()" class="btn btn-default" role="button">Excluir conta</a>
                                                   </div>
                                               </div>
                                           </div>
                                        </div>                                        
                                          
                                           <div class="panel-body bio-graph-info">
-                                              <h1>Infomações do perfil</h1>
+                                              <h1>Infomações do perfil</h1><br><br>
                                               <form class="form-horizontal" role="form">                                                  
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Nome completo</label>
-                                                      <div class="col-lg-6">
+                                                      <div class="col-lg-10">
                                                           <input type="text" class="form-control" id="f-name" placeholder=" ">
                                                       </div>
                                                   </div>
@@ -174,13 +186,13 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
                                                   </div>
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">E-mail</label>
-                                                      <div class="col-lg-6">
+                                                      <div class="col-lg-10">
                                                           <input type="text" class="form-control" id="email" placeholder=" ">
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Celular</label>
-                                                      <div class="col-lg-6">
+                                                      <div class="col-lg-10">
                                                           <input type="text" class="form-control" id="mobile" placeholder=" ">
                                                       </div>
                                                   </div>
@@ -214,14 +226,29 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 	</div>
 	<script type="text/javascript">
 				function mudarEstado(id){
-					var display = document.getElementById(idForm).style.display;
+					var display = document.getElementById(id).style.display;
 				    
-					if(display == "none"){
+					if(display == "none" && id == "profile"){
 				        document.getElementById(id).style.display = 'block';
+				        document.getElementById("edit-profile").style.display = 'none';
 					}
 				    else{
-				        document.getElementById(id).style.display = 'none';
+				        document.getElementById(id).style.display = 'block';
+				        document.getElementById("profile").style.display = 'none';
 				    }					
+				}
+			</script>
+			
+			<script type="text/javascript">
+				function popUpPergunta(){
+					var VouF = confirm("Deseja continuar e excluir sua conta?");
+					if(VouF){
+						alert("Conta deletada!");
+						window.location.href = "/mercadofacil/deletaconta?usuario=consumidor";
+					}
+					else{
+						alert(":)")
+					}	
 				}
 			</script>
 	 <script type="text/javascript">

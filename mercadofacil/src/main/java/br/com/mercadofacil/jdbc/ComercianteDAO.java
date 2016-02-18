@@ -4,6 +4,7 @@
 package br.com.mercadofacil.jdbc;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -84,5 +85,19 @@ public class ComercianteDAO {
 		resultado.close();
 
 		return comerciante;
+	}
+
+	public int deletarDoBanco(Comerciante comerciante, Connection conexao) throws SQLException {
+		int retorno;
+
+		String deletaSQL = "DELETE FROM comerciante where email='"+comerciante.getEmail()+"'"; 
+		
+		Statement stmt = conexao.createStatement();
+				
+		retorno = stmt.executeUpdate(deletaSQL);
+		
+		stmt.close();
+		
+		return retorno;
 	}
 }
