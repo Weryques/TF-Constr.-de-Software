@@ -47,14 +47,13 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 	<div class="header-in">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="home.jsp">Supermercado Único</a></h1>
+				<h1><a href="supermercadounico_home_logado.jsp">Supermercado Único</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
-					<li><a href="account.html">Minha conta</a> <label>/</label></li>
 					<li><a href="#">Meu carrinho</a> <label>/</label></li>	
 				</ul>
 				<div class="clearfix"> </div>
@@ -64,7 +63,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				<div class="top-nav">
 					<span class="menu"> </span>
 					<ul>
-						<li  ><a href="home.jsp" >Home  </a><label>- </label> </li>
+						<li  ><a href="supermercadounico_home_logado.jsp" >Home  </a><label>- </label> </li>
 					</ul>
 					<!--script-->
 				<script>

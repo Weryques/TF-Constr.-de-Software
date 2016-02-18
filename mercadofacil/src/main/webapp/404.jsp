@@ -4,7 +4,7 @@
 <html lang="pt-br">
 <head>
 <title>Mercado Fácil - 404 Error</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/mercadofacil/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 	<div class="container">

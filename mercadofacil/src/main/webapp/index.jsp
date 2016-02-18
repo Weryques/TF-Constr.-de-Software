@@ -37,7 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="search">
 		<i> </i>
 		<div class="s-bar">
-	  	 	<form action="consultarcep">
+	  	 	<form action="/consultarcep">
 				<input type="text" name = "cep" placeholder="CEP 00000-000">
 				<input type="submit"  name="cepProcura" value="Procurar"/>
 	  		</form>

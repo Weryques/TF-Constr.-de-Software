@@ -65,7 +65,7 @@ public class ServletConsultaCEP extends HttpServlet{
 				}
 			}		
 			
-			resp.sendRedirect("resultadobusca.jsp");
+			resp.sendRedirect("/mercadofacil/resultadobusca.jsp");
 			req.setAttribute("supermercados", supermercados);
 			
 			conexao.commit();

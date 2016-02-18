@@ -47,6 +47,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 
 </head>
+<script src="../js/minicart.min.js"></script>
+<script>
+    paypal.minicart.render();
+</script>
+<script>
+    paypal.minicart.reset();
+</script>
+
 <body>
 <%
 Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
@@ -55,7 +63,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="supermercadounico_home.jsp">Supermercado Único</a></h1>
+				<h1><a href="supermercadounico_home_logado.jsp">Supermercado Único</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
@@ -66,28 +74,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				</div>
 				<ul class="grid-header">
 					<li><a href="#" class="glyphicon glyphicon-user"><span ></span> <% out.print(consumidor.getNomeCompleto()); %> </a><label>/</label></li>
-					
-					<%	
-						Produto produtoCarrinho = new Produto();
-						ArrayList<Produto> produtosAddCarrinho = new ArrayList<Produto>();
-						
-						try{
-							String nomeProduto = request.getParameter("nomeProduto");
-							Double valorProduto = Double.parseDouble(request.getParameter("valorProduto"));
-							
-							produtoCarrinho.setNome(nomeProduto);
-							produtoCarrinho.setValor(valorProduto);
-						
-							produtosAddCarrinho.add(produtoCarrinho);
-							
-							session.setAttribute("produtosAddCarrinho", produtosAddCarrinho);
-						}
-						catch(Exception e){
-							e.printStackTrace();
-						}
-
-						%>
-       			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho <%=produtosAddCarrinho.size()%>  </a><label>/</label></li>
+       			 	<li><a href="carrinhocompras.jsp" class="glyphicon glyphicon-shopping-cart"><span ></span>Carrinho</a><label>/</label></li>
        			 	
 				</ul>
 				<div class="clearfix"> </div>
@@ -97,7 +84,7 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 				<div class="top-nav">
 					<span class="menu"> </span>
 					<ul>
-						<li class="active" ><a href="supermercadounico_home.jsp" >Home  </a><label>- </label> </li>
+						<li class="active" ><a href="supermercadounico_home_logado.jsp" >Home  </a><label>- </label> </li>
 					</ul>
 					<!--script-->
 				<script>
@@ -127,25 +114,6 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 						  <h5>--</h5>
 						  <p>-- <span>--</span></p>				   		 
 				   	 </div>
-					 
-			</article>
-			 <article style="position: absolute; width: 100%; opacity: 0;"> 
-				   	<div class="banner-wrap">
-					  		<h2>Café </h2>
-						  <h5>--</h5>
-						  <p>-- <span>--</span></p>
-				   		 
-				   	 </div>
-					 
-			</article>
-			 <article style="position: absolute; width: 100%; opacity: 0;"> 
-				   	<div class="banner-wrap">
-				   	       <h2>Café </h2>
-						  <h5>--</h5>
-						  <p>-- <span>--</span></p>
-				   		 
-				   	 </div>
-					 
 			</article>
 			</div>
 		</div>
@@ -211,32 +179,73 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 							} else {
 
 								for (int i = 0; i < listaDeProdutos.size(); i++) {
-						%>
-						<div id="produto" class="col-md-5 cup-in">
-							<form>
-								<a href="#"><img src="../images/p1.jpg"
-									class="img-responsive" alt=""></a>
-								<input name="nomeProduto" <p><span class="dollar text-info"><%=listaDeProdutos.get(i).getNome()%></span></p> ><br>
-								<input name="valorProduto" <span class="dollar col-md-5">R$ <%=listaDeProdutos.get(i).getValor()%></span> >							
-								<button type="submit" class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Adicionar ao carrinho</button>
-							</form>
-						</div>
+						%>		
+						<!-- Minicart PayPal -->				
+							<!DOCTYPE html>
+									<html>
+									<head>
+										<meta charset="utf-8" />
+										<title></title>
+										
+										<style>	
+										.floating-box {
+  											  float: left;
+  	  											width: 150px;
+   												height: 75px;
+    											margin: 80px;
+										}
+										</style>
+										
+									</head>
+									<body>
+									<div class="floating-box">
+										<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+							                <fieldset>
+							                	<a href="#"> <img src="../images/p1.jpg"> </a>
+							                    <input type="hidden" name="cmd" value="_cart" />
+							                    <input type="hidden" name="add" value="1" />
+							                    <input type="hidden" name="business" value="example@minicartjs.com" />
+							                    <input type="hidden" name="item_name" value="<%=listaDeProdutos.get(i).getNome()%>" />
+							                    <input type="hidden" name="amount" value="<%=listaDeProdutos.get(i).getValor()%>" />
+							                    <input type="hidden" name="discount_amount" value="0" />
+							                    <input type="hidden" name="currency_code" value="BRL" />
+							                    <input type="hidden" name="return" value="http://www.minicartjs.com/?success" />
+							                    <input type="hidden" name="cancel_return" value="http://www.minicartjs.com/?cancel" />
+							                    <strong><%=listaDeProdutos.get(i).getNome()%></strong>
+							                    <ul>
+							                        <li>R$ <%=listaDeProdutos.get(i).getValor()%></li>
+							                    </ul>
+							                    <input class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart" type="submit" name="submit" value="Comprar" class="button" />
+							                </fieldset>
+							            </form>
+							            </div>
+										
+										<script src="../js/minicart.js"></script>
+										<script>
+											paypal.minicart.render();
+											paypal.minicart.cart.on('checkout', function (evt) {
+												var items = this.items(),
+													len = items.length,
+													total = 0,
+													i;
+												// Count the number of each item in the cart
+												for (i = 0; i < len; i++) {
+													total += items[i].get('quantity');
+												}
+												if (total < 1) {
+													alert('A quantidade minima é 1. Por favor, adicione algo ao carrinho antes de finalizar a compra');
+													evt.preventDefault();
+												}
+											});
+										</script>
+									</body>
+									</html>
 						<%
 								}
 							}
 						%>
 						
 					</div>
-					<!---->
-					<div class="browse">
-						<p class="vit">
-							Procurar mais <span>...</span>
-						</p>
-						<a href="#" class="more">Procurar</a>
-						<div class="clearfix"></div>
-					
-					</div>
-					<!---->
 				</div>
 			<div class="clearfix"> </div>
 		</div>
@@ -272,7 +281,6 @@ Consumidor consumidor = (Consumidor) session.getAttribute("consumidor");
 						});
 					</script>
 			
-			<!-- Adicionar na sessão e incrementar contador -->		
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 </body>

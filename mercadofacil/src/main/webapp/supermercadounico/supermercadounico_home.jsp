@@ -45,6 +45,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					});
 					</script>
+					
+					<style>
+					.floating-box {
+  						float: left;
+  	  					width: 150px;
+   						height: 75px;
+    					margin: 80px;
+					}					
+					</style>
 
 </head>
 <body>
@@ -103,24 +112,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				   	      <h2>Café </h2>
 						  <h5>--</h5>
 						  <p>-- <span>--</span></p>				   		 
-				   	 </div>
-					 
-			</article>
-			 <article style="position: absolute; width: 100%; opacity: 0;"> 
-				   	<div class="banner-wrap">
-					  		<h2>Café </h2>
-						  <h5>--</h5>
-						  <p>-- <span>--</span></p>
-				   		 
-				   	 </div>
-					 
-			</article>
-			 <article style="position: absolute; width: 100%; opacity: 0;"> 
-				   	<div class="banner-wrap">
-				   	       <h2>Café </h2>
-						  <h5>--</h5>
-						  <p>-- <span>--</span></p>
-				   		 
 				   	 </div>
 					 
 			</article>
@@ -189,28 +180,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 								for (int i = 0; i < listaDeProdutos.size(); i++) {
 						%>
-						<div class="col-md-5 cup-in">
-							<a href="#"><img src="../images/p1.jpg"
-								class="img-responsive" alt=""></a>
-							<p><span class="dollar text-info"><%=listaDeProdutos.get(i).getNome()%></span></p><br>
-							<span class="dollar col-md-5"><%=listaDeProdutos.get(i).getValor()%>R$</span>
-							<button class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart col-md-5">Comprar</button>
+						<div class="floating-box">
+							<fieldset>
+							<a href="#"><img src="../images/p1.jpg"></a>
+							<p><span><%=listaDeProdutos.get(i).getNome()%></span></p><br>
+							<span>R$ <%=listaDeProdutos.get(i).getValor()%></span>
+							<button class="btn btn-outline btn-success glyphicon glyphicon-shopping-cart">Comprar</button>
+							</fieldset>
 						</div>
 						<%
-							}
+								}
 							}
 						%>
 					</div>
-					<!---->
-					<div class="browse">
-						<p class="vit">
-							Procurar mais <span>...</span>
-						</p>
-						<a href="#" class="more">Procurar</a>
-						<div class="clearfix"></div>
-					
-					</div>
-					<!---->
 				</div>
 			<div class="clearfix"> </div>
 		</div>

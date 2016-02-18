@@ -75,7 +75,7 @@ public class ServletAutenticacao extends HttpServlet{
 			
 			consumidor = consumidorDAO.selectTudo(consumidor, conexao);
 			
-			if(consumidor.getEmail() != null){
+			if(consumidor.getNomeCompleto() != null){
 				//colocando consumidor na sessão
 				HttpSession session = req.getSession(true);//retorna uma sessão caso exista, se não existe ele cria e retorna
 				session.setAttribute("consumidor", consumidor);
@@ -111,7 +111,7 @@ public class ServletAutenticacao extends HttpServlet{
 			
 			comerciante = comercianteDAO.selectTudo(comerciante, conexao);
 			
-			if(comerciante.getEmail() != null){ //então achou alguém
+			if(comerciante.getNomeCompleto() != null){ //então achou alguém
 				//colocando comerciante na sessão
 				HttpSession session = req.getSession(true);//retorna um sessão caso exista, se não existe ele cria e retorna
 				session.setAttribute("comerciante", comerciante);
