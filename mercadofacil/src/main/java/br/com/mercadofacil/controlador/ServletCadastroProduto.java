@@ -33,7 +33,7 @@ public class ServletCadastroProduto extends HttpServlet {
 		//produto.setNomeFantasiaSupermercado(req.getParameter("nomeFantasiaSupermercado"));
 	
 		ProdutoDAO produtoD = new ProdutoDAO();
-		produtoD.InseriProduto(produto);
+		produtoD.inseriProduto(produto);
 		res.sendRedirect("pessoajuridica/pages/cadastroproduto.jsp");
 
 	}

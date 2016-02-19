@@ -29,9 +29,9 @@ public class ServletCadastroServico extends HttpServlet{
 			
 			servico.setNome(req.getParameter("nome"));
 			servico.setDescricao(req.getParameter("descricao"));
-			servico.setCpnj(req.getParameter("cnpj"));
-			servico.setEmail(req.getParameter("email"));
-			servico.setRazaoAnunciante(req.getParameter("razaoSocial"));
+			servico.getAnunciante().getCnpjAnunciante();
+			servico.getAnunciante().setEmail(req.getParameter("email"));
+			servico.getAnunciante().getRazaoSocial();
 			
 		//	InsertBD update = new InsertBD();
 			Statement stmt = null;

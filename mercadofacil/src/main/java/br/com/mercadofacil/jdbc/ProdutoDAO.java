@@ -13,7 +13,7 @@ public class ProdutoDAO {
 	Connection con = new FabricaConexao().getConexao();
 
 	// insert
-	public void InseriProduto(Produto produto) {
+	public void inseriProduto(Produto produto) {
 		String sql = " insert into produto(nome,valor,categoria,descricao,cnpjAnunciante,emailAnunciante,"
 				+ "razaoSocialAnunciante,nomeFantasiaSupermercado,razaoSocialSupermercado,quantidade)"
 				+ "values(?,?,?,?,?,?,?,?,?,?)";

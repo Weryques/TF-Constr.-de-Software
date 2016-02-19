@@ -10,9 +10,7 @@ package br.com.mercadofacil.modelo;
 public class Servico {
 	private String nome;
 	private String descricao;
-	private String email;
-	private String cpnj;
-	private String razaoAnunciante;
+	private Anunciante anunciante = new Anunciante();
 	
 	/**
 	 * @return the nome
@@ -39,39 +37,15 @@ public class Servico {
 		this.descricao = descricao;
 	}
 	/**
-	 * @return the email
+	 * @return the anunciante
 	 */
-	public String getEmail() {
-		return email;
+	public Anunciante getAnunciante() {
+		return anunciante;
 	}
 	/**
-	 * @param email the email to set
+	 * @param anunciante the anunciante to set
 	 */
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	/**
-	 * @return the cpnj
-	 */
-	public String getCpnj() {
-		return cpnj;
-	}
-	/**
-	 * @param cpnj the cpnj to set
-	 */
-	public void setCpnj(String cpnj) {
-		this.cpnj = cpnj;
-	}
-	/**
-	 * @return the razaoAnunciante
-	 */
-	public String getRazaoAnunciante() {
-		return razaoAnunciante;
-	}
-	/**
-	 * @param razaoAnunciante the razaoAnunciante to set
-	 */
-	public void setRazaoAnunciante(String razaoAnunciante) {
-		this.razaoAnunciante = razaoAnunciante;
+	public void setAnunciante(Anunciante anunciante) {
+		this.anunciante = anunciante;
 	}
 }
